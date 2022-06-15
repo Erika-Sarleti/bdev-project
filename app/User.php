@@ -38,7 +38,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     
     public function userInfo(){
         return $this->hasOne('App\UserInfo');
@@ -48,5 +48,13 @@ class User extends Authenticatable
     public function messages() {
         return $this->hasMany('App\Message');
     }
+
+    public function reviews() {
+        return $this->hasMany('App\Review');
+    }
+
+    public function services() {
+		return $this->belongsToMany('App\Service')->withPivot('price');
+	}
 
 }
