@@ -57,4 +57,8 @@ class User extends Authenticatable
 		return $this->belongsToMany('App\Service')->withPivot('price');
 	}
 
+    public function skills() {
+		return $this->belongsToMany('App\Skill');
+	}
+
 }
