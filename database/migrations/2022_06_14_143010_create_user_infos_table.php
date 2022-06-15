@@ -14,7 +14,7 @@ class CreateUserInfosTable extends Migration
     public function up()
     {
         Schema::create('user_infos', function (Blueprint $table) {
-            $table->unsignedBigInteger("user_id")->unique();
+            $table->unsignedBigInteger('user_id')->unique();
             $table->string('cv');
             $table->string('image')->nullable();
             $table->string('locality');
@@ -25,8 +25,8 @@ class CreateUserInfosTable extends Migration
             $table->string('phone');
 
             $table->foreign('user_id')
-                    ->reference('id')
-                    ->on('user');
+                    ->references('id')
+                    ->on('users');
         });
     }
 
