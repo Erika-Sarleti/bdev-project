@@ -15,17 +15,18 @@ class CreateServiceUserTable extends Migration
     {
         Schema::create('service_user', function (Blueprint $table) {			
             
-                $table->unsignedBigInteger('user_id');
-                $table->foreign('user_id')
-                    ->references('id')
-                    ->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
 
-                    $table->unsignedBigInteger('service_id');
-                $table->foreign('service_id')
-                    ->references('id')		
-                    ->on('services');
+            $table->unsignedBigInteger('service_id');
+            $table->foreign('service_id')
+                ->references('id')		
+                ->on('services');
+                
 
-                $table->bigInteger('price')->default(1);
+            $table->bigInteger('price')->default(0);
 
                 //$table->primary(['user_id', 'service_id']); 
                 
