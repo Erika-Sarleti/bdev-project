@@ -1,6 +1,4 @@
 <?php
-
-    // namespace Database\Seeders;
     use Illuminate\Database\Seeder;
     use Faker\Generator as Faker;
     use App\User;
