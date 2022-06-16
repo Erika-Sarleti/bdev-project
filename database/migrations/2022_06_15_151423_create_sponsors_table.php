@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSkillUserTable extends Migration
+class CreateSponsorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSkillUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('sponsor', function (Blueprint $table) {
+        Schema::create('sponsors', function (Blueprint $table) {
             $table->id();
-            $table->datetime('time');
+            $table->string('time');
             $table->float('price');
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateSkillUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skill_user');
+        Schema::dropIfExists('sponsor_user');
     }
 }

@@ -8,14 +8,24 @@ class SponsorSeeder extends Seeder
 {
     public function run()
     {
-        $time = [
-            '24',
-            '48',
-            '72',
-        ];
+        $sponsors =[
+            [
+                'time'=> '24',
+                'price'=>2.99,
+            ],
+            [
+                'time'=> '48',
+                'price'=>5.99,
+            ],
+            [
+                'time'=> '72',
+                'price'=>9.99,
+            ]
+            ];
         foreach($sponsors as $sponsor){
-            Skill::create([
-                'name'=> $skill,
+            Sponsor::create([
+                'time'=> $sponsor['time'],
+                'price'=> $sponsor['price'],
             ]);
 
         }
