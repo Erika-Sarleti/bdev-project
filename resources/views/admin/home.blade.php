@@ -15,9 +15,11 @@
 
                     {{ __('You are logged in!') }}
                     dati della Dashboard
+                    {{-- <a class="navbar-brand" href="{{route('admin.devs.edit', $dev->id)}}">Modifica il profilo</a> --}}
                 </div>
             </div>
 HOME
+
         </div>
     </div>
 </div>

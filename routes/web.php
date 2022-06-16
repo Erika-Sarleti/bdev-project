@@ -28,6 +28,12 @@ Route::middleware('auth')
         Route::resource('/devs', 'UserController');
     });
 
+    Route::group(['middleware' => ['guest']], function () {
+        Route::resource('/guest', 'Guest\GuestController');
+    });
+Route::get("{any?}", function() {
+        return view("guest.home");
+        })->where("any", ".*");
 // Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
@@ -41,6 +47,4 @@ Route::middleware('auth')
         //          Route::post('/slugger', 'HomeController@slugger')->name('slugger');
         //          Route::resource('/posts', 'PostController');
         //  });
-        //  Route::get("{any?}", function() {
-        //       return view("guests.home");
-        //  })->where("any", ".*");
+        //  

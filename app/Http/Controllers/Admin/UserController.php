@@ -41,7 +41,8 @@ namespace App\Http\Controllers\Admin;
      * @return \Illuminate\Http\Response
      */
     public function show(User $dev)
-    {
+    { 
+
         return view('admin.devs.show', compact('dev'));
     }
 

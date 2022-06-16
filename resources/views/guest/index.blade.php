@@ -9,7 +9,7 @@
                 <span>{{$dev->name}}</span>
             </h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{{ route('admin.devs.show', $dev->id)}}" class="btn btn-primary">Vai allo sviluppatore</a>
+            <a href="{{ route('guest.show', $dev->id)}}" class="btn btn-primary">Vai allo sviluppatore</a>
 
 
             Ciao a tutti

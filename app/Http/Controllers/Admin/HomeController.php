@@ -12,8 +12,8 @@ namespace App\Http\Controllers\Admin;
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(User $dev)
     {
-        return view('admin.home');
+        return view('admin.home', compact('dev'));
     }
 }
