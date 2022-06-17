@@ -5,7 +5,7 @@
     <div class="card mt-5" style="width: 18rem;">
 
         
-        <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
+         <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
   
 
         <div class="card-body">
