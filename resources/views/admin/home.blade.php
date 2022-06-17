@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -15,9 +14,14 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    dati della Dashboard
+                    {{-- <a class="navbar-brand" href="{{route('admin.devs.edit', $dev->id)}}">Modifica il profilo</a> --}}
                 </div>
             </div>
+HOME
+
         </div>
     </div>
 </div>
 @endsection
+
