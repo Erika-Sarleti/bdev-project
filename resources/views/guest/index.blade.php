@@ -12,7 +12,7 @@
                 <a href="{{ route('guest.show', $dev->id)}}" class="btn btn-primary">Vai allo sviluppatore</a>
 
 
-                Ciao a tutti
+                Ciao a tuttii
             </div>
         </div>
         @endforeach
