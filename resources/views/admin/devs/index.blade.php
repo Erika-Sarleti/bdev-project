@@ -3,7 +3,11 @@
     <div class="col-7 container-fluid d-flex flex-wrap justify-content-between">
         @foreach ($devs as $dev)
     <div class="card mt-5" style="width: 18rem;">
+
+        
         <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
+  
+
         <div class="card-body">
             <h3 class="card-title">
                 {{$dev->name}}
@@ -14,6 +18,8 @@
     </div>
     @endforeach
     </div>
+
+    {{ $devs->links() }}
     
 @endsection
     
