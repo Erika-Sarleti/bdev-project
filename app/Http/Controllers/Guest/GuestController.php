@@ -1,17 +1,29 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\UserInfo;
+namespace App\Http\Controllers\Guest;
+use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
-class UserInfoController extends Controller
-{
 
+class GuestController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
+        $devs = User::paginate(10);
+        return view('guest.index', compact('devs'));
     }
+    
 
-
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         //
@@ -31,21 +43,21 @@ class UserInfoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\UserInfo  $userInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(UserInfo $userInfo)
+    public function show(User $dev)
     {
-        //
+        return view('guest.show', compact('dev'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\UserInfo  $userInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(UserInfo $userInfo)
+    public function edit($id)
     {
         //
     }
@@ -54,10 +66,10 @@ class UserInfoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UserInfo  $userInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserInfo $userInfo)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -65,10 +77,10 @@ class UserInfoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\UserInfo  $userInfo
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(UserInfo $userInfo)
+    public function destroy($id)
     {
         //
     }
