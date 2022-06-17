@@ -79,7 +79,7 @@
 
                         <h1>CAMPI PLUS</h1>
 
-                        <div class="form-group row">
+                        {{-- <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                             <div class="col-md-6">
@@ -91,7 +91,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="form-group row">
                             <label for="cv" class="col-md-4 col-form-label text-md-right">{{ __('Cv') }}</label>
