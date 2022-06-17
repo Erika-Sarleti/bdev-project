@@ -31,6 +31,8 @@ Route::middleware('auth')
     Route::group(['middleware' => ['guest']], function () {
         Route::resource('/guest', 'Guest\GuestController');
     });
+
+
     Route::get("{any?}", function() {
         return view("welcome");
         })->where("any", ".*");

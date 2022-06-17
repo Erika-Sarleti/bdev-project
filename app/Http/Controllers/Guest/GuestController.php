@@ -48,16 +48,26 @@ class GuestController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $dev)
-    {
-        $userinfo = UserInfo::all();
+    // public function show(User $dev, UserInfo $userinfo)
+    // {
+    //     $userinfo = UserInfo::all();
+    //     // $dev = User::all();
+    //     return view('guest.show', [
+    //         'dev'       => $dev,
+    //         'userinfo'  => $userinfo,
+    //     ]);
+    // }
+    // public function show(UserInfo $userinfo)
+    // {
 
+    //     $userinfo = UserInfo::all();
+    //     return view('guest.show', compact('userinfo'));
+    // }
+
+    public function show(User $dev, UserInfo $userinfo)
+    {
+        $user     = User::all();
+        $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
