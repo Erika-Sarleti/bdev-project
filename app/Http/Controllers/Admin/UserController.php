@@ -49,7 +49,7 @@ namespace App\Http\Controllers\Admin;
         // return redirect()->route('admin.devs.show', $dev->id);
 
 
-            $formData = $request->all();
+        $formData = $request->all();
         $dev = new User();
         $dev->fill($formData);
         $dev->save();
@@ -57,16 +57,15 @@ namespace App\Http\Controllers\Admin;
         return redirect()->route('admin.devs.show', $dev->id)->with('status', 'Complited with succes!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show(User $dev)
-    { 
 
-        return view('admin.devs.show', compact('dev'));
+    public function show(User $dev, UserInfo $userinfo)
+    {
+
+        $userinfo = UserInfo::all();
+        return view('admin.dev.show', [
+            'dev'       => $dev,
+            'userinfo'  => $userinfo,
+        ]);
     }
 
     /**
@@ -75,9 +74,23 @@ namespace App\Http\Controllers\Admin;
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function edit(User $dev)
     {
+        if (Auth::user()->id !== $dev->id) abort(403);
+        // private function getValidator(User $dev) {
+
+        // // $categories = Category::all();
+        // // $tags = Tag::all();
+        // // return view('admin.posts.edit', [
+        // //     'post'          => $post,
+        // //     'categories'    => $categories,
+        // //     'tags'          => $tags
+        // // ]);
+        //     }
         return view('admin.devs.edit', compact('dev'));
+
     }
 
 

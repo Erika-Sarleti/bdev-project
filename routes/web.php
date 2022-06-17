@@ -31,7 +31,11 @@ Route::middleware('auth')
     Route::group(['middleware' => ['guest']], function () {
         Route::resource('/guest', 'Guest\GuestController');
     });
-Route::get("{any?}", function() {
+    Route::get("{any?}", function() {
+        return view("welcome");
+        })->where("any", ".*");
+
+    Route::get("guest/{any?}", function() {
         return view("guest.home");
         })->where("any", ".*");
 // Auth::routes();
@@ -47,4 +51,4 @@ Route::get("{any?}", function() {
         //          Route::post('/slugger', 'HomeController@slugger')->name('slugger');
         //          Route::resource('/posts', 'PostController');
         //  });
-        //  
+        //

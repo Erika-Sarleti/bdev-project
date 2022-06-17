@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'email', 'password',
+        'name', 'surname', 'email', 'password', 'slug'
     ];
 
 
@@ -65,4 +66,15 @@ class User extends Authenticatable
 		return $this->belongsToMany('App\Sponsor');
 	}
 
+    static public function generateSlug($originalStr) {
+        $baseSlug = Str::of($originalStr)->slug('-');
+        $slug = $baseSlug;
+        $_i = 1;
+        while(self::where('slug', $slug)->first()) {
+            $slug = "$baseSlug-$_i";
+            $_i++;
+        }
+        // dd($slug);
+        return $slug;
+    }
 }
