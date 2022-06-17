@@ -20,19 +20,29 @@
                 <ul class="navbar-nav">
                   @auth
                     <a class="navbar-brand" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
+                    
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{{route('admin.devs.index')}}">Esplora</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"> Ciao {{ Auth::user()->name }}</a>
+                    </li>
                     @else
-                    <a href="{{ route('login') }}">Login</a>
-
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="{{route('guest.index')}}">Esplora</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    </li>
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}">Register</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                    </li>
                     @endif
+                    
                   @endauth
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Sei uno sviluppatore?</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"> {{ Auth::user()->name }}</a>
-                  </li>
+                  
+                  
                   <li class="nav-item">
                     <a class="nav-link" href="#">Help </a>
                   </li>
