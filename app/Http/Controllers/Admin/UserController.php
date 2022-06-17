@@ -77,7 +77,9 @@ namespace App\Http\Controllers\Admin;
      */
     public function edit(User $dev)
     {
-        return view('admin.devs.edit', compact('dev'));
+
+        if (Auth::user()->id == $dev->id) {
+            return view('admin.devs.edit', compact('dev'));
     }
 
 
