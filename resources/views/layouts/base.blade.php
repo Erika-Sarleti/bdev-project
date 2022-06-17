@@ -19,7 +19,7 @@
               <div class="collapse navbar-collapse no-growth" id="navbarNav">
                 <ul class="navbar-nav">
                   @auth
-                    <a class="navbar-brand" href="{{route('admin.devs.edit', $dev->id)}}">Modifica il profilo</a>
+                    <a class="navbar-brand" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
                     @else
                     <a href="{{ route('login') }}">Login</a>
 
@@ -31,7 +31,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Sei uno sviluppatore?</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Ciao {{$dev->name}}</a>
+                    <a class="nav-link" href="#"> {{ Auth::user()->name }}</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Help </a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
       use App\Http\Controllers\Controller;
       use App\User;
       use Illuminate\Http\Request;
+      use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
 {
 
@@ -31,7 +32,23 @@ namespace App\Http\Controllers\Admin;
      */
     public function store(Request $request)
     {
-        //
+        // $data = $request->all();
+
+        // $formData = [
+        //     'user_id' => Auth::user()->id,
+        // ] + $data;
+
+        // $dev = User::create($formData);
+
+        // return redirect()->route('admin.devs.show', $dev->id);
+
+
+            $formData = $request->all();
+        $dev = new User();
+        $dev->fill($formData);
+        $dev->save();
+        $newDev = User::create($formData);
+        return redirect()->route('admin.devs.show', $dev->id)->with('status', 'Complited with succes!');
     }
 
     /**
@@ -68,7 +85,11 @@ namespace App\Http\Controllers\Admin;
                  // ]]);
                  // qui invece gli passo l'argomento con $post
                 //  $request->validate($this->getValidators($dev));
-                 $dev->update($request->all());
+
+                $formData = $request->all();
+
+                $dev->update($formData);
+
                  return redirect()->route('admin.devs.show', $dev->id);
     }
 
