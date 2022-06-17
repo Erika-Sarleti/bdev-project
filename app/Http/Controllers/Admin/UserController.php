@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
       use App\Http\Controllers\Controller;
       use App\User;
+      use App\UserInfo;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
@@ -10,8 +11,13 @@ namespace App\Http\Controllers\Admin;
 
     public function index()
     {
+        $userinfo = UserInfo::all();
+
         $devs = User::paginate(10);
-        return view('admin.devs.index', compact('devs'));
+        return view('admin.devs.index', [
+            'devs' => $devs,
+            'userinfo' => $userinfo,
+        ]);
     }
 
     /**
