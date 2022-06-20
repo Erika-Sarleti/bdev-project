@@ -12194,7 +12194,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?cd2b4095e9ce66cde642c3502a4022d9) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?a78ffbbed2d858c61e068e3b756c9988) format("truetype");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?cd2b4095e9ce66cde642c3502a4022d9) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?a78ffbbed2d858c61e068e3b756c9988) format("truetype");
 }
 
 .fab,
@@ -14103,7 +14103,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?e8a1ba418ee6d897d1339ef22e6d8e60) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?b1a1bebb63656b34a23982706f712f71) format("truetype");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?e8a1ba418ee6d897d1339ef22e6d8e60) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?b1a1bebb63656b34a23982706f712f71) format("truetype");
 }
 
 .far,
@@ -14128,7 +14128,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?55b416a8df21f9f987aa352f10d1343b) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?738201559a50502aacabdbdb02720910) format("truetype");
+  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?55b416a8df21f9f987aa352f10d1343b) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?738201559a50502aacabdbdb02720910) format("truetype");
 }
 
 .fas,
@@ -22526,5 +22526,56 @@ li {
 .my-text-color {
   color: #ffffff;
   text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+}
+
+.my-text-color-animated {
+  color: #ffffff;
+  text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+  -webkit-animation: my-text-color-animated 5s infinite;
+          animation: my-text-color-animated 5s infinite;
+}
+
+@-webkit-keyframes my-text-color-animated {
+  0% {
+    text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+  }
+
+  25% {
+    text-shadow: #001aff 0px 0px 5px, #001aff 0px 0px 10px, #001aff 0px 0px 15px, #001aff 0px 0px 20px, #001aff 0px 0px 30px, #001aff 0px 0px 40px, #001aff 0px 0px 50px, #001aff 0px 0px 75px, 2px 2px 2px #001aff;
+  }
+
+  50% {
+    text-shadow: #00fd15 0px 0px 5px, #00fd15 0px 0px 10px, #00fd15 0px 0px 15px, #00fd15 0px 0px 20px, #00fd15 0px 0px 30px, #00fd15 0px 0px 40px, #00fd15 0px 0px 50px, #00fd15 0px 0px 75px, 2px 2px 2px #00fd15;
+  }
+
+  75% {
+    text-shadow: #fbff00 0px 0px 5px, #fbff00 0px 0px 10px, #fbff00 0px 0px 15px, #fbff00 0px 0px 20px, #fbff00 0px 0px 30px, #fbff00 0px 0px 40px, #fbff00 0px 0px 50px, #fbff00 0px 0px 75px, 2px 2px 2px #fbff00;
+  }
+
+  100% {
+    text-shadow: #ff0000 0px 0px 5px, #ff0000 0px 0px 10px, #ff0000 0px 0px 15px, #ff0000 0px 0px 20px, #ff0000 0px 0px 30px, #ff0000 0px 0px 40px, #ff0000 0px 0px 50px, #ff0000 0px 0px 75px, 2px 2px 2px #ff0000;
+  }
+}
+
+@keyframes my-text-color-animated {
+  0% {
+    text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+  }
+
+  25% {
+    text-shadow: #001aff 0px 0px 5px, #001aff 0px 0px 10px, #001aff 0px 0px 15px, #001aff 0px 0px 20px, #001aff 0px 0px 30px, #001aff 0px 0px 40px, #001aff 0px 0px 50px, #001aff 0px 0px 75px, 2px 2px 2px #001aff;
+  }
+
+  50% {
+    text-shadow: #00fd15 0px 0px 5px, #00fd15 0px 0px 10px, #00fd15 0px 0px 15px, #00fd15 0px 0px 20px, #00fd15 0px 0px 30px, #00fd15 0px 0px 40px, #00fd15 0px 0px 50px, #00fd15 0px 0px 75px, 2px 2px 2px #00fd15;
+  }
+
+  75% {
+    text-shadow: #fbff00 0px 0px 5px, #fbff00 0px 0px 10px, #fbff00 0px 0px 15px, #fbff00 0px 0px 20px, #fbff00 0px 0px 30px, #fbff00 0px 0px 40px, #fbff00 0px 0px 50px, #fbff00 0px 0px 75px, 2px 2px 2px #fbff00;
+  }
+
+  100% {
+    text-shadow: #ff0000 0px 0px 5px, #ff0000 0px 0px 10px, #ff0000 0px 0px 15px, #ff0000 0px 0px 20px, #ff0000 0px 0px 30px, #ff0000 0px 0px 40px, #ff0000 0px 0px 50px, #ff0000 0px 0px 75px, 2px 2px 2px #ff0000;
+  }
 }
 

@@ -29,3 +29,27 @@ li{
     color: #ffffff;
     text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
 }
+
+.my-text-color-animated{
+    color: #ffffff;
+    text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+    animation: my-text-color-animated 5s infinite;
+}
+
+@keyframes my-text-color-animated {
+    0% {
+        text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+    }
+    25% {
+        text-shadow: #001aff 0px 0px 5px, #001aff 0px 0px 10px, #001aff 0px 0px 15px, #001aff 0px 0px 20px, #001aff 0px 0px 30px, #001aff 0px 0px 40px, #001aff 0px 0px 50px, #001aff 0px 0px 75px, 2px 2px 2px #001aff;
+    }
+    50% {
+        text-shadow: #00fd15 0px 0px 5px, #00fd15 0px 0px 10px, #00fd15 0px 0px 15px, #00fd15 0px 0px 20px, #00fd15 0px 0px 30px, #00fd15 0px 0px 40px, #00fd15 0px 0px 50px, #00fd15 0px 0px 75px, 2px 2px 2px #00fd15;
+    }
+    75% {
+        text-shadow: #fbff00 0px 0px 5px, #fbff00 0px 0px 10px, #fbff00 0px 0px 15px, #fbff00 0px 0px 20px, #fbff00 0px 0px 30px, #fbff00 0px 0px 40px, #fbff00 0px 0px 50px, #fbff00 0px 0px 75px, 2px 2px 2px #fbff00;
+    }
+    100% {
+        text-shadow: #ff0000 0px 0px 5px, #ff0000 0px 0px 10px, #ff0000 0px 0px 15px, #ff0000 0px 0px 20px, #ff0000 0px 0px 30px, #ff0000 0px 0px 40px, #ff0000 0px 0px 50px, #ff0000 0px 0px 75px, 2px 2px 2px #ff0000;
+    }
+}
