@@ -60,13 +60,6 @@ class GuestController extends Controller
     // public function show(UserInfo $userinfo)
     // {
 
-    //     $userinfo = UserInfo::all();
-    //     return view('guest.show', compact('userinfo'));
-    // }
-
-    public function show(User $dev, UserInfo $userinfo)
-    {
-        $user     = User::all();
         $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev'       => $dev,
