@@ -7,77 +7,49 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    protected $validationRules = [
+        'name' => 'required|max:255',
+        'email' => 'required|email|max:255',
+        'message' => 'required|max:255',
+    ];
+
+
+
+    public function index(Message $message) //TODO:
     {
-        //
+        $message = Message::all();
+        return view('admin.devs.show', [
+            'message' => $message,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()// TODO:
     {
-        //
+  
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request) //TODO:
     {
-        //
+        $request->validate($this->validationRules, [
+            'email' => 'Inserisci una mail valida',
+        ]);
+
+        $formData = $request->all();
+
+        $newMessage = Message::create($formData);
+
+
+        return redirect()->route('guest.show', $newMessage->id)->with('status', 'Completed with success!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(Message $message) // TODO:
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Message $message) // TODO:
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Message $message) // TODO:
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Message  $message
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Message $message) // TODO:
     {
         //

@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::resource('/message', 'Guest\MessageController');
 Auth::routes();
 
 Route::middleware('auth')
@@ -35,6 +36,7 @@ Route::get("{any?}", function() {
         return view("guest.home");
         })->where("any", ".*");
 // Auth::routes();
+
 
 // Route::get('/home', 'HomeController@index')->name('home');
 

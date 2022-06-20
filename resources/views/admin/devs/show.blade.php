@@ -8,6 +8,7 @@
           <p class="card-text">{{$dev->description}}</p>
           {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
           {{-- <a href="{{route('admin.devs.edit', $dev->id)}}" class="btn btn-primary">Invia un messaggio</a> --}}
+          
         </div>
     </div>
 @endsection
