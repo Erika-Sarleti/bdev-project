@@ -8,6 +8,7 @@
                 @csrf
                 @method('PUT')
 
+                {{-- PROFILO PERSONALE --}}
 
                 <div class="mb-3">
                   <label for="name" class="form-label fw-bold" style="color: rgb(255, 119, 0)">Nome</label>

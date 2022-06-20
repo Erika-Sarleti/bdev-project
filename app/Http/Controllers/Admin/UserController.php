@@ -18,8 +18,15 @@ namespace App\Http\Controllers\Admin;
             'devs' => $devs,
             'userinfo' => $userinfo,
         ]);
+
+
     }
 
+
+    public function indexChat()
+    {
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

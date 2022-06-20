@@ -24,5 +24,3 @@
     {{ $devs->links() }}
     
 @endsection
-    
-
