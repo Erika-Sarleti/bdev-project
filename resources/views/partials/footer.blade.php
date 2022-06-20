@@ -23,22 +23,22 @@
                     <div class="text-white">
                         <ul class="list-group-flush" >
                             <li class="my-text-color mt-5">
-                                <a href="#" class="text-white">
+                                <a href="#" class="my-text-link">
                                     Registrati
                                 </a>
                             </li>
                             <li class="my-text-color mt-5">
-                                <a href="#" class="text-white">
+                                <a href="#" class="my-text-link">
                                 Cerchi uno sviluppatore?
                                 </a>
                             </li>
                             <li class="my-text-color mt-5">
-                                <a href="#" class="text-white">
+                                <a href="#" class="my-text-link">
                                 Lavora con noi
                                 </a>    
                             </li>
                             <li class="my-text-color mt-5">
-                                <a href="#" class="text-white">
+                                <a href="#" class="my-text-link">
                                 Vuoi darci dei consigli?
                                 </a>    
                             </li>

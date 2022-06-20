@@ -22,7 +22,7 @@
 
 footer{
     background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 98%, rgba(199,28,130,1) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 88%, rgba(199,28,130,1) 100%);
     height: 100vh;
 }
 
@@ -37,6 +37,16 @@ li{
 .my-text-color{
     color: #ffffff;
     text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+}
+
+.my-text-link{
+    color: #ffffff;
+}
+
+:where(li) i:hover{
+    transform: scale(2.5);
+    color: #ffffff;
+    transition: .5s;
 }
 
 .my-text-color-animated{

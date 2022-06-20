@@ -12194,7 +12194,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?cd2b4095e9ce66cde642c3502a4022d9) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?a78ffbbed2d858c61e068e3b756c9988) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.woff2?cd2b4095e9ce66cde642c3502a4022d9) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-brands-400.ttf?a78ffbbed2d858c61e068e3b756c9988) format("truetype");
 }
 
 .fab,
@@ -14103,7 +14103,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?e8a1ba418ee6d897d1339ef22e6d8e60) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?b1a1bebb63656b34a23982706f712f71) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.woff2?e8a1ba418ee6d897d1339ef22e6d8e60) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-regular-400.ttf?b1a1bebb63656b34a23982706f712f71) format("truetype");
 }
 
 .far,
@@ -14128,7 +14128,7 @@ fieldset:disabled .btn {
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?55b416a8df21f9f987aa352f10d1343b) format("woff2"), url(/fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?738201559a50502aacabdbdb02720910) format("truetype");
+  src: url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.woff2?55b416a8df21f9f987aa352f10d1343b) format("woff2"), url(../fonts/vendor/@fortawesome/fontawesome-free/webfa-solid-900.ttf?738201559a50502aacabdbdb02720910) format("truetype");
 }
 
 .fas,
@@ -22521,7 +22521,7 @@ readers do not read off random characters that represent icons */
 
 footer {
   background: rgb(0, 0, 0);
-  background: linear-gradient(180deg, rgb(0, 0, 0) 98%, rgb(199, 28, 130) 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 88%, rgb(199, 28, 130) 100%);
   height: 100vh;
 }
 
@@ -22536,6 +22536,16 @@ li {
 .my-text-color {
   color: #ffffff;
   text-shadow: #C71C82 0px 0px 5px, #C71C82 0px 0px 10px, #C71C82 0px 0px 15px, #C71C82 0px 0px 20px, #C71C82 0px 0px 30px, #C71C82 0px 0px 40px, #C71C82 0px 0px 50px, #C71C82 0px 0px 75px, 2px 2px 2px #C71C82;
+}
+
+.my-text-link {
+  color: #ffffff;
+}
+
+:where(li) i:hover {
+  transform: scale(2.5);
+  color: #ffffff;
+  transition: 0.5s;
 }
 
 .my-text-color-animated {
