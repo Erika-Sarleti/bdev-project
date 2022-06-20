@@ -45,7 +45,7 @@ class MessageController extends Controller
         //     'email' => 'Inserisci una mail valida',
         // ]);
 
-        $id = User::where('id', $dev->id)->get('id');
+        // $id = User::where('id', $dev->id)->get('id');
         // dd($dev);
         // $formData = $request->all();
         // dd($formData);
