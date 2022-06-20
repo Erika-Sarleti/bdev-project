@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -22,9 +24,10 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(User $dev)
     {
-        //
+
+        return view('guest.createReview', compact('dev'));
     }
 
     /**
@@ -33,9 +36,15 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $dev)
     {
-        //
+        Review::create([
+            'user_id' => $request->user_id,
+            'rating' => $request->rating,
+            'message' => $request->message,
+        ]);
+        
+        return redirect()->route('guest.show', $request->user_id)->with('status', 'Completed with success!');
     }
 
     /**

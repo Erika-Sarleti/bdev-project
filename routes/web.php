@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Route::resource('/message', 'MessageController');
 Route::post('/message', 'MessageController@store')->name('message.store');
+Route::resource('/review', 'ReviewController');
+Route::get('/review/{id}', 'ReviewController@create')->name('review.create');
+Route::post('/review', 'ReviewController@store')->name('review.store');
 Auth::routes();
 
 Route::middleware('auth')
