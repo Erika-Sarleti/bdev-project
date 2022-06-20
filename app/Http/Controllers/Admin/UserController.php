@@ -62,7 +62,7 @@ namespace App\Http\Controllers\Admin;
     {
 
         $userinfo = UserInfo::all();
-        return view('admin.dev.show', [
+        return view('admin.devs.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
         ]);

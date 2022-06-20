@@ -3,7 +3,7 @@
     <div class="col-7 container-fluid d-flex flex-wrap justify-content-between">
         @foreach ($devs as $dev)
         <div class="card mt-5" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="{{$dev->name}}">
             <div class="card-body">
                 <h5 class="card-title">
                     <span>{{$dev->name}}</span>

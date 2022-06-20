@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
+use App\UserInfo;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,15 @@ class GuestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $devs, UserInfo $userinfo)
     {
+        $userinfo = UserInfo::all();
+
         $devs = User::paginate(10);
-        return view('guest.index', compact('devs'));
+        return view('guest.index', [
+            'devs' => $devs,
+            'userinfo' => $userinfo,
+        ]);
     }
     
 
@@ -46,9 +52,15 @@ class GuestController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $dev)
+    public function show($id)
     {
-        return view('guest.show', compact('dev'));
+        $dev = User::where('id', $id)->first();
+
+        $userinfo = UserInfo::all();
+        return view('guest.show', [
+            'dev' => $dev,
+            'userinfo' => $userinfo,
+        ]);
     }
 
     /**
