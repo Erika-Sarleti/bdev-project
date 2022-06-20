@@ -22519,6 +22519,15 @@ readers do not read off random characters that represent icons */
   flex-grow: 0;
 }
 
+footer {
+  background-color: #000000;
+  height: 100vh;
+}
+
+.my-p {
+  padding-bottom: 6rem;
+}
+
 li {
   list-style: none;
 }

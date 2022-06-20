@@ -1,12 +1,15 @@
 <footer>
 
-    <div class="bg-dark" style="height:100%">
+
         <div class="my-text-color-animated d-flex justify-content-center align-items-center pt-5">
-            <i class="fa-brands fa-connectdevelop fs-1"></i>
+            <div class="d-flex flex-column justify-content-center align-items-center">
+                <i class="fa-brands fa-connectdevelop fs-1"></i>
+                <p class="text-uppercase">ciccio</p>
+            </div>
         </div>
-        <div class="container">
+        <div class="container my-p">
             <div class="row">   
-                <div class="col-6 d-flex justify-content-center align-items-center" style="height:100vh">
+                <div class="col-6 d-flex justify-content-center align-items-center">
                     <div class="footer-copyright">
                         <p class="text-white">Copyright &copy; 2022 - <a href="https://www.linkedin.com/in/giuseppe-cavallaro-a8b8b8b8/">Ciccio</a></p>
                     </div>
@@ -16,7 +19,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 d-flex justify-content-center align-items-center" style="height:100vh">
+                <div class="col-6 d-flex justify-content-center align-items-center">
                     <div class="text-white">
                         <ul class="list-group-flush" >
                             <li class="my-text-color mt-5">
@@ -45,8 +48,8 @@
             </div>
         </div>
     </div>
-    <div class="bg-dark">
-        <ul class="d-flex justify-content-center align-items-center mb-0 pb-3">
+    
+        <ul class="d-flex justify-content-center align-items-center">
             <li class="my-text-color">
                 <a href="wwww.facebook.it" class="text-white">
                 <i class="fa-brands fa-facebook-f"></i>
@@ -70,6 +73,5 @@
                 <i class="fa-brands fa-linkedin-in"></i>
             </li>
         </ul>
-    </div>
 
 </footer>
