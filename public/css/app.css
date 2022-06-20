@@ -22520,7 +22520,8 @@ readers do not read off random characters that represent icons */
 }
 
 footer {
-  background-color: #000000;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 98%, rgb(199, 28, 130) 100%);
   height: 100vh;
 }
 
