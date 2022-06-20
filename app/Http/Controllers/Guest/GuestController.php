@@ -57,9 +57,8 @@ class GuestController extends Controller
     //         'userinfo'  => $userinfo,
     //     ]);
     // }
-    // public function show(UserInfo $userinfo)
-    // {
-
+    public function show(UserInfo $userinfo)
+    {
         $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev'       => $dev,
