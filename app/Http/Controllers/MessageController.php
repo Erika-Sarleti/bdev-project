@@ -22,7 +22,7 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create()// TODO:
     {
         //
     }
@@ -33,7 +33,7 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request) //TODO:
     {
         //
     }
@@ -44,7 +44,7 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function show(Message $message)
+    public function show(Message $message) // TODO:
     {
         //
     }
@@ -55,7 +55,7 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function edit(Message $message)
+    public function edit(Message $message) // TODO:
     {
         //
     }
@@ -67,7 +67,7 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Request $request, Message $message) // TODO:
     {
         //
     }
@@ -78,7 +78,7 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Message $message)
+    public function destroy(Message $message) // TODO:
     {
         //
     }
