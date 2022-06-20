@@ -40259,10 +40259,10 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\app.js */"./resources/js/app.js");
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\resources\\assets\\js\\app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
-!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\resources\\assets\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+__webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\js\app.js */"./resources/js/app.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\resources\\assets\\js\\app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+__webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\resources\\assets\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 /***/ })
