@@ -25,30 +25,41 @@ class MessageController extends Controller
     }
 
     
-    public function create()// TODO:
+    public function create(Request $request, User $dev)// TODO:
     {
-  
-    }
-
-    public function store(Request $request, User $dev) //TODO:
-    {
-        $request->validate($this->validationRules, [
-            'email' => 'Inserisci una mail valida',
-        ]);
-
-        $dev = User::where('id', $dev->id)->first();
 
         $formData = $request->all();
 
         $newMessage = Message::create([
             'user_id' => $dev->id,
-            'name' => $formData['name'],
             'email' => $formData['email'],
             'message' => $formData['message'],
         ]);
 
+        return redirect()->route('guest.show', $newMessage)->with('status', 'Complited with succes!');
+    }
 
-        return redirect()->route('guest.show', $newMessage->id)->with('status', 'Completed with success!');
+    public function store(Request $request, User $dev) //TODO:
+    {
+        // $request->validate($this->validationRules, [
+        //     'email' => 'Inserisci una mail valida',
+        // ]);
+
+        $id = User::where('id', $dev->id)->get('id');
+        // dd($dev);
+        // $formData = $request->all();
+        // dd($formData);
+        
+       
+
+        Message::create([
+            'user_id' => $request->user_id,
+            'guest_mail' => $request->guest_mail,
+            'message' => $request->message,
+        ]);
+
+
+        return redirect()->route('guest.show', $request->user_id)->with('status', 'Completed with success!');
     }
 
     

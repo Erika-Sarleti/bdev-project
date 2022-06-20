@@ -56,6 +56,7 @@ class GuestController extends Controller
     {
         $dev = User::where('id', $id)->first();
 
+
         $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev' => $dev,

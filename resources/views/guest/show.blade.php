@@ -18,10 +18,11 @@
       <div class="form-group">
         <label for="name">Nome</div>
         <input type="text" class="form-control" id="name" placeholder="Nome">
-        <label for="email">Email*</label>
-        <input type="email" class="form-control" id="email" placeholder="Email">
+        <label for="guest_mail">Email*</label>
+        <input name="guest_mail" type="email" class="form-control" id="guest_mail" placeholder="Email">
         <label for="message">Messaggio*</label>
-        <textarea class="form-control" id="message" rows="3"></textarea>
+        <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+        <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
       </div>
       <button type="submit" class="btn btn-primary">Invia</button>
     </form>
