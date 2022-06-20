@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Message;
+use App\User;
 use Illuminate\Http\Request;
 
 class MessageController extends Controller
@@ -29,15 +30,22 @@ class MessageController extends Controller
   
     }
 
-    public function store(Request $request) //TODO:
+    public function store(Request $request, User $dev) //TODO:
     {
         $request->validate($this->validationRules, [
             'email' => 'Inserisci una mail valida',
         ]);
 
+        $dev = User::where('id', $dev->id)->first();
+
         $formData = $request->all();
 
-        $newMessage = Message::create($formData);
+        $newMessage = Message::create([
+            'user_id' => $dev->id,
+            'name' => $formData['name'],
+            'email' => $formData['email'],
+            'message' => $formData['message'],
+        ]);
 
 
         return redirect()->route('guest.show', $newMessage->id)->with('status', 'Completed with success!');

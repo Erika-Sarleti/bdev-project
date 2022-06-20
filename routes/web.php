@@ -17,7 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/message', 'Guest\MessageController');
+Route::resource('/message', 'MessageController');
+Route::post('/message', 'MessageController@store')->name('message.store');
 Auth::routes();
 
 Route::middleware('auth')

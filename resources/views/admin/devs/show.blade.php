@@ -8,7 +8,15 @@
           <p class="card-text">{{$dev->description}}</p>
           {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
           {{-- <a href="{{route('admin.devs.edit', $dev->id)}}" class="btn btn-primary">Invia un messaggio</a> --}}
-          
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Messaggi</h5>
+              <p class="card-text">
+                @foreach ($dev->messages as $message)
+                  <p>{{$message->message}}</p>
+                @endforeach
+              </p>
+              
         </div>
     </div>
 @endsection

@@ -11,8 +11,9 @@
           <a href="#form-message" class="btn btn-primary">Invia un messaggio</a>
         </div>
     </div >
-    <form action="{{ route(message.store) }}" method="post" class="mt-3" style="height: 100vh" id="form-message">
-      @csrf_token
+    <form action="{{ route("message.store")}}" method="POST" class="mt-3" style="height: 100vh" id="form-message">
+      @method("POST")
+      @csrf
 
       <div class="form-group">
         <label for="name">Nome</div>
