@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
+use App\UserInfo;
 use App\User;
 use Illuminate\Http\Request;
-use App\UserInfo;
-
 
 class GuestController extends Controller
 {
@@ -14,18 +13,17 @@ class GuestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $devs, UserInfo $userinfo)
     {
-        $devs = User::paginate(10);
-        // return view('guest.index', compact('devs'));
-
         $userinfo = UserInfo::all();
+
+        $devs = User::paginate(10);
         return view('guest.index', [
             'devs' => $devs,
             'userinfo' => $userinfo,
         ]);
     }
-
+    
 
     /**
      * Show the form for creating a new resource.
@@ -48,21 +46,21 @@ class GuestController extends Controller
         //
     }
 
-    // public function show(User $dev, UserInfo $userinfo)
-    // {
-    //     $userinfo = UserInfo::all();
-    //     // $dev = User::all();
-    //     return view('guest.show', [
-    //         'dev'       => $dev,
-    //         'userinfo'  => $userinfo,
-    //     ]);
-    // }
-    public function show(UserInfo $userinfo)
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
     {
+        $dev = User::where('id', $id)->first();
+
+
         $userinfo = UserInfo::all();
         return view('guest.show', [
-            'dev'       => $dev,
-            'userinfo'  => $userinfo,
+            'dev' => $dev,
+            'userinfo' => $userinfo,
         ]);
     }
 

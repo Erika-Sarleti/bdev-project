@@ -13,7 +13,7 @@ class MessageSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run(Faker $faker, Message $message)
     {
         $users = User::all();
 
@@ -21,8 +21,10 @@ class MessageSeeder extends Seeder
             Message::create([
             'user_id'           =>  $user->id,
             'guest_mail'        =>  $faker->email(),
-            'message'           =>  $faker->text(),
+            'message'           =>  $message,
           ]);
+
+        
     }
 }
 }

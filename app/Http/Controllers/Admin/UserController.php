@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
       use App\Http\Controllers\Controller;
       use App\User;
       use App\UserInfo;
+      use App\Message;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
@@ -65,13 +66,16 @@ namespace App\Http\Controllers\Admin;
     }
 
 
-    public function show(User $dev, UserInfo $userinfo)
+    public function show(User $dev, UserInfo $userinfo, Message $message)
     {
+
+        $message = Message::all();
 
         $userinfo = UserInfo::all();
         return view('admin.devs.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
+            'message'   => $message,
         ]);
     }
 

@@ -68,22 +68,14 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data )
+    protected function create(array $data)
     {
 
-
-        $arrslug = [
-            'name'      =>  $data['name'],
-            'surname'   =>  $data['surname'],
-        ];
-        $fullname = implode(' ', $arrslug );
-
         $user = User::create([
-            'name'      =>  ucwords($data['name']),
-            'surname'   =>  ucwords($data['surname']),
-            'email'     =>  $data['email'],
-            'password'  =>  Hash::make($data['password']),
-            'slug'      =>  User::generateSlug($fullname)
+            'name' => ucwords($data['name']),
+            'surname' => ucwords($data['surname']),
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
         ]);
 
         UserInfo::create([
