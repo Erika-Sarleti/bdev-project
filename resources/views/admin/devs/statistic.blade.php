@@ -1,4 +1,4 @@
-{{-- DASHBOARD: REVIEWS --}}
+{{-- DASHBOARD: STATISTICHE --}}
 
 {{-- @extends('layouts.base')
 @section('pageMain')
@@ -26,3 +26,5 @@
     {{ $devs->links() }}
     
 @endsection --}}
+    
+

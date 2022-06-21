@@ -1,3 +1,5 @@
+<!-- QUI IL GUEST PUò SCRIVERE UNA RECENSIONE!!!!!!! -->
+
 @extends('layouts.base')
 @section('pageTitle', 'Scrivi una recensione')
 
@@ -11,6 +13,7 @@
 
     
     <div class="form-group">
+
         <label for="rating">Rating</div>
         <select id="rating" name="rating" class="mt-3" form="form-review">
             <option value="1">1</option>
@@ -21,6 +24,10 @@
         </select>
         <label for="message">Messaggio*</label>
         <textarea  name="message" class="form-control mt-3" id="message" rows="3"></textarea>
+        @error('message')
+        <div class="alert alert-warning">{{ $message }}</div>
+        @enderror
+
         <input name="user_id" value="{{$id_dev}}" class='d-none' id="user_id">
   
         
@@ -30,6 +37,14 @@
     
   </form> 
 </div>
+
+<span v-for="voto in 5" 
+                    :key="voto.vote_average"
+                     >
+                     
+                     <i v-if="voto <= valoreVoto(filmCard.vote_average)" class="bi bi-star-fill text-warning"></i>
+                     <i v-else class="bi bi-star text-muted"></i>
+                     </span>
 
 
 @endsection

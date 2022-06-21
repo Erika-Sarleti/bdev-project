@@ -9,6 +9,17 @@ namespace App\Http\Controllers\Admin;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
 {
+    //VALIDATION:
+
+    private function getValidators($model) {
+        return [
+            'name'     => 'required|max:100|min:2',
+            'surname' => 'required|max:100|min:2',
+            'email'   => 'required|min:10',
+            'password' => 'required|min:8',
+        ];
+    }
+
 
     public function index()
     {
@@ -115,12 +126,14 @@ namespace App\Http\Controllers\Admin;
                  // ]]);
                  // qui invece gli passo l'argomento con $post
                 //  $request->validate($this->getValidators($dev));
+                $request->validate($this->getValidators($dev));
+
 
                 $formData = $request->all();
 
                 $dev->update($formData);
 
-                 return redirect()->route('admin.devs.show', $dev->id);
+                 return redirect()->route('admin.devs.edit', $dev->id);
     }
 
     /**
