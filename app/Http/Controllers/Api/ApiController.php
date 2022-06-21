@@ -1,19 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
 use App\Http\Controllers\Controller;
 use App\UserInfo;
-use App\Traits\searchFilter;
 use Illuminate\Http\Request;
+use App\Review;
 
 class ApiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    use \App\Traits\searchFilter;
+
     public function index(Request $request)
     {
         // $dataUserinfo = UserInfo::paginate(15);
@@ -28,77 +24,67 @@ class ApiController extends Controller
         // }
 
         $result = $this->queryComposer($request);
-        
+        $review = Review::all();
         $ciao = $result->toSql();
+        $result = $result ->with([
+            'user' => function ($query1) {$query1->select('id', 'name', 'surname');},
+         ])->paginate(20);
+        $user_id = [];
 
-        return response()->json([
-            'status'    => 'success',
-            'response'  => $result,
-            'sql' => $ciao
-        ]);
+        if ($request->nreview) {
+            // $result = $this->queryComposer($request);
+            // $result = $result ->with([
+            //     'user' => function ($query1) {$query1->select('id', 'name', 'surname');}]);
+            foreach ($result as $user) {
+                $user_id[] = $user->user->id;
+            }
+            $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
+                // dd($dati);
+                foreach ($dati as $key => $user) {
+                    if(count($user) < $request->nreview) {
+                        unset($dati[$key]);
+                    }
+                }
+            return response()->json([
+                'status'    => 'success',
+                'response'  => $dati,
+                'sql'       => $result
+            ]);
+        }
+        else {
+            return response()->json([
+                'status'    => 'success',
+                'response'  => $result,
+                'sql'       => $ciao
+            ]);
+        }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
