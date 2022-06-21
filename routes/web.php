@@ -19,9 +19,6 @@ Route::get('/', function () {
 
 Route::resource('/message', 'MessageController');
 Route::post('/message', 'MessageController@store')->name('message.store');
-Route::resource('/review', 'ReviewController');
-Route::get('/review/{id}', 'ReviewController@create')->name('review.create');
-Route::post('/review', 'ReviewController@store')->name('review.store');
 Auth::routes();
 
 Route::middleware('auth')
@@ -35,6 +32,7 @@ Route::middleware('auth')
 
     Route::group(['middleware' => ['guest']], function () {
         Route::resource('/guest', 'Guest\GuestController');
+        Route::get('/review/{id}', 'Guest\GuestController@create')->name('guest.create');
     });
 Route::get("{any?}", function() {
         return view("guest.home");

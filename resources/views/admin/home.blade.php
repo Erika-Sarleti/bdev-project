@@ -18,6 +18,11 @@
 
                     {{ __('You are logged in!') }}
                     dati della Dashboard
+
+                        {{-- PRIMA PAGINA INGRESSO SITO DA LOGGATI  --}}
+                        IL MIO profilo - EDITOR
+                        CHAT - SHOW
+
                     {{-- <a class="navbar-brand" href="{{route('admin.devs.edit', $dev->id)}}">Modifica il profilo</a> --}}
                 </div>
             </div>

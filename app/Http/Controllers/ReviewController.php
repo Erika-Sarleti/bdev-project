@@ -24,10 +24,10 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(User $dev)
+    public function create($id)
     {
-
-        return view('guest.createReview', compact('dev'));
+        
+        return view('guest.create', ['id'=> $dev->id]);
     }
 
     /**
@@ -38,13 +38,8 @@ class ReviewController extends Controller
      */
     public function store(Request $request, User $dev)
     {
-        Review::create([
-            'user_id' => $request->user_id,
-            'rating' => $request->rating,
-            'message' => $request->message,
-        ]);
+        //
         
-        return redirect()->route('guest.show', $request->user_id)->with('status', 'Completed with success!');
     }
 
     /**
