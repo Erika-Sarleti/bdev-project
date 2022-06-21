@@ -34,10 +34,7 @@ class GuestController extends Controller
      */
     public function create(Request $request, $id_dev)
     {
-        // dd($dev);
-        // $id_user =$request->query->all();
-        // dd($id_user);
-        // $dev=
+        
         return view('guest.create', [
             // 'dev' => $dev,
             'id_dev' => $id_dev,]);

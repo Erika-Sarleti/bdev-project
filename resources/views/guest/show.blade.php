@@ -13,7 +13,6 @@
     </div >
     @php
       $id_dev=$dev->id;
-      // dd($IdUtenteRew);
     @endphp
 
     <a href="{{route('guest.create', ['id' => $id_dev])}}">Scrivi una Recensione</a>
