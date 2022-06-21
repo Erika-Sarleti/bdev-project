@@ -28,6 +28,7 @@ Route::middleware('auth')
     ->group(function(){
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/devs', 'UserController');
+
     });
 
     Route::group(['middleware' => ['guest']], function () {
@@ -51,4 +52,4 @@ Route::get("{any?}", function() {
         //          Route::post('/slugger', 'HomeController@slugger')->name('slugger');
         //          Route::resource('/posts', 'PostController');
         //  });
-        //  
+        //
