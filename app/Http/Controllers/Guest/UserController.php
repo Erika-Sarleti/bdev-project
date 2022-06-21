@@ -1,44 +1,25 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Guest;
       use App\Http\Controllers\Controller;
       use App\User;
       use App\UserInfo;
-      use App\Message;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
 {
-    //VALIDATION:
-
-    private function getValidators($model) {
-        return [
-            'name'     => 'required|max:100|min:2',
-            'surname' => 'required|max:100|min:2',
-            'email'   => 'required|min:10',
-            'password' => 'required|min:8',
-        ];
-    }
-
 
     public function index()
     {
         $userinfo = UserInfo::all();
 
         $devs = User::paginate(10);
-        return view('admin.devs.index', [
+        return view('guest.index', [
             'devs' => $devs,
             'userinfo' => $userinfo,
         ]);
-
-
     }
 
-
-    public function indexChat()
-    {
-        
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -46,7 +27,7 @@ namespace App\Http\Controllers\Admin;
      */
     public function create()
     {
-
+        //
     }
 
     /**
@@ -73,20 +54,17 @@ namespace App\Http\Controllers\Admin;
         $dev->fill($formData);
         $dev->save();
         $newDev = User::create($formData);
-        return redirect()->route('admin.devs.show', $dev->id)->with('status', 'Complited with succes!');
+        return redirect()->route('guest.show', $dev->id)->with('status', 'Complited with succes!');
     }
 
 
-    public function show(User $dev, UserInfo $userinfo, Message $message)
+    public function show(User $dev, UserInfo $userinfo)
     {
 
-        $message = Message::all();
-
         $userinfo = UserInfo::all();
-        return view('admin.devs.show', [
+        return view('guest.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
-            'message'   => $message,
         ]);
     }
 
@@ -111,7 +89,7 @@ namespace App\Http\Controllers\Admin;
         // //     'tags'          => $tags
         // // ]);
         //     }
-        return view('admin.devs.edit', compact('dev'));
+        return view('guest.edit', compact('dev'));
 
     }
 
@@ -126,14 +104,12 @@ namespace App\Http\Controllers\Admin;
                  // ]]);
                  // qui invece gli passo l'argomento con $post
                 //  $request->validate($this->getValidators($dev));
-                $request->validate($this->getValidators($dev));
-
 
                 $formData = $request->all();
 
                 $dev->update($formData);
 
-                 return redirect()->route('admin.devs.edit', $dev->id);
+                 return redirect()->route('guest.show', $dev->id);
     }
 
     /**

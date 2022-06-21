@@ -9,11 +9,9 @@ use Illuminate\Http\Request;
 class MessageController extends Controller
 {
     protected $validationRules = [
-        'name' => 'required|max:255',
-        'email' => 'required|email|max:255',
-        'message' => 'required|max:255',
+        'guest_mail' => 'required|max:255|email',
+        'message' => 'required|max:255'
     ];
-
 
 
     public function index(Message $message) //TODO:
@@ -32,14 +30,11 @@ class MessageController extends Controller
 
     public function store(Request $request, User $dev) 
     {
-        // $request->validate($this->validationRules, [
-        //     'email' => 'Inserisci una mail valida',
-        // ]);
 
-        // $id = User::where('id', $dev->id)->get('id');
-        // dd($dev);
-        // $formData = $request->all();
-        // dd($formData);
+        $request->validate($this->validationRules, [
+            'guest_mail' => 'Inserisci una mail valida',
+            'message' => 'Il campo non può essere vuoto'
+        ]);
         
        
 

@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <script src="{{ asset('js/app.js')}}" defer></script>
 <body>
+  {{-- <div id="app"> --}}
+
+  
     <header>
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
@@ -57,5 +60,6 @@
     </header>
     @yield('pageMain')
     @include('partials.footer')
+  {{-- </div> --}}
 </body>
 </html>
