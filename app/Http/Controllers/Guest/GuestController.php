@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Guest;
 use App\Http\Controllers\Controller;
 use App\UserInfo;
 use App\User;
+use App\Review;
+
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -30,9 +32,12 @@ class GuestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, $id_dev)
     {
-        //
+        
+        return view('guest.create', [
+            // 'dev' => $dev,
+            'id_dev' => $id_dev,]);
     }
 
     /**
@@ -41,9 +46,16 @@ class GuestController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
-        //
+        $dev_id =  $request->user_id;
+        Review::create([
+            'user_id' => $request->user_id,
+            'rating' => $request->rating,
+            'review' => $request->message,
+        ]);
+        
+        return redirect()->route('guest.show', $dev_id)->with('status', 'Completed with success!');
     }
 
     /**
