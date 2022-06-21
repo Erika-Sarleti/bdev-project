@@ -11,8 +11,15 @@
           <a href="#form-message" class="btn btn-primary">Invia un messaggio</a>
         </div>
     </div >
+    @php
+      $id_dev=$dev->id;
+      // dd($IdUtenteRew);
+    @endphp
+
+    <a href="{{route('guest.create', ['id' => $id_dev])}}">Scrivi una Recensione</a>
+    
+
     <form action="{{ route("message.store")}}" method="POST" class="mt-3" style="height: 100vh" id="form-message">
-      @method("POST")
       @csrf
 
       <div class="form-group">
@@ -23,6 +30,8 @@
         <label for="message">Messaggio*</label>
         <textarea name="message" class="form-control" id="message" rows="3"></textarea>
         <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
+
+        {{-- <?php dd($dev->id) ?> --}}
       </div>
       <button type="submit" class="btn btn-primary">Invia</button>
     </form>

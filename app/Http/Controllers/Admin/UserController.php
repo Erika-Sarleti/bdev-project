@@ -35,7 +35,7 @@ namespace App\Http\Controllers\Admin;
      */
     public function create()
     {
-        //
+
     }
 
     /**
