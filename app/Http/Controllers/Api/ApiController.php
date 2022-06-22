@@ -12,16 +12,7 @@ class ApiController extends Controller
 
     public function index(Request $request)
     {
-        // $dataUserinfo = UserInfo::paginate(15);
 
-        // if (isset($request->role)) {
-        //     // dd($dataUserinfo);
-        //     foreach ($dataUserinfo as $key => $user) {
-        //         if (in_array($user->role, $request->role)) {
-
-        //         }
-        //     }
-        // }
 
         $result = $this->queryComposer($request);
         $review = Review::all();
@@ -30,16 +21,44 @@ class ApiController extends Controller
             'user' => function ($query1) {$query1->select('id', 'name', 'surname');},
          ])->paginate(20);
         $user_id = [];
-
-        if ($request->nreview) {
-            // $result = $this->queryComposer($request);
-            // $result = $result ->with([
-            //     'user' => function ($query1) {$query1->select('id', 'name', 'surname');}]);
+        if($request->nreview && $request->mediarating){
             foreach ($result as $user) {
                 $user_id[] = $user->user->id;
             }
             $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
-                // dd($dati);
+            
+                foreach ($dati as $key => $user) {
+                    if(count($user) < $request->nreview) {
+                        unset($dati[$key]);
+                    }
+                };
+            $nreview = 0;
+            foreach ($dati as $key => $user) {
+                
+                for($i = 0; $i < count($user); $i++){
+                    $nreview = $nreview + $user[$i]['rating'];
+                    
+                }
+    
+                if(round($nreview / count($user)) < $request->mediarating){
+                    unset($dati[$key]);
+                }
+                
+                $nreview = 0;
+            }
+            return response()->json([
+                'status'    => 'success',
+                'response'  => $dati,
+                'sql'       => $result
+            ]);
+        };
+        if ($request->nreview) {
+
+            foreach ($result as $user) {
+                $user_id[] = $user->user->id;
+            }
+            $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
+            
                 foreach ($dati as $key => $user) {
                     if(count($user) < $request->nreview) {
                         unset($dati[$key]);
@@ -51,6 +70,34 @@ class ApiController extends Controller
                 'sql'       => $result
             ]);
         }
+
+        if ($request->mediarating){
+            foreach ($result as $user) {
+                $user_id[] = $user->user->id;
+            }
+            $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
+            $nreview = 0;
+                foreach ($dati as $key => $user) {
+                    
+                    for($i = 0; $i < count($user); $i++){
+                        $nreview = $nreview + $user[$i]['rating'];
+                       
+                    }
+                    // dd($nreview);
+                    if(round($nreview / count($user)) < $request->mediarating){
+                        unset($dati[$key]);
+                    }
+                    
+                    $nreview = 0;
+                }
+                return response()->json([
+                    'status'    => 'success',
+                    'response'  => $dati,
+                    'sql'       => $result
+                ]);
+                
+        }
+
         else {
             return response()->json([
                 'status'    => 'success',
@@ -58,6 +105,9 @@ class ApiController extends Controller
                 'sql'       => $ciao
             ]);
         }
+
+
+
     }
 
     public function create()
