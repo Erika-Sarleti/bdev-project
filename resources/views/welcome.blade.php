@@ -36,7 +36,7 @@
 
                 <div class="links">
                     <a href="{{route('guest.index')}}">Index</a>
-                    <a href="https://laracasts.com">Laracasts</a>
+                    <a href="{{route('guest.home')}}">Laracasts</a>
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>

@@ -55,8 +55,11 @@
             </div>
           </nav>
     </header> --}}
-    @include('partials.header')
-    @yield('pageMain')
-    @include('partials.footer')
+    <div id="app">
+      @include('partials.header')
+      @yield('pageMain')
+      @include('partials.footer')
+    </div>
+
 </body>
 </html>

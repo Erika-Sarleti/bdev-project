@@ -15,6 +15,10 @@ class GuestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function guestindex(User $dev)
+    {
+        return view('guest.home', compact('dev'));
+    }
     public function index(User $devs, UserInfo $userinfo)
     {
         $userinfo = UserInfo::all();

@@ -16,4 +16,5 @@ namespace App\Http\Controllers\Admin;
     {
         return view('admin.home', compact('dev'));
     }
+
 }
