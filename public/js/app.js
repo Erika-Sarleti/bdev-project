@@ -38781,7 +38781,93 @@ if (inBrowser) {
 /*!******************************************************!*\
   !*** ./resources/js/components/ExampleComponent.vue ***!
   \******************************************************/
-/***/ (() => {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+/* harmony import */ var _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ExampleComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ExampleComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e& ***!
+  \*************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=template&id=299e239e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=template&id=299e239e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_template_id_299e239e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/sass/app.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/app.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n   ╷\n78 │ >>>>>>> origin/Erika\r\n   │                     ^\n   ╵\n  C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\resources\\sass\\app.scss 78:21  root stylesheet\n    at C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:99628:16)\n    at render_closure1.call$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:85048:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:29643:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28163:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28470:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3899:77)\n    at _Future._completeError$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28316:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:27964:12)\n    at Object._asyncRethrow (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3701:17)\n    at C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:19854:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3726:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:27983:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:27977:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:29643:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28163:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28470:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3899:77)\n    at _Future._completeError$2 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28316:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:28400:18)\n    at Object._microtaskLoop (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3955:24)\n    at StaticClosure._startMicrotaskLoop (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:3961:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:27884:21)\n    at invokeClosure (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:1435:26)\n    at Immediate.<anonymous> (C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\node_modules\\sass\\sass.dart.js:1456:18)\n    at processImmediate (node:internal/timers:466:21)");
+
+/***/ }),
+
+/***/ 0:
+/*!***************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/assets/js/app.js ./resources/sass/app.scss ./resources/assets/sass/app.scss ***!
+  \***************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\js\app.js */"./resources/js/app.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\resources\\assets\\js\\app.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+__webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
+!(function webpackMissingModule() { var e = new Error("Cannot find module 'C:\\Users\\Paolo\\Documents\\Boolean\\bdev-project\\resources\\assets\\sass\\app.scss'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <template>\n|     <div class=\"container\">\n|         <div class=\"row justify-content-center\">");
 

@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/api-dev', 'Api\ApiController@index');
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,6 +29,7 @@ Route::middleware('auth')
     ->group(function(){
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/devs', 'UserController');
+
     });
 
     Route::group(['middleware' => ['guest']], function () {
@@ -51,4 +53,4 @@ Route::get("{any?}", function() {
         //          Route::post('/slugger', 'HomeController@slugger')->name('slugger');
         //          Route::resource('/posts', 'PostController');
         //  });
-        //  
+        //
