@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::resource('/message', 'MessageController');
 Route::post('/message', 'MessageController@store')->name('message.store');
+
 Auth::routes();
 
 Route::middleware('auth')

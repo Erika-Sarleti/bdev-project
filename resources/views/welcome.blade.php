@@ -11,6 +11,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+        <script src="{{ asset('js/script.js')}}" defer></script>
     </head>
     <body>
         <div class="container-home">
@@ -20,8 +21,7 @@
                 <a href="{{ route('guest.home') }}" class="btn-neon delay-display">Entra</a>
                 <h1 class="down">ciccio</h1>
             </div>
-            
-            <script src="{{ asset('script.js')}}"></script>
+
         </div>
         </div>
     </body>
