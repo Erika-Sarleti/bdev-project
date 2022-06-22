@@ -1,6 +1,4 @@
-<footer>
-
-
+<footer id="footer">
         <div class="my-text-color-animated d-flex justify-content-center align-items-center pt-5">
             <div class="d-flex flex-column justify-content-center align-items-center">
                 <i class="fa-brands fa-connectdevelop fs-1"></i>

@@ -1,0 +1,21 @@
+/* Scrollbar */
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--my-pink) var(--my-black);
+  }
+
+  
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--my-black);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--my-pink);
+    border-radius: 8px;
+    border: 3px double var(--my-black);
+  }
