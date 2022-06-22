@@ -1,6 +1,4 @@
-{{-- DASHBOARD: REVIEWS --}}
-
-{{-- @extends('layouts.base')
+@extends('layouts.base')
 @section('pageMain')
     <div class="col-7 container-fluid d-flex flex-wrap justify-content-between">
         @foreach ($devs as $dev)
@@ -9,7 +7,7 @@
         
          <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
   
-        
+        {{-- DASHBOARD --}}
 
 
         <div class="card-body">
@@ -25,4 +23,4 @@
 
     {{ $devs->links() }}
     
-@endsection --}}
+@endsection

@@ -13,10 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css')}}">
     <script src="{{ asset('js/app.js')}}" defer></script>
 <body>
-  {{-- <div id="app"> --}}
-
-  
-    <header>
+    {{-- <header>
         <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Navbar</a>
@@ -27,7 +24,7 @@
                 <ul class="navbar-nav">
                   @auth
                     <a class="navbar-brand" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
-                    
+
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="{{route('admin.devs.index')}}">Esplora</a>
                     </li>
@@ -46,10 +43,10 @@
                         <a class="nav-link" href="{{ route('register') }}">Register</a>
                     </li>
                     @endif
-                    
+
                   @endauth
-                  
-                  
+
+
                   <li class="nav-item">
                     <a class="nav-link" href="#">Help </a>
                   </li>
@@ -57,9 +54,9 @@
               </div>
             </div>
           </nav>
-    </header>
+    </header> --}}
+    @include('partials.header')
     @yield('pageMain')
     @include('partials.footer')
-  {{-- </div> --}}
 </body>
 </html>

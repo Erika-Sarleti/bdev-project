@@ -10,13 +10,6 @@ use Illuminate\Http\Request;
 
 class GuestController extends Controller
 {
-
-    protected $validationRules = [
-        'rating' => 'required',
-        'message' => 'required|max:255|min:2',
-    ];
-
-
     /**
      * Display a listing of the resource.
      *
@@ -55,11 +48,6 @@ class GuestController extends Controller
      */
     public function store(Request $request )
     {
-        $request->validate($this->validationRules, [
-            'message' => 'Il campo non può essere vuoto'
-        ]);
-
-
         $dev_id =  $request->user_id;
         Review::create([
             'user_id' => $request->user_id,

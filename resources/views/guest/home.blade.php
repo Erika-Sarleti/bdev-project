@@ -1,5 +1,3 @@
-<!-- HOME DEL GUEST -->
-
 @extends('layouts.app')
 
 @section('content')
