@@ -17,7 +17,7 @@
             <div class="demo">
                 <h1 class="up">ciccio</h1>
                 <h2 class="byline" id="byline">The Bests Developers</h2>
-                <a href="{{ route('guest.index') }}" class="btn-neon delay-display">Entra</a>
+                <a href="{{ route('guest.home') }}" class="btn-neon delay-display">Entra</a>
                 <h1 class="down">ciccio</h1>
             </div>
             

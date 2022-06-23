@@ -34,8 +34,14 @@ Route::middleware('auth')
 
     Route::group(['middleware' => ['guest']], function () {
         Route::resource('/guest', 'Guest\GuestController');
+        Route::get('/home', 'Guest\GuestController@guestindex')->name('guest.home');
         Route::get('guest/review/{id}', 'Guest\GuestController@create')->name('guest.create');
     });
+
+    Route::get('/home', function () {
+        return view('guest.home');
+    })->name('guest.home');
+
 Route::get("{any?}", function() {
         return view("guest.home");
         })->where("any", ".*");
