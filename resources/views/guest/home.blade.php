@@ -24,17 +24,17 @@
             <div class="center-section-how">
                 <h3 class="my-text-white">Trovare lo sviluppatore adatto a te 
                     non è mai stato così semplice</h3>
-                    <div class="d-flex justify-content-evenly align-items-center my-3">
+                    <div class="d-flex justify-content-center align-items-center">
                         <div class="my-card" style="width: 200px; height:400px">
-                            <img src="https://picsum.photos/200" alt="" class="my-img">
+                            <img src="https://picsum.photos/200?random=1" alt="" class="my-img">
                             <small class="my-p my-text-white">Ricerca tra millemila sviluppatori iscritti alla nostra piattaforma</small>
                         </div>
                         <div class="my-card" style="width: 200px; height:400px">
-                            <img src="https://picsum.photos/200" alt="" class="my-img">
+                            <img src="https://picsum.photos/200?random=2" alt="" class="my-img">
                             <small class="my-p my-text-white">Mandagli un messaggio. Come su Tinder!</small>
                         </div>
                         <div class="my-card" style="width: 200px; height:400px">
-                            <img src="https://picsum.photos/200" alt="" class="my-img">
+                            <img src="https://picsum.photos/200?random=3" alt="" class="my-img">
                             <small class="my-p my-text-white">Il tuo sito sarà pronto in brevissimo tempo! Perché tu vali. ci metto altro testo perché così simulo un testo lungo, va bene?</small>
                         </div>
                     </div>
@@ -56,19 +56,24 @@
             <div class="center-section-evidence">
                 <h3 class="my-text-color">
                     Scopri la nostra rete di migliori sviluppatori in Italia:
-                    <div class="d-flex overlay">
-                        @foreach ($devs as $dev)
-                            <div class="d-flex flex-column justify-content-center align-items-center">
-                                <a href="{{ route('guest.show', $dev->id) }}" class="my-text-color">
-                                    {{ $dev->name }}
-                                    <img src="{{ $dev->userinfo->image }}" class="my-img-round">
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
                 </h3>
+                    {{-- CAROSELLO --}}
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach($devs as $profile)
+                          <div class="carousel-item">
+                            <img src="https://picsum.photos/200/300?random=1" class="d-block" style="width: 300px;" alt="...">
+                          </div>
+                            @endforeach
+                          {{-- <div class="carousel-item">
+                            <img src="https://picsum.photos/200/300?random=2" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="https://picsum.photos/200/300?random=2" class="d-block w-100" alt="...">
+                          </div> --}}
+                        </div>
+                      </div>
             </div>
-
             <div class="container-buttons">
                 <a href="#section-how" class="btn-neon">
                     s
@@ -95,7 +100,9 @@
             </div>
         </section>
     </div>
+
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
     
 
