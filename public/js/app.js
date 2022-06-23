@@ -49842,7 +49842,10 @@ var app = new Vue({
       });
     }
   }
-});
+}); // carosello
+
+var item = document.getElementById('carousel-js');
+item.firstChild.classList.add('active'); //fine carosello
 
 /***/ }),
 

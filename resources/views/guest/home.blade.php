@@ -8,7 +8,11 @@
             <div class="center-section">
                 
                 <h4 class="my-text-color">Inizia qui la ricerca dello sviluppatore su misura per il tuo business:</h4>
-                <a href="{{route('guest.index')}}" class="btn-neon">Vai alla ricerca</a>
+                <form action="{{ route('guest.index') }}" method="GET">
+                    <input type="text" placeholder="Cerca per ruolo" class="form-control me-2 flex-grow-1" name="role"> 
+                    <button class="btn btn-primary text-light">Cerca</button>
+                </form>
+
                 
             </div>
                 <div class="container-buttons">
@@ -59,10 +63,10 @@
                 </h3>
                     {{-- CAROSELLO --}}
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
+                        <div class="carousel-inner" id="carousel-js">
                             @foreach($devs as $profile)
                           <div class="carousel-item">
-                            <img src="https://picsum.photos/200/300?random=1" class="d-block" style="width: 300px;" alt="...">
+                            <img src="{{ $profile->userinfo->image}}" class="d-block" style="width: 300px;" alt="...">
                           </div>
                             @endforeach
                           {{-- <div class="carousel-item">
@@ -101,7 +105,7 @@
         </section>
     </div>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
     
