@@ -6,6 +6,7 @@
   --my-white-transparent: rgba(255,255,255,0.1);
   --my-transparent: transparent;
   --my-pink: #C71C82;
+  --my-green: #1FC71C;
 }
 
 /*!
@@ -12667,9 +12668,49 @@ img {
   max-height: 165px;
 }
 
-.center-section-evidence {
+.container-section {
+  position: relative;
+  max-width: 100%;
+  height: 100vh;
+}
+
+.container-section .center-section-evidence {
   position: absolute;
-  top: 20%;
-  left: 25%;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.container-section .my-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 8px var(--my-white);
+  margin: 2rem;
+}
+
+.container-section .my-text-white {
+  color: var(--my-white);
+  text-shadow: var(--my-white) 0px 0px 5px, var(--my-white) 0px 0px 10px, var(--my-white) 0px 0px 15px, var(--my-white) 0px 0px 20px, var(--my-white) 0px 0px 30px, var(--my-white) 0px 0px 40px, var(--my-white) 0px 0px 50px, var(--my-white) 0px 0px 75px, 0px 0px 2px var(--my-white);
+}
+
+.container-section .section-carousel {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-section-say {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%);
+}
+
+.center-section-say .my-text-green {
+  color: var(--my-white);
+  text-shadow: var(--my-green) 0px 0px 5px, var(--my-green) 0px 0px 10px, var(--my-green) 0px 0px 15px, var(--my-green) 0px 0px 20px, var(--my-green) 0px 0px 30px, var(--my-green) 0px 0px 40px, var(--my-green) 0px 0px 50px, var(--my-green) 0px 0px 75px, 0px 0px 2px var(--my-green);
 }
 

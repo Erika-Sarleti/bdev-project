@@ -102,7 +102,10 @@ const app = new Vue({
 // carosello
 
 const item = document.getElementById('carousel-js');
+
 item.firstChild.classList.add('active');
+
+
 
 //fine carosello
 

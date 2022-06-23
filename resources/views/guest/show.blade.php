@@ -7,7 +7,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ $dev->name }}</h5>
           <p class="card-text">{{$dev->description}}</p>
-          {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
+  
           <a href="#form-message" class="btn btn-primary">Invia un messaggio</a>
         </div>
     </div >

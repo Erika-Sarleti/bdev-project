@@ -61,23 +61,29 @@
                 <h3 class="my-text-color">
                     Scopri la nostra rete di migliori sviluppatori in Italia:
                 </h3>
+            </div>
                     {{-- CAROSELLO --}}
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide section-carousel" data-bs-ride="carousel" data-bs-interval="2000">
                         <div class="carousel-inner" id="carousel-js">
                             @foreach($devs as $profile)
-                          <div class="carousel-item">
-                            <img src="{{ $profile->userinfo->image}}" class="d-block" style="width: 300px;" alt="...">
-                          </div>
-                            @endforeach
-                          {{-- <div class="carousel-item">
-                            <img src="https://picsum.photos/200/300?random=2" class="d-block w-100" alt="...">
-                          </div>
-                          <div class="carousel-item">
-                            <img src="https://picsum.photos/200/300?random=2" class="d-block w-100" alt="...">
-                          </div> --}}
+                                <div class="carousel-item">
+                                    <a href="{{route('guest.show', [$profile->id])}}" class="my-card">
+                                            <img src="{{ $profile->userinfo->image}}" class="d-block " style="width: 400px; height:200px;" alt="{{ $profile->name }}">
+                                            <p class="my-text-color">{{ $profile->name }}</p>
+                                            <p class="my-text-white">{{$profile->userinfo->description}}</p>
+                                    </a>
+                                </div>
+                                @endforeach
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev" id="js-prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="next" id="js-next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
                         </div>
                       </div>
-            </div>
             <div class="container-buttons">
                 <a href="#section-how" class="btn-neon">
                     s
@@ -90,8 +96,9 @@
 
         {{-- sezione dicono di noi --}}
         <section class="container-section" id="section-say">
-            <div class="center-section">
-                ciao, sono la sezione dicono di noi
+            <div class="center-section-say">
+                <h2 class="my-text-green">Dicono di noi...</h2>
+                
             </div>
 
             <div class="container-buttons">

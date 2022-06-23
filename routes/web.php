@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/api-dev', 'Api\ApiController@index');
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,7 +22,6 @@ Route::get('/', function () {
 Route::resource('/message', 'MessageController');
 Route::post('/message', 'MessageController@store')->name('message.store');
 
-Auth::routes();
 
 Route::middleware('auth')
     ->namespace('Admin')
