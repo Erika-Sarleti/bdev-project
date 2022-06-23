@@ -8,7 +8,7 @@
             <div class="center-section">
                 
                 <h4 class="my-text-color">Inizia qui la ricerca dello sviluppatore su misura per il tuo business:</h4>
-                <a href="#" class="btn-neon">Vai alla ricerca</a>
+                <a href="{{route('guest.index')}}" class="btn-neon">Vai alla ricerca</a>
                 
             </div>
                 <div class="container-buttons">

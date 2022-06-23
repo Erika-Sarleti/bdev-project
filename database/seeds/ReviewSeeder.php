@@ -17,11 +17,14 @@ class ReviewSeeder extends Seeder
         $users = User::all();
 
         foreach ($users as $user) {
-            Review::create([
-            'user_id'           =>  $user->id,
-            'review'        =>  $faker->text(),
-            'rating'           =>  $faker->randomFloat(1, 1, 5),
-          ]);
+            $n = rand(1, 7);
+            for ($i= 0; $i< $n; $i++ ){
+                Review::create([
+                            'user_id'           =>  $user->id,
+                            'review'        =>  $faker->text(),
+                            'rating'           =>  $faker->numberBetween(1, 5),
+                        ]);
+            }    
     }
 }
 }
