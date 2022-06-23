@@ -7,6 +7,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// components
+
+@import 'components/carousell';
+
 
 // Fontawesome
 // @import '~@fortawesome/fontawesome-free/scss/brands';
@@ -51,7 +55,7 @@
 
 .no-growth{
     flex-grow: 0;
-
+  
 }
 
 footer{
@@ -407,10 +411,6 @@ header{
         color: var(--my-white);
         text-shadow: var(--my-white) 0px 0px 5px, var(--my-white) 0px 0px 10px, var(--my-white) 0px 0px 15px, var(--my-white) 0px 0px 20px, var(--my-white) 0px 0px 30px, var(--my-white) 0px 0px 40px, var(--my-white) 0px 0px 50px, var(--my-white) 0px 0px 75px, 0px 0px 2px var(--my-white);
     }
-    .my-img{
-        width: 200px;
-        height: 200px;
-    }
     .my-p{
         display: flex;
         justify-content: center;
@@ -423,20 +423,27 @@ header{
     }
 }
 
+.my-card{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px var(--my-white);
+    margin: 2rem;
+    padding: 2rem 1rem;
+    .my-img{
+        max-width: 165px;
+        max-height: 165px;
+    }
+}
+// section EVIDENCE
+
 .center-section-evidence{
     position: absolute;
     top: 20%;
     left: 25%;
-    .my-img-round{
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-    }
-    .overlay{
-        margin-top: 2rem;
-        width: 500px;
-        height: 300px;
-        overflow-x: scroll;
-    }
 }
 

@@ -37,6 +37,7 @@ Route::middleware('auth')
         Route::get('/home', 'Guest\GuestController@guestindex'
         )->name('guest.home');
         Route::resource('/guest', 'Guest\GuestController');
+        Route::get('/home', 'Guest\GuestController@guestindex')->name('guest.home');
         Route::get('guest/review/{id}', 'Guest\GuestController@create')->name('guest.create');
     });
     
