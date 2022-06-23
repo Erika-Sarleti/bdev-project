@@ -75,6 +75,26 @@ const app = new Vue({
             }
         })
         }
+    },
+    mounted: function mounted(){
+        if(window.location.search){
+            let rol = window.location.search.replace('?role=', '');
+            if(rol.includes('+')){
+                for(i = 0; i < 5; i++){
+                    rol =  rol.replace('+', ' ');
+                    rol =  rol.replace('+', ' ');
+                    rol =  rol.replace('+', ' ');
+                } 
+            };
+                this.role = rol;    
+            
+            
+            Axios.get("/api-dev?role=" + this.role)
+           .then((response) => {
+            console.log(response); 
+            this.devs = response.data.response.data;          
+        })
+        }
     }
 });
 

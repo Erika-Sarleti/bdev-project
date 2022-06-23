@@ -49841,6 +49841,28 @@ var app = new Vue({
         }
       });
     }
+  },
+  mounted: function mounted() {
+    var _this3 = this;
+
+    if (window.location.search) {
+      var rol = window.location.search.replace('?role=', '');
+
+      if (rol.includes('+')) {
+        for (i = 0; i < 5; i++) {
+          rol = rol.replace('+', ' ');
+          rol = rol.replace('+', ' ');
+          rol = rol.replace('+', ' ');
+        }
+      }
+
+      ;
+      this.role = rol;
+      Axios.get("/api-dev?role=" + this.role).then(function (response) {
+        console.log(response);
+        _this3.devs = response.data.response.data;
+      });
+    }
   }
 }); // carosello
 
@@ -49980,13 +50002,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\Erika\Desktop\boolean\bdev-project\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\Erika\Desktop\boolean\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> origin/uva
 
 
 /***/ })

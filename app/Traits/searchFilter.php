@@ -13,7 +13,7 @@ function queryComposer($request) {
     $dataReview     =   Review::all();
     if ($request->role) {
         $dataUserinfo->where(function($query) use ($request) {
-            $test = $request->role . "%";
+            $test ="%" . $request->role . "%";
             $query->where('role', 'LIKE', $test);
         });
         }
