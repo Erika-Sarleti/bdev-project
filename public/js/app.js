@@ -49768,11 +49768,15 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    Axios = _require["default"];
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
+
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49794,9 +49798,51 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    devs: [],
+    role: '',
+    linkShow: '/guest/',
+    ciao: [],
+    results: [],
+    nreview: '',
+    mediarating: ''
+  },
+  methods: {
+    search: function search() {
+      var _this = this;
+
+      this.devs = [];
+      Axios.get("/api-dev?role=" + this.role).then(function (response) {
+        console.log(response);
+        _this.devs = response.data.response.data;
+      });
+    },
+    filter: function filter() {
+      var _this2 = this;
+
+      this.devs = [];
+      this.ciao = [];
+      this.results = [];
+      Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating).then(function (response) {
+        _this2.ciao = Object.keys(response.data.response);
+        _this2.results = _this2.ciao.map(function (x) {
+          return parseInt(x, 10);
+        });
+
+        if (_this2.nreview != 0 || _this2.mediarating != 0) {
+          response.data.sql.data.forEach(function (element, index) {
+            if (_this2.results.includes(element.user_id)) {
+              _this2.devs.push(element);
+            }
+          });
+        } else {
+          _this2.devs = response.data.response.data;
+        }
+      });
+    }
+  }
 });
-console.log('APP.JS FUNZIONA');
 
 /***/ }),
 

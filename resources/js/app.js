@@ -1,3 +1,5 @@
+const { default: Axios } = require('axios');
+
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -29,9 +31,54 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 
 const app = new Vue({
     el: '#app',
+    data: {
+        devs: [],
+        role: '',
+        linkShow: '/guest/',
+        ciao: [],
+        results: [],
+        nreview: '',
+        mediarating: ''
+    },
+    methods: {
+        search: function() {
+            this.devs = [];
+           Axios.get("/api-dev?role=" + this.role)
+           .then((response) => {
+            console.log(response); 
+            this.devs = response.data.response.data;          
+        })
+        },
+        filter: function() {
+            this.devs = [];
+            this.ciao = [];
+            this.results = [];
+           Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating)
+           .then((response) => {
+
+            this.ciao = Object.keys(response.data.response);
+
+            this.results = this.ciao.map(function(x){
+                return parseInt(x, 10);
+            })
+
+            if (this.nreview != 0 || this.mediarating != 0) {
+                response.data.sql.data.forEach((element, index) => {
+                    if (this.results.includes(element.user_id))
+                    {
+                        this.devs.push(element);
+                    }
+    
+                });
+            } else {
+                this.devs = response.data.response.data; 
+            }
+        })
+        }
+    }
 });
 
-console.log('APP.JS FUNZIONA')
+
 
 
 
