@@ -11,13 +11,13 @@
           <div class="collapse navbar-collapse no-growth" id="navbarNav">
             <ul class="navbar-nav">
               @auth
-                <a class="navbar-brand my-text-color" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
+                {{-- <a class="navbar-brand my-text-color" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a> --}}
                 
                 <li class="nav-item">
                   <a class="nav-link active my-text-color" aria-current="page" href="{{route('admin.devs.index')}}">Esplora</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link my-text-color" href="#"> Ciao {{ Auth::user()->name }}</a>
+                  <a class="nav-link my-text-color" href="{{route('admin.devs.show',  Auth::user()->id )}}"> Ciao {{ Auth::user()->name }}</a>
                 </li>
                 @else
                 <li class="nav-item">

@@ -69,13 +69,13 @@ namespace App\Http\Controllers\Admin;
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
 
-        $message = Message::all();
+        $messages = Message::all();
 
         $userinfo = UserInfo::all();
         return view('admin.devs.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
-            'message'   => $message,
+            'messages'   => $messages,
         ]);
     }
 

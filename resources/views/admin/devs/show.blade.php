@@ -4,53 +4,34 @@
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
-    <aside class="section-aside">
-        <ul>
-            <li>
-                <a href="#" class="btn-neon">
-                    il mio profilo
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    chat
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    reviews
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    statics
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    ciccioPlus
-                </a>
-            </li>
-        </ul>
-    </aside>
+    @include('partials.aside')
     
     <section class="section-main">
     
-        <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
+        <h2 class="my-text-color my-4">  {{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
         
         <div class="container mb-5">
             <div class="row">
                 <div class="col">
 
-                    <div class="card" style="width: 18rem;">
+                    <div class="container text-light">
                         <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
                         <div class="card-body">
-                        <h5 class="card-title">{{$dev->name}}</h5>
-                        <p class="card-text">{{$dev->description}}</p>
-                        <h5 class="card-title">Messaggi</h5>
-                        @foreach ($dev->messages as $message)
-                            <p>{{$message->message}}</p>
-                        @endforeach 
+                        <h2>General Info</h2>
+                        <p>{{$dev->name}} {{$dev->surname}}</p>
+                        <h5>Descrizione</h5>
+                        <p class="card-text">{{$dev->userinfo->description}}</p>
+                        <h5>Luogo</h5>
+                        <p class="card-text">{{$dev->userinfo->locality}}</p>
+                        <h5>Ruolo</h5>
+                        <p class="card-text">{{$dev->userinfo->role}}</p>
+                        
+                            <a href="{{$dev->userinfo->github}}" class='btn-neon'>GitHub</h5>
+                        
+
+                        
+                            <a href="{{$dev->userinfo->cv}}" class='btn-neon'>CV</a> 
+                        
                     </div>
                 </div>
 
