@@ -1,4 +1,5 @@
 const { default: Axios } = require('axios');
+const { defaultsDeep } = require('lodash');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -45,8 +46,8 @@ const app = new Vue({
             this.devs = [];
            Axios.get("/api-dev?role=" + this.role)
            .then((response) => {
-            console.log(response); 
-            this.devs = response.data.response.data;          
+               this.devs = response.data.response.data;          
+               console.log(this.devs); 
         })
         },
         filter: function() {
@@ -55,7 +56,7 @@ const app = new Vue({
             this.results = [];
            Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating)
            .then((response) => {
-
+            console.log(response);
             this.sqlData = Object.keys(response.data.response);
 
             this.results = this.sqlData.map(function(x){
@@ -72,6 +73,7 @@ const app = new Vue({
                 });
             } else {
                 this.devs = response.data.response.data; 
+                
             }
         })
         }

@@ -9,7 +9,12 @@
                 <div class="filters d-flex flex-column mt-5 mb-5">
 
                 <label for="role"> FILTRA PER RUOLO </label>
-                <input v-model="role" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <select v-model="role" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <option value="back end">back end</option>
+                    <option value="front end">front end</option>
+                    <option value="full stack">full stack</option>
+                    <option value="data analyst">data analyst</option>
+                </select>
 
                 <button @click="search" class="btn btn-outline-success mb-5 mt-2" type="submit">SEARCH</button>
 
@@ -26,12 +31,16 @@
             </div>
             
             <div v-for="dev in devs" class="card mt-5" style="width: 18rem;">
+               
                 <img :src="dev.image" class="card-img-top" alt="devname">
                 <div class="card-body">
                     <h5 class="card-title">
                         <span>@{{dev.user.name}}</span>
                     </h5>
                     <p class="card-text">@{{dev.description}}</p>
+                    <small class="text-muted">@{{dev.role}}</small>
+                    
+                    
                     <a :href="linkShow + dev.user.id" class="btn btn-primary">Vai allo sviluppatore</a>
     
     

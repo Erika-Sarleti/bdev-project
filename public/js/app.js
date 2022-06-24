@@ -40099,6 +40099,9 @@ module.exports = function(module) {
 
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     Axios = _require["default"];
+
+var _require2 = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    defaultsDeep = _require2.defaultsDeep;
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40143,8 +40146,8 @@ var app = new Vue({
 
       this.devs = [];
       Axios.get("/api-dev?role=" + this.role).then(function (response) {
-        console.log(response);
         _this.devs = response.data.response.data;
+        console.log(_this.devs);
       });
     },
     filter: function filter() {
@@ -40154,6 +40157,7 @@ var app = new Vue({
       this.sqlData = [];
       this.results = [];
       Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating).then(function (response) {
+        console.log(response);
         _this2.sqlData = Object.keys(response.data.response);
         _this2.results = _this2.sqlData.map(function (x) {
           return parseInt(x, 10);
@@ -40320,7 +40324,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: expected \"{\".\n    ╷\n544 │ >>>>>>> origin/Simone\r\n    │                      ^\n    ╵\n  C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\resources\\sass\\app.scss 544:22  root stylesheet\n    at C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass-loader\\dist\\index.js:73:7\n    at Function.call$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:99628:16)\n    at render_closure1.call$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:85048:12)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:29643:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28163:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28470:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3899:77)\n    at _Future._completeError$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28316:9)\n    at _AsyncAwaitCompleter.completeError$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:27964:12)\n    at Object._asyncRethrow (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3701:17)\n    at C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:19854:20\n    at _wrapJsFunctionForAsync_closure.$protected (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3726:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:27983:12)\n    at _awaitOnObject_closure0.call$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:27977:25)\n    at _RootZone.runBinary$3$3 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:29643:18)\n    at _FutureListener.handleError$1 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28163:21)\n    at _Future__propagateToListeners_handleError.call$0 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28470:49)\n    at Object._Future__propagateToListeners (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3899:77)\n    at _Future._completeError$2 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28316:9)\n    at _Future__asyncCompleteError_closure.call$0 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:28400:18)\n    at Object._microtaskLoop (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3955:24)\n    at StaticClosure._startMicrotaskLoop (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:3961:11)\n    at _AsyncRun__scheduleImmediateJsOverride_internalCallback.call$0 (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:27884:21)\n    at invokeClosure (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:1435:26)\n    at Immediate.<anonymous> (C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\node_modules\\sass\\sass.dart.js:1456:18)\n    at processImmediate (node:internal/timers:466:21)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 

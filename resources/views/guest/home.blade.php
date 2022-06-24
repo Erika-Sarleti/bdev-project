@@ -100,7 +100,13 @@
         <section class="container-section" id="section-say">
             <div class="center-section-say">
                 <h2 class="my-text-color">Si sono affidati a noi</h2>
-                
+                <ul>
+                    <li>fiat</li>
+                    <li>radio dj</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
 
             <div class="container-buttons">
