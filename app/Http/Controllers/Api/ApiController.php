@@ -62,6 +62,8 @@ class ApiController extends Controller
                 foreach ($dati as $key => $user) {
                     if(count($user) < $request->nreview) {
                         unset($dati[$key]);
+                    } else if(count($user) >= $request->nreview){
+                        $user['n_recensioni']= count($user);
                     }
                 }
             return response()->json([
@@ -83,9 +85,11 @@ class ApiController extends Controller
                         $nreview = $nreview + $user[$i]['rating'];
                        
                     }
-                    // dd($nreview);
+                    
                     if(round($nreview / count($user)) < $request->mediarating){
                         unset($dati[$key]);
+                    } else if(round($nreview / count($user)) >= $request->mediarating){
+                        $user['media']= round($nreview / count($user));
                     }
                     
                     $nreview = 0;
@@ -99,10 +103,27 @@ class ApiController extends Controller
         }
 
         else {
+            foreach ($result as $user) {
+                $user_id[] = $user->user->id;
+            }
+            $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
+            $nreview = 0;
+            
+            foreach ($dati as $key => $user) {
+                for($i = 0; $i < count($user); $i++){
+                    $nreview = $nreview + $user[$i]['rating'];
+                   
+                }
+                $user['n_recensioni']= count($user);
+                
+                $user['media']= round($nreview / count($user));
+                $nreview = 0;
+            }
+            
             return response()->json([
                 'status'    => 'success',
                 'response'  => $result,
-                'sql'       => $ciao
+                'sql'       => $dati
             ]);
         }
 

@@ -38,9 +38,9 @@
                         <span>@{{dev.user.name}}</span>
                     </h5>
                     <p class="card-text">@{{dev.description}}</p>
-                    <small class="text-muted">@{{dev.role}}</small>
-                    
-                    
+                    <small> @{{dev.media}}</small>
+                    <small> @{{dev.nreview}}</small>
+
                     <a :href="linkShow + dev.user.id" class="btn btn-primary">Vai allo sviluppatore</a>
     
     
