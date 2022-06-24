@@ -6,7 +6,12 @@
   --my-white-transparent: rgba(255,255,255,0.1);
   --my-transparent: transparent;
   --my-pink: #C71C82;
+<<<<<<< HEAD
   --my-green: #1FC71C;
+=======
+  --background-blue: #043574;
+  --input-color: #819ABA;
+>>>>>>> origin/Simone
 }
 
 /*!
@@ -12714,5 +12719,58 @@ img {
   top: 50%;
   left: 20%;
   transform: translate(-50%);
+}
+
+.sign-in {
+  max-width: 100%;
+  background: var(--background-blue);
+}
+
+.sign-in input {
+  border-radius: 40px;
+  border-top-left-radius: 40px !important;
+  border-bottom-left-radius: 40px !important;
+  background-color: var(--input-color);
+}
+
+.sign-in button {
+  width: 250px;
+}
+
+.sign-in .register {
+  max-width: 100%;
+  height: 100vh;
+  background: var(--background-blue);
+}
+
+.sign-in .name-data {
+  max-width: 100%;
+  height: 100vh;
+  background: var(--background-blue);
+}
+
+.sign-in .name-data .input-box {
+  width: 70%;
+}
+
+.sign-in .name-data .input-box my-input-group {
+  width: 500px;
+  background-color: #001aff;
+}
+
+.sign-in .name-data .input-box span {
+  font-size: 1rem;
+}
+
+.sign-in .login-data {
+  max-width: 100%;
+  height: 100vh;
+  background: var(--background-blue);
+}
+
+.sign-in .confirm-registration {
+  max-width: 100%;
+  height: 100vh;
+  background: var(--background-blue);
 }
 
