@@ -14,6 +14,18 @@
         <script src="{{ asset('js/script.js')}}" defer></script>
     </head>
     <body>
+
+        @auth
+        <div class="container-home">
+            <div class="demo">
+                <h1 class="up">ciccio</h1>
+                <h2 class="byline" id="byline">The Bests Developers</h2>
+                <a href="{{route('admin.devs.show',  Auth::user()->id )}}" class="btn-neon delay-display">Entra</a>
+                <h1 class="down">ciccio</h1>
+            </div>
+        </div>
+
+        @else
         <div class="container-home">
             <div class="demo">
                 <h1 class="up">ciccio</h1>
@@ -21,8 +33,8 @@
                 <a href="{{ route('guest.home') }}" class="btn-neon delay-display">Entra</a>
                 <h1 class="down">ciccio</h1>
             </div>
-
         </div>
-        </div>
+        @endauth
+       
     </body>
 </html>

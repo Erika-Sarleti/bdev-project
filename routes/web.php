@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/api-dev', 'Api\ApiController@index');
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -28,8 +29,9 @@ Route::middleware('auth')
     ->name('admin.')
     ->prefix('admin')
     ->group(function(){
-        Route::get('/', 'HomeController@index')->name('home');
+        // Route::get('/devs', 'UserController@edit')->name('edit');
         Route::resource('/devs', 'UserController');
+        // Route::get('/dashboard/{id}', 'UserController@myindex')->name('home');
 
     });
 
@@ -41,9 +43,9 @@ Route::middleware('auth')
         Route::get('guest/review/{id}', 'Guest\GuestController@create')->name('guest.create');
     });
     
-Route::get("{any?}", function() {
-        return view("guest.home");
-        })->where("any", ".*");
+// Route::get("{any?}", function() {
+//         return view("guest.home");
+//         })->where("any", ".*");
 // Auth::routes();
 
 

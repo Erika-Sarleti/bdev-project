@@ -1,6 +1,7 @@
-@extends('layouts.admin')
-
+@extends('layouts.base')
 @section('pageMain')
+
+{{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
     <aside class="section-aside">
@@ -40,12 +41,56 @@
         <div class="container mb-5">
             <div class="row">
                 <div class="col">
-                    <form method="POST" action="{{ route('admin.devs.update', $dev->id ) }}" enctype="multipart/form-data">
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title">{{$dev->name}}</h5>
+                        <p class="card-text">{{$dev->description}}</p>
+                        <h5 class="card-title">Messaggi</h5>
+                        @foreach ($dev->messages as $message)
+                            <p>{{$message->message}}</p>
+                        @endforeach 
+                    </div>
+                </div>
+
+                <a class="btn-neon mt-5" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
+
+            </div>
+        </div>
+              
+          
+      
+    </section>
+</main>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     {{-- <form method="POST" action="{{ route('admin.devs.update', $dev->id ) }}" enctype="multipart/form-data">
         
                         @csrf
                         @method('PUT')
         
-                        {{-- PROFILO PERSONALE --}}
+                
         
                         <div class="mb-3">
                           <label for="name" class="form-label fw-bold my-text-color">Nome</label>
@@ -82,8 +127,4 @@
         
                         <button type="submit" class="btn-neon mt-5 fw-bold">SUBMIT</button>
         
-                    </form>
-                </section>
-</main>
-@endsection
-
+                    </form> --}}
