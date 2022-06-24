@@ -7,7 +7,18 @@
         <div class="card-body">
           <h5 class="card-title">{{ $dev->name }}</h5>
           <p class="card-text">{{$dev->description}}</p>
-  
+          <small class="text-muted">numero recensioni: {{$dev->reviews->count('reviews')}}</small>
+          <div class="text-dark">media voti:
+            <script>
+              let media = 0;
+              @foreach($dev->reviews as $vote)
+                media += {{ $vote->rating }};
+              @endforeach
+              media = Math.floor(media / {{ $dev->reviews->count('reviews') }});
+              document.write(media);
+            </script>
+          </div>
+
           <a href="#form-message" class="btn btn-primary">Invia un messaggio</a>
         </div>
     </div >
@@ -30,7 +41,7 @@
         <textarea name="message" class="form-control" id="message" rows="3"></textarea>
         <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
 
-        {{-- <?php dd($dev->id) ?> --}}
+        
       </div>
       <button type="submit" class="btn btn-primary">Invia</button>
     </form>
