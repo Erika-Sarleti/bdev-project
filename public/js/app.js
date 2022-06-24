@@ -40099,6 +40099,9 @@ module.exports = function(module) {
 
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     Axios = _require["default"];
+
+var _require2 = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    map = _require2.map;
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -40143,8 +40146,13 @@ var app = new Vue({
 
       this.devs = [];
       Axios.get("/api-dev?role=" + this.role).then(function (response) {
-        console.log(response);
+        // console.log(response); 
         _this.devs = response.data.response.data;
+
+        _this.devs.forEach(function (element) {
+          element['media'] = response.data.sql[element.user_id].media;
+          element['nreview'] = response.data.sql[element.user_id].n_recensioni;
+        });
       });
     },
     filter: function filter() {
@@ -40190,6 +40198,11 @@ var app = new Vue({
       Axios.get("/api-dev?role=" + this.role).then(function (response) {
         console.log(response);
         _this3.devs = response.data.response.data;
+
+        _this3.devs.forEach(function (element) {
+          element['media'] = response.data.sql[element.user_id].media;
+          element['nreview'] = response.data.sql[element.user_id].n_recensioni;
+        });
       });
     }
   }
@@ -40331,8 +40344,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Erika\Desktop\boolean\bdev-project\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Erika\Desktop\boolean\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

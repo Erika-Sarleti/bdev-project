@@ -1,4 +1,5 @@
 const { default: Axios } = require('axios');
+const { map } = require('lodash');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -43,10 +44,16 @@ const app = new Vue({
     methods: {
         search: function() {
             this.devs = [];
+
+
            Axios.get("/api-dev?role=" + this.role)
            .then((response) => {
-            console.log(response); 
-            this.devs = response.data.response.data;          
+            // console.log(response); 
+            this.devs = response.data.response.data; 
+            this.devs.forEach(element =>{
+                element['media'] = response.data.sql[element.user_id].media;
+                element['nreview'] = response.data.sql[element.user_id].n_recensioni;
+            })
         })
         },
         filter: function() {
@@ -57,7 +64,7 @@ const app = new Vue({
            .then((response) => {
 
             this.sqlData = Object.keys(response.data.response);
-
+            
             this.results = this.sqlData.map(function(x){
                 return parseInt(x, 10);
             })
@@ -67,6 +74,7 @@ const app = new Vue({
                     if (this.results.includes(element.user_id))
                     {
                         this.devs.push(element);
+                        
                     }
     
                 });
@@ -75,6 +83,7 @@ const app = new Vue({
             }
         })
         }
+    
     },
     mounted: function mounted(){
         if(window.location.search){
@@ -92,7 +101,11 @@ const app = new Vue({
             Axios.get("/api-dev?role=" + this.role)
            .then((response) => {
             console.log(response); 
-            this.devs = response.data.response.data;          
+            this.devs = response.data.response.data;     
+            this.devs.forEach(element =>{
+                element['media'] = response.data.sql[element.user_id].media;
+                element['nreview'] = response.data.sql[element.user_id].n_recensioni;
+            })     
         })
         }
     }
