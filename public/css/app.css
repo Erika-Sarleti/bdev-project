@@ -12668,11 +12668,12 @@ img {
   max-height: 165px;
 }
 
-.container-section {
+.container-section-start {
   position: relative;
   max-width: 100%;
   height: 100vh;
-  background-image: url(/images/immagine.png?d41d8cd98f00b204e9800998ecf8427e);
+  background-image: url(/images/immagine.png?82daa168976313a4c2fa6cc43e67b94e);
+  background-size: cover;
 }
 
 .container-section .center-section-evidence {
@@ -12703,15 +12704,15 @@ img {
   transform: translate(-50%, -50%);
 }
 
+.my-text-green {
+  color: var(--my-white);
+  text-shadow: var(--my-green) 0px 0px 5px, var(--my-green) 0px 0px 10px, var(--my-green) 0px 0px 15px, var(--my-green) 0px 0px 20px, var(--my-green) 0px 0px 30px, var(--my-green) 0px 0px 40px, var(--my-green) 0px 0px 50px, var(--my-green) 0px 0px 75px, 0px 0px 2px var(--my-green);
+}
+
 .center-section-say {
   position: absolute;
   top: 50%;
   left: 20%;
   transform: translate(-50%);
-}
-
-.center-section-say .my-text-green {
-  color: var(--my-white);
-  text-shadow: var(--my-green) 0px 0px 5px, var(--my-green) 0px 0px 10px, var(--my-green) 0px 0px 15px, var(--my-green) 0px 0px 20px, var(--my-green) 0px 0px 30px, var(--my-green) 0px 0px 40px, var(--my-green) 0px 0px 50px, var(--my-green) 0px 0px 75px, 0px 0px 2px var(--my-green);
 }
 

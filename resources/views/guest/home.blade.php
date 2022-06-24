@@ -4,7 +4,7 @@
 @section('pageMain')
     
     <div class="container-index">
-        <section class="container-section" id="section-start">
+        <section class="container-section-start" id="section-start">
             <div class="center-section">
                 
                 <h4 class="my-text-color">Inizia qui la ricerca dello sviluppatore su misura per il tuo business:</h4>
@@ -28,20 +28,20 @@
         <section class="container-section" id="section-how">
 
             <div class="center-section-how">
-                <h3 class="my-text-white">Trovare lo sviluppatore adatto a te 
+                <h3 class="my-text-color">Trovare lo sviluppatore adatto a te 
                     non è mai stato così semplice</h3>
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="my-card" style="width: 200px; height:400px">
                             <img src="https://picsum.photos/200?random=1" alt="" class="my-img">
-                            <small class="my-p my-text-white">Ricerca tra millemila sviluppatori iscritti alla nostra piattaforma</small>
+                            <small class="my-p text-white">Ricerca tra millemila sviluppatori iscritti alla nostra piattaforma</small>
                         </div>
                         <div class="my-card" style="width: 200px; height:400px">
                             <img src="https://picsum.photos/200?random=2" alt="" class="my-img">
-                            <small class="my-p my-text-white">Mandagli un messaggio. Come su Tinder!</small>
+                            <small class="my-p text-white">Mandagli un messaggio. Come su Tinder!</small>
                         </div>
                         <div class="my-card" style="width: 200px; height:400px">
                             <img src="https://picsum.photos/200?random=3" alt="" class="my-img">
-                            <small class="my-p my-text-white">Il tuo sito sarà pronto in brevissimo tempo! Perché tu vali. ci metto altro testo perché così simulo un testo lungo, va bene?</small>
+                            <small class="my-p text-white">Il tuo sito sarà pronto in brevissimo tempo! Perché tu vali. ci metto altro testo perché così simulo un testo lungo, va bene?</small>
                         </div>
                     </div>
                 
@@ -72,7 +72,7 @@
                                     <a href="{{route('guest.show', [$profile->id])}}" class="my-card">
                                             <img src="{{ $profile->userinfo->image}}" class="d-block " style="width: 400px; height:200px;" alt="{{ $profile->name }}">
                                             <p class="my-text-color">{{ $profile->name }}</p>
-                                            <p class="my-text-white">{{$profile->userinfo->description}}</p>
+                                            <p class="text-white">{{$profile->userinfo->description}}</p>
                                     </a>
                                 </div>
                                 @endforeach
@@ -99,7 +99,7 @@
         {{-- sezione dicono di noi --}}
         <section class="container-section" id="section-say">
             <div class="center-section-say">
-                <h2 class="my-text-green">Dicono di noi...</h2>
+                <h2 class="my-text-green">Si sono affidati a noi</h2>
                 
             </div>
 
