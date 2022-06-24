@@ -120,7 +120,7 @@ namespace App\Http\Controllers\Admin;
 
                 $dev->update($formData);
 
-                 return redirect()->route('admin.devs.show', $dev->id);
+                 return redirect()->route('admin.home', $dev->id);
     }
 
     /**
@@ -132,5 +132,10 @@ namespace App\Http\Controllers\Admin;
     public function destroy($id)
     {
         //
+    }
+
+ //DASHBOARD:
+    public function myindex(User $dev) {
+        return view('admin.home', compact('dev'));
     }
 }

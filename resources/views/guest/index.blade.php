@@ -21,7 +21,7 @@
                 <input v-model="mediarating" name="mediarating" type="number" min="0" max="5">
 
 
-                <button class="mt-2" @click="filter">APPLY FILTERS</button>
+                <button class="btn btn-outline-success mt-2" @click="filter">APPLY FILTERS</button>
 
             </div>
             
@@ -30,6 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">
                         <span>@{{dev.user.name}}</span>
+
                     </h5>
                     <p class="card-text">@{{dev.description}}</p>
                     <a :href="linkShow + dev.user.id" class="btn btn-primary">Vai allo sviluppatore</a>
