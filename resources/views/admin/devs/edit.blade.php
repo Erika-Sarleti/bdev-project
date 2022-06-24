@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.admin')
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
@@ -8,27 +8,27 @@
         <ul>
             <li>
                 <a href="#" class="btn-neon">
-                    il mio profilo
+                    Il mio profilo
                 </a>
             </li>
             <li>
                 <a href="#"  class="btn-neon">
-                    chat
+                    Chat
                 </a>
             </li>
             <li>
                 <a href="#"  class="btn-neon">
-                    reviews
+                    Reviews
                 </a>
             </li>
             <li>
                 <a href="#"  class="btn-neon">
-                    statics
+                    Statics
                 </a>
             </li>
             <li>
                 <a href="#"  class="btn-neon">
-                    ciccioPlus
+                    CiccioPlus
                 </a>
             </li>
         </ul>
@@ -71,15 +71,66 @@
                         @error('Email')
                         <div class="alert alert-warning">{{ $message }}</div>
                         @enderror
-        
+    
+                        @php
+                            $info = $dev->userinfo
+                        @endphp
+
                         <div class="mb-3">
-                            <label for="password" class="form-label fw-bold my-text-color">Password</label>
-                            <input type="password" class="form-control" id="password" name="password">
+                            <label for="cv" class="form-label fw-bold my-text-color">Cv</label>
+                            <input type="text" class="form-control" id="cv" name="cv" value="{{ $info->cv }}" {{ old('cv', $info->cv) }}>
                         </div>
-                        @error('password')
+                        @error('cv')
                         <div class="alert alert-warning">{{ $message }}</div>
                         @enderror
-        
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label fw-bold my-text-color">Image</label>
+                            <input type="file" class="form-control" id="image" name="image" value="{{ $info->image }}" {{ old('image', $info->image) }}>
+                        </div>
+                        @error('Email')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
+                            <label for="locality" class="form-label fw-bold my-text-color">Locality</label>
+                            <input type="text" class="form-control" id="locality" name="locality" value="{{ $info->locality }}" {{ old('locality', $info->locality) }}>
+                        </div>
+                        @error('locality')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
+                            <label for="github" class="form-label fw-bold my-text-color">Github</label>
+                            <input type="text" class="form-control" id="github" name="github" value="{{ $info->github }}" {{ old('github', $info->github) }}>
+                        </div>
+                        @error('github')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-bold my-text-color">Description</label>
+                            <input type="text" class="form-control" id="description" name="description" value="{{ $info->description }}" {{ old('description', $info->description) }}>
+                        </div>
+                        @error('description')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
+                            <label for="role" class="form-label fw-bold my-text-color">Role</label>
+                            <input type="text" class="form-control" id="role" name="role" value="{{ $info->role }}" {{ old('role', $info->role) }}>
+                        </div>
+                        @error('role')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label fw-bold my-text-color">Phone</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="{{ $info->phone }}" {{ old('phone', $info->phone) }}>
+                        </div>
+                        @error('phone')
+                        <div class="alert alert-warning">{{ $message }}</div>
+                        @enderror
         
                         <button type="submit" class="btn-neon mt-5 fw-bold">SUBMIT</button>
         
