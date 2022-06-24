@@ -35,7 +35,7 @@ const app = new Vue({
         devs: [],
         role: '',
         linkShow: '/guest/',
-        ciao: [],
+        sqlData: [],
         results: [],
         nreview: '',
         mediarating: ''
@@ -51,14 +51,14 @@ const app = new Vue({
         },
         filter: function() {
             this.devs = [];
-            this.ciao = [];
+            this.sqlData = [];
             this.results = [];
            Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating)
            .then((response) => {
 
-            this.ciao = Object.keys(response.data.response);
+            this.sqlData = Object.keys(response.data.response);
 
-            this.results = this.ciao.map(function(x){
+            this.results = this.sqlData.map(function(x){
                 return parseInt(x, 10);
             })
 
@@ -104,8 +104,6 @@ const app = new Vue({
 const item = document.getElementById('carousel-js');
 
 item.firstChild.classList.add('active');
-
-
 
 //fine carosello
 
