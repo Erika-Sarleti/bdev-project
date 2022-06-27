@@ -70,6 +70,7 @@
                         <div class="carousel-inner" id="carousel-js">
                             @foreach($devs as $profile)
                             
+                
                                 <div class="carousel-item">
                                     <a href="{{route('guest.show', [$profile->id])}}" class="my-card">
                                             <img src="{{ $profile->userinfo->image}}" class="d-block " style="width: 400px; height:200px;" alt="{{ $profile->name }}">
@@ -91,9 +92,7 @@
                     @endif
 
                     <script type="text/javascript">
-                        const item = document.getElementById('carousel-js');
-
-                        item.firstChild.classList.add('active');
+                        
                     </script>
                     {{-- FINE CAROSELLO --}}
             <div class="container-buttons">
