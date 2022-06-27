@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\UserInfo;
 use App\User;
 use App\Review;
+use App\Sponsor;
+use Carbon\Carbon;
 
 
 use Illuminate\Http\Request;
@@ -18,18 +20,47 @@ class GuestController extends Controller
      */
     public function guestindex()
     {
-        $devs=User::all();
-        return view('guest.home', compact('devs'));
-    }
-    public function index(User $devs, UserInfo $userinfo)
-    {
-        $userinfo = UserInfo::all();
+        $dev_sponsor = User::with([
+            'sponsors' => function ($query) {
+                $query->where('end_time', '>', Carbon::now());
+            },
+            'userInfo',
+        ])->paginate(10);
+        
 
-        $devs = User::paginate(10);
-        return view('guest.index', [
-            'devs' => $devs,
-            'userinfo' => $userinfo,
+        foreach($dev_sponsor as $key => $sponsored){
+            if(count($sponsored->sponsors) == 0){
+                unset($dev_sponsor[$key]);
+            };   
+            };
+    
+            
+        return view('guest.home', [
+            'devs' => $dev_sponsor,
         ]);
+    }
+    public function index()
+    {
+        
+        $dev_sponsor = User::with([
+            'sponsors' => function ($query) {
+                $query->where('end_time', '>', Carbon::now());
+            },
+            'userInfo',
+        ])->paginate(10);
+        
+
+        foreach($dev_sponsor as $key => $sponsored){
+            if(count($sponsored->sponsors) == 0){
+                unset($dev_sponsor[$key]);
+            };   
+            };
+    
+            
+        return view('guest.index', [
+            'devs' => $dev_sponsor,
+        ]);
+        
     }
     
 
@@ -74,12 +105,14 @@ class GuestController extends Controller
     {
         $dev = User::where('id', $id)->first();
         $reviews = Review::where('user_id', $id)->first();
+        $sponsors = Sponsor::all();
         
         $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev' => $dev,
             'userinfo' => $userinfo,
             'reviews' => $reviews,
+            'sponsors' => $sponsors,
         ]);
     }
 

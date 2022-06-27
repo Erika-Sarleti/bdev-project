@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
+
+    private function validation() {
+        return [
+            'review' => 'required|max:255|min:5',
+            'rating' => 'required|max:5|min:1',
+        ];
+    }
+
+
     /**
      * Display a listing of the resource.
      *

@@ -40207,10 +40207,25 @@ var app = new Vue({
       });
     }
   }
-}); // carosello
+}); // funzione pagamento formula
 
-var item = document.getElementById('carousel-js');
-item.firstChild.classList.add('active'); //fine carosello
+var amountShow = document.getElementById('js-amount');
+var amount = document.getElementById('amount');
+var promo24 = document.getElementById('js-button-24');
+var promo72 = document.getElementById('js-button-72');
+var promo144 = document.getElementById('js-button-144');
+promo24.addEventListener('click', function () {
+  amount.setAttribute('value', '2.99');
+  amountShow.innerHTML = '2.99€';
+});
+promo72.addEventListener('click', function () {
+  amount.setAttribute('value', '5.99');
+  amountShow.innerHTML = '5.99€';
+});
+promo144.addEventListener('click', function () {
+  amount.setAttribute('value', '9.99');
+  amountShow.innerHTML = '9.99€';
+});
 
 /***/ }),
 
@@ -40345,8 +40360,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\camil\OneDrive\Desktop\BOOLEAN\bdev-project\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\camil\OneDrive\Desktop\BOOLEAN\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

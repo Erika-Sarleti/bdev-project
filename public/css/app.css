@@ -12231,8 +12231,16 @@ li {
 }
 
 .my-text-color {
-  color: #ffffff;
-  text-shadow: var(--my-pink) 0px 0px 5px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 15px, var(--my-pink) 0px 0px 20px, var(--my-pink) 0px 0px 30px, var(--my-pink) 0px 0px 40px, var(--my-pink) 0px 0px 50px, var(--my-pink) 0px 0px 75px, 2px 2px 2px var(--my-pink);
+  color: var(--my-white);
+  text-shadow: var(--my-black) 0px 0px 5px, var(--my-black) 0px 0px 10px, var(--my-white) 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+
+.my-text-color2 {
+  color: var(--my-white);
+}
+
+.my-text-color-pink {
+  color: var(--my-pink);
 }
 
 .my-text-link {
@@ -12339,8 +12347,8 @@ header {
 
 .down {
   height: 100px;
-  -webkit-animation: down 10s ease-out 1;
-          animation: down 10s ease-out 1;
+  -webkit-animation: down 6s ease-out 1;
+          animation: down 6s ease-out 1;
   transform: rotate(-180deg) scale(1.2);
   margin-left: -1em;
   margin-top: -2.5em;
@@ -12349,14 +12357,14 @@ header {
 }
 
 .byline span {
-  -webkit-animation: spin-letters 10s linear 1;
-          animation: spin-letters 10s linear 1;
+  -webkit-animation: spin-letters 6s linear 1;
+          animation: spin-letters 6s linear 1;
 }
 
 .byline {
   font-size: 1.5em;
-  -webkit-animation: move-byline 10s linear 1;
-          animation: move-byline 10s linear 1;
+  -webkit-animation: move-byline 6s linear 1;
+          animation: move-byline 6s linear 1;
 }
 
 /* Keyframes */
@@ -12574,8 +12582,8 @@ img {
           animation-duration: 1s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 10s;
-          animation-delay: 10s;
+  -webkit-animation-delay: 6s;
+          animation-delay: 6s;
 }
 
 @-webkit-keyframes delay-display {

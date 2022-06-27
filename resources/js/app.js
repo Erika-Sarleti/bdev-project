@@ -113,15 +113,29 @@ const app = new Vue({
 });
 
 
-// carosello
 
-const item = document.getElementById('carousel-js');
+// funzione pagamento formula
 
-item.firstChild.classList.add('active');
+let amountShow = document.getElementById('js-amount');
+let amount = document.getElementById('amount');
+let promo24 = document.getElementById('js-button-24');
+let promo72 = document.getElementById('js-button-72');
+let promo144 = document.getElementById('js-button-144');
 
-//fine carosello
+promo24.addEventListener('click', function(){
+    amount.setAttribute('value', '2.99')
+    amountShow.innerHTML = '2.99€';
+})
 
+promo72.addEventListener('click', function(){
+    amount.setAttribute('value', '5.99')
+    amountShow.innerHTML = '5.99€';
+})
 
+promo144.addEventListener('click', function(){
+    amount.setAttribute('value', '9.99')
+    amountShow.innerHTML = '9.99€';
+})
 
 
 

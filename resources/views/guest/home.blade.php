@@ -65,17 +65,19 @@
                 </h3>
             </div>
                     {{-- CAROSELLO --}}
+                    @if(count($devs) > 0)
                     <div id="carouselExampleSlidesOnly" class="carousel slide section-carousel" data-bs-ride="carousel" data-bs-interval="2000">
                         <div class="carousel-inner" id="carousel-js">
                             @foreach($devs as $profile)
+                            
                                 <div class="carousel-item">
                                     <a href="{{route('guest.show', [$profile->id])}}" class="my-card">
                                             <img src="{{ $profile->userinfo->image}}" class="d-block " style="width: 400px; height:200px;" alt="{{ $profile->name }}">
                                             <p class="my-text-color">{{ $profile->name }}</p>
                                             <p class="text-white">{{$profile->userinfo->description}}</p>
-                                    </a>
-                                </div>
-                                @endforeach
+                                        </a>
+                                    </div>
+                                    @endforeach
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlidesOnly" data-bs-slide="prev" id="js-prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="visually-hidden">Previous</span>
@@ -85,7 +87,15 @@
                                     <span class="visually-hidden">Next</span>
                                 </button>
                         </div>
-                      </div>
+                    </div>
+                    @endif
+
+                    <script type="text/javascript">
+                        const item = document.getElementById('carousel-js');
+
+                        item.firstChild.classList.add('active');
+                    </script>
+                    {{-- FINE CAROSELLO --}}
             <div class="container-buttons">
                 <a href="#section-how" class="btn-neon">
                     s

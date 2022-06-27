@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
       use App\User;
       use App\UserInfo;
       use App\Message;
+      use App\Skill;
+      use App\Review;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
@@ -24,9 +26,18 @@ namespace App\Http\Controllers\Admin;
     }
 
 
-    public function indexChat()
+    public function message()
     {
-        
+        $messages = Message::where('user_id', Auth::user()->id)->get();
+    
+        return view('admin.messages.index', compact('messages'));
+    }
+
+    public function review()
+    {
+        $reviews = Review::where('user_id', Auth::user()->id)->get();
+    
+        return view('admin.reviews.index', compact('reviews'));
     }
     /**
      * Show the form for creating a new resource.
@@ -69,7 +80,8 @@ namespace App\Http\Controllers\Admin;
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
 
-        $messages = Message::all();
+        $dev = $dev->with('skills')->first();       
+        $message = Message::all();
 
         $userinfo = UserInfo::all();
         return view('admin.devs.show', [
@@ -89,6 +101,7 @@ namespace App\Http\Controllers\Admin;
 
     public function edit(User $dev)
     {
+        $skills = Skill::all();
 
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
 
@@ -106,7 +119,8 @@ namespace App\Http\Controllers\Admin;
 
         return view('admin.devs.edit', [
             'dev' => $dev,
-            'userinfo' => $userinfo
+            'userinfo' => $userinfo,
+            'skills' => $skills,
         ]);
 
     }
@@ -124,6 +138,8 @@ namespace App\Http\Controllers\Admin;
                 //  $request->validate($this->getValidators($dev));
 
                 $formData = $request->all();
+
+                $dev->skills()->sync($formData['skills']);
 
                 $dev->update($formData);
 

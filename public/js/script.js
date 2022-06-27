@@ -123,12 +123,16 @@ for (i = 0; i < bylineArr.length; i++) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\script.js */"./resources/js/script.js");
 =======
 module.exports = __webpack_require__(/*! C:\Users\camil\OneDrive\Desktop\BOOLEAN\bdev-project\resources\js\script.js */"./resources/js/script.js");
 >>>>>>> origin/camilla
 =======
 module.exports = __webpack_require__(/*! C:\Users\camil\OneDrive\Desktop\BOOLEAN\bdev-project\resources\js\script.js */"./resources/js/script.js");
+>>>>>>> origin/uva
+=======
+module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\script.js */"./resources/js/script.js");
 >>>>>>> origin/uva
 
 

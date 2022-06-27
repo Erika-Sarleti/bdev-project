@@ -6,8 +6,6 @@
 
         
          <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
-  
-        {{-- DASHBOARD --}}
 
 
         <div class="card-body">

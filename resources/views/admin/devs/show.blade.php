@@ -1,39 +1,33 @@
-@extends('layouts.base')
+@extends('layouts.admin')
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
-    @include('partials.aside')
+    @include('partials.sidebar');
     
     <section class="section-main">
-    
-        <h2 class="my-text-color my-4">  {{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
         
         <div class="container mb-5">
             <div class="row">
                 <div class="col">
 
-                    <div class="container text-light">
-                        <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <h2>General Info</h2>
-                        <p>{{$dev->name}} {{$dev->surname}}</p>
-                        <h5>Descrizione</h5>
-                        <p class="card-text">{{$dev->userinfo->description}}</p>
-                        <h5>Luogo</h5>
-                        <p class="card-text">{{$dev->userinfo->locality}}</p>
-                        <h5>Ruolo</h5>
-                        <p class="card-text">{{$dev->userinfo->role}}</p>
-                        
-                            <a href="{{$dev->userinfo->github}}" class='btn-neon'>GitHub</h5>
-                        
-
-                        
-                            <a href="{{$dev->userinfo->cv}}" class='btn-neon'>CV</a> 
-                        
-                    </div>
-                </div>
+                  <div class="card" style="width: 18rem;">
+                    <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Nome: {{$dev->name}}</h5>
+                      <h5 class="card-title">Cognome: {{$dev->surname}}</h5>
+                      <p class="card-text">Descrizione: {{$dev->userinfo->description}}</p>
+                      <p class="card-text">Email: {{$dev->email}}</p>
+                      <p class="card-text">Cv: {{$dev->userinfo->cv}}</p>
+                      <p class="card-text">Immagine: {{$dev->userinfo->image}}</p>
+                      <p class="card-text">Località: {{$dev->userinfo->locality}}</p>
+                      <p class="card-text">Github: {{$dev->userinfo->github}}</p>
+                      <p class="card-text">Ruolo: {{$dev->userinfo->role}}</p>
+                      <p class="card-text">Telefono: {{$dev->userinfo->phone}}</p>
+                      @foreach ($dev->skills as $skill)
+                        <p class="card-text">Conoscenze: {{$skill->name}}</p>
+                      @endforeach
 
                 <a class="btn-neon mt-5" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
 
