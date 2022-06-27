@@ -56,7 +56,10 @@
         <textarea name="message" class="form-control" id="message" rows="3"></textarea>
         <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> origin/camilla
       </div>
       <button type="submit" class="btn btn-primary">Invia</button>
     </form>

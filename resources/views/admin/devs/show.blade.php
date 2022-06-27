@@ -4,39 +4,9 @@
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
-    <aside class="section-aside">
-        <ul>
-            <li>
-                <a href="#" class="btn-neon">
-                    il mio profilo
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    chat
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    reviews
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    statics
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    ciccioPlus
-                </a>
-            </li>
-        </ul>
-    </aside>
+    @include('partials.sidebar');
     
     <section class="section-main">
-    
-        <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
         
         <div class="container mb-5">
             <div class="row">
@@ -46,7 +16,18 @@
                     <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{$dev->name}}</h5>
-                      <p class="card-text">{{$dev->description}}</p>
+                      <h5 class="card-title">{{$dev->surname}}</h5>
+                      <p class="card-text">{{$dev->userinfo->description}}</p>
+                      <p class="card-text">{{$dev->email}}</p>
+                      <p class="card-text">{{$dev->userinfo->cv}}</p>
+                      <p class="card-text">{{$dev->userinfo->image}}</p>
+                      <p class="card-text">{{$dev->userinfo->locality}}</p>
+                      <p class="card-text">{{$dev->userinfo->github}}</p>
+                      <p class="card-text">{{$dev->userinfo->role}}</p>
+                      <p class="card-text">{{$dev->userinfo->phone}}</p>
+                      @foreach ($dev->skills as $skill)
+                        <p class="card-text">{{$skill->name}}</p>
+                      @endforeach
                       {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
                       {{-- <a href="{{route('admin.devs.edit', $dev->id)}}" class="btn btn-primary">Invia un messaggio</a> --}}
                       <div class="card">

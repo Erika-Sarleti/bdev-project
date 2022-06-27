@@ -6,7 +6,7 @@
     <aside class="section-aside">
         <ul>
             <li>
-                <a href="#" class="btn-neon">
+                <a href="{{ route('admin.devs.show', $dev->id ) }}" class="btn-neon">
                     il mio profilo
                 </a>
             </li>
