@@ -12771,3 +12771,7 @@ img {
   background: var(--background-blue);
 }
 
+.my-container-show {
+  padding-top: 5.5rem;
+}
+
