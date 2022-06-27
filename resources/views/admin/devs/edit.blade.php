@@ -131,8 +131,18 @@
                         @error('phone')
                         <div class="alert alert-warning">{{ $message }}</div>
                         @enderror
+
+
+                        <div class="mb-3 d-flex flex-column">
+                            <label for="skill" class="form-label fw-bold my-text-color">Skills</label>
+                        @foreach ($skills as $skill)
+                        <input class="form-check-input" type="checkbox" name="skills[]" id="skill-{{ $skill->id }}" value="{{ $skill->id }}">
+                        <label class="form-check-label me-4" style="color: white" for="skill-{{ $skill->id }}">{{ $skill->name }}</label>
+                        @endforeach
+                        </div>
+
         
-                        <button type="submit" class="btn-neon mt-5 fw-bold">SUBMIT</button>
+                    <button type="submit" class="btn-neon mt-5 fw-bold">SUBMIT</button>
         
                     </form>
                 </section>

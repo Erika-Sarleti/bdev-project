@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
       use App\User;
       use App\UserInfo;
       use App\Message;
+      use App\Skill;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
@@ -69,6 +70,7 @@ namespace App\Http\Controllers\Admin;
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
 
+        $dev = $dev->with('skills')->first();       
         $message = Message::all();
 
         $userinfo = UserInfo::all();
@@ -89,6 +91,7 @@ namespace App\Http\Controllers\Admin;
 
     public function edit(User $dev)
     {
+        $skills = Skill::all();
 
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
 
@@ -106,7 +109,8 @@ namespace App\Http\Controllers\Admin;
 
         return view('admin.devs.edit', [
             'dev' => $dev,
-            'userinfo' => $userinfo
+            'userinfo' => $userinfo,
+            'skills' => $skills,
         ]);
 
     }
@@ -124,6 +128,8 @@ namespace App\Http\Controllers\Admin;
                 //  $request->validate($this->getValidators($dev));
 
                 $formData = $request->all();
+
+                $dev->skills()->sync($formData['skills']);
 
                 $dev->update($formData);
 

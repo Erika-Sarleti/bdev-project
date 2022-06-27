@@ -11,7 +11,7 @@
           <div class="collapse navbar-collapse no-growth" id="navbarNav">
             <ul class="navbar-nav">
               @auth
-                <a class="navbar-brand my-text-color" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
+                <a class="navbar-brand my-text-color" href="{{route('admin.devs.show',  Auth::user()->id )}}">DASHBOARD</a>
             
                 <li class="nav-item dropdown my-text-color">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle my-text-color" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
