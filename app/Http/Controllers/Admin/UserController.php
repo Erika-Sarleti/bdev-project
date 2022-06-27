@@ -89,6 +89,9 @@ namespace App\Http\Controllers\Admin;
 
     public function edit(User $dev)
     {
+
+        $userinfo = UserInfo::where('user_id', Auth::user()->id);
+
         if (Auth::user()->id !== $dev->id) abort(403);
         // private function getValidator(User $dev) {
 
@@ -100,7 +103,11 @@ namespace App\Http\Controllers\Admin;
         // //     'tags'          => $tags
         // // ]);
         //     }
-        return view('admin.devs.edit', compact('dev'));
+
+        return view('admin.devs.edit', [
+            'dev' => $dev,
+            'userinfo' => $userinfo
+        ]);
 
     }
 
@@ -132,5 +139,10 @@ namespace App\Http\Controllers\Admin;
     public function destroy($id)
     {
         //
+    }
+
+ //DASHBOARD:
+    public function myindex(User $dev) {
+        return view('admin.home', compact('dev'));
     }
 }
