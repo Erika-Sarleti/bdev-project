@@ -27,7 +27,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"  class="btn-neon">
+                <a href="{{route('admin.devs.payments.index', ['id'=> Auth::user()->id])}}"  class="btn-neon">
                     ciccioPlus
                 </a>
             </li>
@@ -66,11 +66,12 @@
 
 
             </div>
-                  </div>
-                </div>
-            </div>
         </div>
               </section>
+
+              
+
+
             </main>
             @endsection
 

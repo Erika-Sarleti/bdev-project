@@ -16,7 +16,7 @@ Route::get('/api-dev', 'Api\ApiController@index');
 
 Auth::routes();
 
-Route::get('/', function () {
+Route::get('/', function(){
     return view('welcome');
 });
 
@@ -25,16 +25,15 @@ Route::post('/message', 'MessageController@store')->name('message.store');
 
 
 Route::middleware('auth')
-    ->namespace('Admin')
-    ->name('admin.')
-    ->prefix('admin')
-    ->group(function(){
-        // Route::get('/devs', 'UserController@edit')->name('edit');
-        Route::resource('/devs', 'UserController');
-        // Route::get('/dashboard/{id}', 'UserController@myindex')->name('home');
-
+->namespace('Admin')
+->name('admin.')
+->prefix('admin')
+->group(function(){
+    Route::resource('/devs', 'UserController');
+    Route::resource('/payments', 'SponsorController');
+    Route::get('/devs/{id}/payments', 'SponsorController@index');
+    Route::post('/checkout','SponsorController@checkout');
     });
-
     Route::group(['middleware' => ['guest']], function () {
         Route::get('/home', 'Guest\GuestController@guestindex'
         )->name('guest.home');
