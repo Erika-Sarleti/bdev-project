@@ -1,42 +1,12 @@
-@extends('layouts.base')
+@extends('layouts.admin')
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
-    <aside class="section-aside">
-        <ul>
-            <li>
-                <a href="#" class="btn-neon">
-                    il mio profilo
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    chat
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    reviews
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    statics
-                </a>
-            </li>
-            <li>
-                <a href="{{route('admin.devs.payments.index', ['id'=> Auth::user()->id])}}"  class="btn-neon">
-                    ciccioPlus
-                </a>
-            </li>
-        </ul>
-    </aside>
+    @include('partials.sidebar');
     
     <section class="section-main">
-    
-        <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
         
         <div class="container mb-5">
             <div class="row">
@@ -45,24 +15,20 @@
                   <div class="card" style="width: 18rem;">
                     <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{$dev->name}}</h5>
-                      <p class="card-text">{{$dev->description}}</p>
-                      {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
-                      {{-- <a href="{{route('admin.devs.edit', $dev->id)}}" class="btn btn-primary">Invia un messaggio</a> --}}
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Messaggi</h5>
-                          <p class="card-text">
-                            @foreach ($dev->messages as $message)
-                              <p>{{$message->message}}</p>
-                            @endforeach
-                          </p>
-                          
-                    </div>
-                </div>
+                      <h5 class="card-title">Nome: {{$dev->name}}</h5>
+                      <h5 class="card-title">Cognome: {{$dev->surname}}</h5>
+                      <p class="card-text">Descrizione: {{$dev->userinfo->description}}</p>
+                      <p class="card-text">Email: {{$dev->email}}</p>
+                      <p class="card-text">Cv: {{$dev->userinfo->cv}}</p>
+                      <p class="card-text">Immagine: {{$dev->userinfo->image}}</p>
+                      <p class="card-text">Località: {{$dev->userinfo->locality}}</p>
+                      <p class="card-text">Github: {{$dev->userinfo->github}}</p>
+                      <p class="card-text">Ruolo: {{$dev->userinfo->role}}</p>
+                      <p class="card-text">Telefono: {{$dev->userinfo->phone}}</p>
+                      @foreach ($dev->skills as $skill)
+                        <p class="card-text">Conoscenze: {{$skill->name}}</p>
+                      @endforeach
 
-
-                <a class="navbar-brand my-text-color mt-5" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
 
 
             </div>
