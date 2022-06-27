@@ -4,35 +4,7 @@
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
 <main class="d-flex container-bg mtplus">
 
-    <aside class="section-aside">
-        <ul>
-            <li>
-                <a href="#" class="btn-neon">
-                    Il mio profilo
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    Chat
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    Reviews
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    Statics
-                </a>
-            </li>
-            <li>
-                <a href="#"  class="btn-neon">
-                    CiccioPlus
-                </a>
-            </li>
-        </ul>
-    </aside>
+    @include('partials.sidebar');
     
     <section class="section-main">
     

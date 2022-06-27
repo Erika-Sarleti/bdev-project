@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
       use App\UserInfo;
       use App\Message;
       use App\Skill;
+      use App\Review;
       use Illuminate\Http\Request;
       use Illuminate\Support\Facades\Auth;
       class UserController extends Controller
@@ -25,9 +26,18 @@ namespace App\Http\Controllers\Admin;
     }
 
 
-    public function indexChat()
+    public function message()
     {
-        
+        $messages = Message::where('user_id', Auth::user()->id)->get();
+    
+        return view('admin.messages.index', compact('messages'));
+    }
+
+    public function review()
+    {
+        $reviews = Review::where('user_id', Auth::user()->id)->get();
+    
+        return view('admin.reviews.index', compact('reviews'));
     }
     /**
      * Show the form for creating a new resource.

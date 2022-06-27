@@ -20,7 +20,10 @@
             <option value="5">5</option>
         </select>
         <label for="message">Messaggio*</label>
-        <textarea  name="message" class="form-control mt-3" id="message" rows="3"></textarea>
+        <textarea  name="message" class="form-control mt-3 @error('message') is-invalid @enderror" required id="message" rows="3"></textarea>
+        @error('message')
+            <div class="alert alert-warning">{{ $message }}</div>
+        @enderror
         <input name="user_id" value="{{$id_dev}}" class='d-none' id="user_id">
   
         

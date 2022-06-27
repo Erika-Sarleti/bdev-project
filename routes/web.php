@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/message', 'MessageController');
+
 Route::post('/message', 'MessageController@store')->name('message.store');
 
 
@@ -31,9 +31,15 @@ Route::middleware('auth')
     ->group(function(){
         // Route::get('/devs', 'UserController@edit')->name('edit');
         Route::resource('/devs', 'UserController');
+        Route::get('/message', 'UserController@message');
+        Route::get('/review', 'UserController@review');
         // Route::get('/dashboard/{id}', 'UserController@myindex')->name('home');
 
     });
+
+    Route::resource('/message', 'MessageController');
+
+
 
     Route::group(['middleware' => ['guest']], function () {
         Route::get('/home', 'Guest\GuestController@guestindex'

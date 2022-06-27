@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layouts.admin')
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
@@ -15,35 +15,20 @@
                   <div class="card" style="width: 18rem;">
                     <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">{{$dev->name}}</h5>
-                      <h5 class="card-title">{{$dev->surname}}</h5>
-                      <p class="card-text">{{$dev->userinfo->description}}</p>
-                      <p class="card-text">{{$dev->email}}</p>
-                      <p class="card-text">{{$dev->userinfo->cv}}</p>
-                      <p class="card-text">{{$dev->userinfo->image}}</p>
-                      <p class="card-text">{{$dev->userinfo->locality}}</p>
-                      <p class="card-text">{{$dev->userinfo->github}}</p>
-                      <p class="card-text">{{$dev->userinfo->role}}</p>
-                      <p class="card-text">{{$dev->userinfo->phone}}</p>
+                      <h5 class="card-title">Nome: {{$dev->name}}</h5>
+                      <h5 class="card-title">Cognome: {{$dev->surname}}</h5>
+                      <p class="card-text">Descrizione: {{$dev->userinfo->description}}</p>
+                      <p class="card-text">Email: {{$dev->email}}</p>
+                      <p class="card-text">Cv: {{$dev->userinfo->cv}}</p>
+                      <p class="card-text">Immagine: {{$dev->userinfo->image}}</p>
+                      <p class="card-text">Località: {{$dev->userinfo->locality}}</p>
+                      <p class="card-text">Github: {{$dev->userinfo->github}}</p>
+                      <p class="card-text">Ruolo: {{$dev->userinfo->role}}</p>
+                      <p class="card-text">Telefono: {{$dev->userinfo->phone}}</p>
                       @foreach ($dev->skills as $skill)
-                        <p class="card-text">{{$skill->name}}</p>
+                        <p class="card-text">Conoscenze: {{$skill->name}}</p>
                       @endforeach
-                      {{-- TODO: il link deve reindirizzare al form per inviare il messaggio, CREDO serva un  --}}
-                      {{-- <a href="{{route('admin.devs.edit', $dev->id)}}" class="btn btn-primary">Invia un messaggio</a> --}}
-                      <div class="card">
-                        <div class="card-body">
-                          <h5 class="card-title">Messaggi</h5>
-                          <p class="card-text">
-                            @foreach ($dev->messages as $message)
-                              <p>{{$message->message}}</p>
-                            @endforeach
-                          </p>
-                          
-                    </div>
-                </div>
 
-
-                <a class="navbar-brand my-text-color mt-5" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
 
 
             </div>
