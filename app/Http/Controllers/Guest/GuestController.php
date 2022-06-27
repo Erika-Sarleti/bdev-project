@@ -25,23 +25,25 @@ class GuestController extends Controller
                 $query->where('end_time', '>', Carbon::now());
             },
             'userInfo',
-        ])->paginate(10);
+        ])->get();
         
-
         foreach($dev_sponsor as $key => $sponsored){
+            
             if(count($sponsored->sponsors) == 0){
                 unset($dev_sponsor[$key]);
             };   
-            };
-    
+        };
+        
+        
             
         return view('guest.home', [
             'devs' => $dev_sponsor,
         ]);
     }
+
     public function index()
     {
-        
+
         $dev_sponsor = User::with([
             'sponsors' => function ($query) {
                 $query->where('end_time', '>', Carbon::now());
@@ -59,6 +61,7 @@ class GuestController extends Controller
             
         return view('guest.index', [
             'devs' => $dev_sponsor,
+
         ]);
         
     }

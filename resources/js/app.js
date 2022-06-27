@@ -114,6 +114,13 @@ const app = new Vue({
 
 
 
+if (document.getElementById('carousel-js')) {
+    const item = document.getElementById('carousel-js');
+    
+    item.firstChild.classList.add('active');
+    
+}
+
 // funzione pagamento formula
 
 let amountShow = document.getElementById('js-amount');

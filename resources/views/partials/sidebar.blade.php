@@ -26,7 +26,7 @@
             </a>
         </li>
         <li>
-            <a href="#"  class="btn-neon">
+            <a href="{{url('/admin/devs/'.Auth::user()->id .'/payments') }}"   class="btn-neon">
                 ciccioPlus
             </a>
         </li>

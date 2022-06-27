@@ -40207,7 +40207,13 @@ var app = new Vue({
       });
     }
   }
-}); // funzione pagamento formula
+});
+
+if (document.getElementById('carousel-js')) {
+  var item = document.getElementById('carousel-js');
+  item.firstChild.classList.add('active');
+} // funzione pagamento formula
+
 
 var amountShow = document.getElementById('js-amount');
 var amount = document.getElementById('amount');
