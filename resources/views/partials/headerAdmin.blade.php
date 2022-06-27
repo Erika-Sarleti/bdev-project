@@ -11,7 +11,7 @@
           <div class="collapse navbar-collapse no-growth" id="navbarNav">
             <ul class="navbar-nav">
               @auth
-                <a class="navbar-brand my-text-color" href="{{route('admin.devs.show',  Auth::user()->id )}}">DASHBOARD</a>
+                
             
                 <li class="nav-item dropdown text-white">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
