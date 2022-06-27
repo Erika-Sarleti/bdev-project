@@ -2,16 +2,28 @@
 @extends('layouts.base')
 @section('pageTitle', 'ShowPage')
 @section('pageMain')
+<form action="{{ route('register') }}" method="POST" class="mt-3"  id="form-message">
+        @csrf
     <div class="sign-in">
-        <section class="register d-flex justify-content-center align-items-center">
+        <section class="register d-flex flex-column justify-content-center align-items-center">
             <div class="row pt-5">
-                <div class="col-6 mt-5">
-                    <h1> dopo </h1>
-                </div>
+                <h1 class="my-text-color mb-3">
+                    Scegli la tua specializzazione
+                </h1>
             </div>
+            <div class=" pt-5">
+                <select name="role" id="role">
+                <option value="Front-End Developer">Front-End Developer</option>
+                <option value="Back-End Developer">Back-End Developer</option>
+                <option value="Data Analyst">Data Analyst</option>
+
+
+            </select>
+            </div>
+            <a href="#name-register" class="btn btn-neon mt-3">Invia</a>
         </section>
 
-        <section class="name-data d-flex justify-content-center">
+        <section id='name-register' style="height: 100vh" class="name-data d-flex justify-content-center">
             {{-- FIXME: sistemare align-items-center --}}
             <div class="row pt-5 d-flex justify-content-center align-items-center input-box ">
                 <div class="d-flex flex-column text-center">
@@ -25,31 +37,29 @@
                     {{-- FIXME: sistemare padding nome e cognome  --}}
                     <div class="row">
                         <div class="col">
-                            <form action="{{ route('message.store') }}" method="POST" class="mt-3 "
-                                style="height: 100vh" id="form-message">
-                                @csrf
-                                <div class="row my-input-group my-3">
-                                    <div class="d-flex input-group mb-3 align-items-center ">
-                                        <span class="my-text-color" id="basic-addon1">Nome*:</span>
-                                        <input type="text" class="form-control  flex-grow-1" placeholder="Username"
-                                            aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
-                                    <div class="d-flex input-group align-items-center my-3">
-                                        <span class="my-text-color" id="basic-addon1">Cognome*:</span>
-                                        <input type="text" class="form-control  flex-grow-1" placeholder="Username"
-                                            aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
+                            
+                                
+                            <div class="row my-input-group my-3">
+                                <div class="d-flex input-group mb-3 align-items-center ">
+                                    <span class="my-text-color" id="basic-addon1">Nome*:</span>
+                                    <input type="text" class="form-control  flex-grow-1" placeholder="Username"
+                                        aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
-                                <button type="submit" class="btn btn-neon mt-3">Invia</button>
-                                <h5 class="my-text-color pt-4">I campi contrassegnati da (*) sono obbligatori</h5>
-                            </form>
+                                <div class="d-flex input-group align-items-center my-3">
+                                    <span class="my-text-color" id="basic-addon1">Cognome*:</span>
+                                    <input type="text" class="form-control  flex-grow-1" placeholder="Username"
+                                        aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <a href="#campi-register" class="btn btn-neon mt-3">Invia</a>
+                            <h5 class="my-text-color pt-4">I campi contrassegnati da (*) sono obbligatori</h5>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="login-data d-flex justify-content-center align-items-center">
+        <section id='campi-register' style="height: 100vh" class="login-data d-flex justify-content-center align-items-center">
              {{-- FIXME: sistemare align-items-center --}}
             <div class="row pt-5 d-flex justify-content-center input-box ">
                 <div class="d-flex flex-column text-center">
@@ -63,9 +73,7 @@
                     {{-- FIXME: sistemare padding nome e cognome  --}}
                     <div class="row">
                         <div class="col">
-                            <form action="{{ route('message.store') }}" method="POST" class="mt-3 "
-                                style="height: 100vh" id="form-message">
-                                @csrf
+                            
                                 <div class="row my-input-group">
                                     <div class="d-flex input-group mb-3 align-items-center my-3">
                                         <span class="my-text-color" id="basic-addon1">Email*:</span>
@@ -74,26 +82,25 @@
                                     </div>
                                     <div class="d-flex input-group mb-3 align-items-center my-3">
                                         <span class="my-text-color" id="basic-addon1">Password*:</span>
-                                        <input type="text" class="form-control  flex-grow-1" placeholder="Username"
+                                        <input type="password" class="form-control  flex-grow-1" placeholder="Username"
                                             aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                     <div class="d-flex input-group mb-3 align-items-center my-3">
                                         <span class="my-text-color" id="basic-addon1">Conferma password*:</span>
-                                        <input type="text" class="form-control  flex-grow-1" placeholder="Username"
+                                        <input type="password" class="form-control  flex-grow-1" placeholder="Username"
                                             aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-neon mt-3">Invia</button>
                                 <h5 class="my-text-color pt-4">I campi contrassegnati da (*) sono obbligatori</h5>
-                            </form>
-
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="confirm-registration d-flex justify-content-center align-items-center">
+</form>
+        <section id='completed' style="height: 100vh" class="confirm-registration d-flex justify-content-center align-items-center">
             <div class="row pt-5">
                 <div class="col-6 mt-5">
                     <span>&check;</span>
