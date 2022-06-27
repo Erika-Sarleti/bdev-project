@@ -40162,6 +40162,7 @@ var app = new Vue({
       this.sqlData = [];
       this.results = [];
       Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating).then(function (response) {
+        console.log(response);
         _this2.sqlData = Object.keys(response.data.response);
         _this2.results = _this2.sqlData.map(function (x) {
           return parseInt(x, 10);

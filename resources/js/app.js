@@ -62,7 +62,7 @@ const app = new Vue({
             this.results = [];
            Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating)
            .then((response) => {
-
+            console.log(response);
             this.sqlData = Object.keys(response.data.response);
             
             this.results = this.sqlData.map(function(x){
@@ -80,6 +80,7 @@ const app = new Vue({
                 });
             } else {
                 this.devs = response.data.response.data; 
+                
             }
         })
         }

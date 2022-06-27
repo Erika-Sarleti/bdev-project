@@ -6,6 +6,7 @@ use App\UserInfo;
 use App\User;
 use App\Review;
 
+
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -72,12 +73,13 @@ class GuestController extends Controller
     public function show($id)
     {
         $dev = User::where('id', $id)->first();
-
-
+        $reviews = Review::where('user_id', $id)->first();
+        
         $userinfo = UserInfo::all();
         return view('guest.show', [
             'dev' => $dev,
             'userinfo' => $userinfo,
+            'reviews' => $reviews,
         ]);
     }
 

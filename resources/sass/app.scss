@@ -140,7 +140,6 @@ header{
 }
 
 .section-main{
-    height: 100vh;
     width: 80%;
 }
 
@@ -184,7 +183,7 @@ header{
         0 0 92px rgb(0, 255, 234),
         0 0 102px rgb(0, 255, 234),
         0 0 151px rgb(0, 255, 234);
-    
+
 }
 .byline span {
     animation: spin-letters 10s linear 1;
@@ -213,7 +212,7 @@ header{
             transform: translateZ(-1000em) rotate(-180deg) scale(1.2);
         }
     }
-    
+
     @keyframes spin-letters {
         0%, 10% {
             opacity: 0;
@@ -230,7 +229,7 @@ header{
             opacity: 0;
         }
     }
-    
+
     @keyframes move-byline {
         0% {
             transform: translateZ(5em);
@@ -239,11 +238,11 @@ header{
             transform: translateZ(0);
         }
     }
-    
+
     @keyframes flicker {
-    
+
         0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        
+
             text-shadow:
             0 0 4px #fff,
             0 0 11px #fff,
@@ -254,20 +253,20 @@ header{
             0 0 100px rgb(0, 255, 234),
             0 0 150px rgb(0, 255, 234);
         }
-        
-        20%, 24%, 55% {        
+
+        20%, 24%, 55% {
             text-shadow: none;
-        }    
+        }
       }
 
     .demo {
         perspective: 800px;
         transform-style: preserve3d;
     }
-    
+
     /* Generale */
-    
-    
+
+
     .demo {
         height: 17em;
         left: 50%;
@@ -276,27 +275,27 @@ header{
         transform: translate(-50%, -50%);
         width: 34em;
     }
-    
+
     .byline span {
         display: inline-block;
     }
-    
+
     img {
         width: 100%;
     }
-    
+
     .star, .wars, .byline {
         position: absolute;
     }
-    
+
     .up {
         top: -0.75em;
     }
-    
+
     .down{
         bottom: -0.5em;
     }
-    
+
     .byline {
         color: #fff;
         font-family: 'Ubuntu', sans-serif;;
@@ -308,21 +307,21 @@ header{
         text-transform: uppercase;
         top: 29%;
     }
-    
+
     /*** Media queries  ***/
-    
+
     @media only screen and (max-width: 600px) {
         .demo {
             font-size: 10px;
         }
     }
-    
+
     @media only screen and (max-width: 480px) {
         .demo {
             font-size: 7px;
         }
     }
-  
+
     .container-home{
         background-color: rgb(0, 0, 0);
         height: 100vh;
@@ -343,7 +342,7 @@ header{
             0 0 102px rgb(0, 255, 234),
             0 0 151px rgb(0, 255, 234);
         }
-        
+
     }
 
     .delay-display{
@@ -494,3 +493,53 @@ header{
 
 
 
+.sign-in{
+    max-width: 100%;
+    background: var(--background-blue);
+    input{
+        border-radius: 40px;
+        border-top-left-radius:40px !important;
+        border-bottom-left-radius: 40px !important;
+        background-color: var( --input-color);
+    }
+    button{
+        width: 250px;
+    }
+    .register{
+        max-width: 100%;
+        height: 100vh;
+        background: var(--background-blue);
+    }
+    .name-data{
+        max-width: 100%;
+        height: 100vh;
+        background: var(--background-blue);
+        .input-box{
+            width:70%;
+
+            my-input-group{
+                width: 500px;
+                background-color: #001aff;
+            }
+            span{
+                font-size: 1rem;
+                // width: 20%;
+            }
+        }
+    }
+    .login-data{
+        max-width: 100%;
+        height: 100vh;
+        background: var(--background-blue);
+    }
+    .confirm-registration{
+        max-width: 100%;
+        height: 100vh;
+        background: var(--background-blue);
+    }
+}
+
+// SHOW
+.my-container-show{
+    padding-top: 5.5rem;
+}
