@@ -57,8 +57,8 @@
         <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
 
         
+        <button type="submit" class="btn btn-primary">Invia</button>
       </div>
-      <button type="submit" class="btn btn-primary">Invia</button>
     </form>
   </div>
   </section>

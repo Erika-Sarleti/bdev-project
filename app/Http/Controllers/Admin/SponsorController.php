@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
-use App\UserInfo;
+use Carbon\Carbon;
 use App\Sponsor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Braintree;
 use App\Http\Controllers\Controller;
 
@@ -46,6 +47,7 @@ class SponsorController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey'),
         ]);
+
         
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
@@ -57,10 +59,31 @@ class SponsorController extends Controller
             ]
         ]);
 
+        $dev = User::where('id', Auth::user()->id)->first();
+
         if ($result->success) {
             $transaction = $result->transaction;
-            
-            return back()->with('success_message', 'Transaction ID: ' . $transaction->id);
+            if ($request->amount == '2.99') {
+                $sponsor = [
+                    'sponsor_id' => 1,
+                ];
+                $dev->sponsors()->attach($sponsor, ['created_at' => Carbon::now(), 'end_time' => Carbon::now()->add('hour', 24)]);
+                return back()->with('success_message', 'Transaction ID: ' . $transaction->id);
+            }
+            if ($request->amount == '5.99') {
+                $sponsor = [
+                    'sponsor_id' => 2,
+                ];
+                $dev->sponsors()->attach($sponsor, ['created_at' => Carbon::now(), 'end_time' => Carbon::now()->add('hour', 72)]);
+                return back()->with('success_message', 'Transaction ID: ' . $transaction->id);
+            }
+            if ($request->amount == '9.99') {
+                $sponsor = [
+                    'sponsor_id' => 3,
+                ];
+                $dev->sponsors()->attach($sponsor, ['created_at' => Carbon::now(), 'end_time' => Carbon::now()->add('hour', 144)]);
+                return back()->with('success_message', 'Transaction ID: ' . $transaction->id);
+            }
         } else {
             $errorString = "";
             foreach ($result->errors->deepAll() as $error) {

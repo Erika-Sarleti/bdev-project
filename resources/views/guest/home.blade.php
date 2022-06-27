@@ -89,6 +89,12 @@
                         </div>
                     </div>
                     @endif
+
+                    <script type="text/javascript">
+                        const item = document.getElementById('carousel-js');
+
+                        item.firstChild.classList.add('active');
+                    </script>
                     {{-- FINE CAROSELLO --}}
             <div class="container-buttons">
                 <a href="#section-how" class="btn-neon">

@@ -36,7 +36,7 @@
     
     <section class="section-main">
     
-        <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
+        <h2 class="my-text-color2 my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
         
         <div class="container mb-5">
             <div class="row">
@@ -49,7 +49,7 @@
                         {{-- PROFILO PERSONALE --}}
         
                         <div class="mb-3">
-                          <label for="name" class="form-label fw-bold my-text-color">Nome</label>
+                          <label for="name" class="form-label fw-bold text-white">Nome</label>
                           <input type="text" class="form-control" id="name" name="name" value="{{ $dev->name }}" {{ old('name', $dev->name) }}>
                         </div>
                         @error('name')
@@ -57,7 +57,7 @@
                         @enderror
         
                         <div class="mb-3">
-                            <label for="surname" class="form-label fw-bold my-text-color">Surname</label>
+                            <label for="surname" class="form-label fw-bold text-white">Surname</label>
                             <input type="text" class="form-control" id="surname" name="surname" value="{{ $dev->surname }}" {{ old('surname', $dev->surname) }}>
                         </div>
                         @error('surname')
@@ -65,7 +65,7 @@
                         @enderror
         
                         <div class="mb-3">
-                            <label for="email" class="form-label fw-bold my-text-color">Email</label>
+                            <label for="email" class="form-label fw-bold text-white">Email</label>
                             <input type="text" class="form-control" id="email" name="email" value="{{ $dev->email }}" {{ old('email', $dev->email) }}>
                         </div>
                         @error('Email')
@@ -77,7 +77,7 @@
                         @endphp
 
                         <div class="mb-3">
-                            <label for="cv" class="form-label fw-bold my-text-color">Cv</label>
+                            <label for="cv" class="form-label fw-bold text-white">Cv</label>
                             <input type="text" class="form-control" id="cv" name="cv" value="{{ $info->cv }}" {{ old('cv', $info->cv) }}>
                         </div>
                         @error('cv')
@@ -85,7 +85,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="image" class="form-label fw-bold my-text-color">Image</label>
+                            <label for="image" class="form-label fw-bold text-white">Image</label>
                             <input type="file" class="form-control" id="image" name="image" value="{{ $info->image }}" {{ old('image', $info->image) }}>
                         </div>
                         @error('Email')
@@ -93,7 +93,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="locality" class="form-label fw-bold my-text-color">Locality</label>
+                            <label for="locality" class="form-label fw-bold text-white">Locality</label>
                             <input type="text" class="form-control" id="locality" name="locality" value="{{ $info->locality }}" {{ old('locality', $info->locality) }}>
                         </div>
                         @error('locality')
@@ -101,7 +101,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="github" class="form-label fw-bold my-text-color">Github</label>
+                            <label for="github" class="form-label fw-bold text-white">Github</label>
                             <input type="text" class="form-control" id="github" name="github" value="{{ $info->github }}" {{ old('github', $info->github) }}>
                         </div>
                         @error('github')
@@ -109,7 +109,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="description" class="form-label fw-bold my-text-color">Description</label>
+                            <label for="description" class="form-label fw-bold text-white">Description</label>
                             <input type="text" class="form-control" id="description" name="description" value="{{ $info->description }}" {{ old('description', $info->description) }}>
                         </div>
                         @error('description')
@@ -117,7 +117,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="role" class="form-label fw-bold my-text-color">Role</label>
+                            <label for="role" class="form-label fw-bold text-white">Role</label>
                             <input type="text" class="form-control" id="role" name="role" value="{{ $info->role }}" {{ old('role', $info->role) }}>
                         </div>
                         @error('role')
@@ -125,7 +125,7 @@
                         @enderror
 
                         <div class="mb-3">
-                            <label for="phone" class="form-label fw-bold my-text-color">Phone</label>
+                            <label for="phone" class="form-label fw-bold text-white">Phone</label>
                             <input type="text" class="form-control" id="phone" name="phone" value="{{ $info->phone }}" {{ old('phone', $info->phone) }}>
                         </div>
                         @error('phone')

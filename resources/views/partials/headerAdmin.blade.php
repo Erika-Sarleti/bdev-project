@@ -1,4 +1,4 @@
-<header>
+<header class>
     <nav class="navbar navbar-expand-lg nav-sticky">
         <div class="container-fluid">
           <a class="navbar-brand my-text-color d-flex align-items-center" href="{{ route('guest.home')}}">
@@ -11,20 +11,27 @@
           <div class="collapse navbar-collapse no-growth" id="navbarNav">
             <ul class="navbar-nav">
               @auth
-                <a class="navbar-brand my-text-color" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a>
+                {{-- <a class="navbar-brand my-text-color" href="{{route('admin.devs.edit',  Auth::user()->id )}}">Modifica il profilo</a> --}}
             
-                <li class="nav-item dropdown my-text-color">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle my-text-color" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class="nav-item dropdown text-white">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }}
                     </a>
-            
+                    
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                      <a class="dropdown-item my-text-color-pink" href="{{route('admin.devs.edit',  Auth::user()->id )}}">
+                          Modifica Profilo
+                      </a>
+                      <a class="dropdown-item my-text-color-pink" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                             
                         </a>
+                    </div>
+                    
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                        
             
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -45,7 +52,9 @@
               
               
               <li class="nav-item">
-                <a class="nav-link my-text-color" href="#">Help </a>
+                <a class="navbar-brand my-text-color d-flex align-items-center" href="{{ route('guest.home')}}">
+                  <span>HOME</span>
+                </a>
               </li>
             </ul>
           </div>
