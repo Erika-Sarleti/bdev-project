@@ -87,7 +87,7 @@ namespace App\Http\Controllers\Admin;
         return view('admin.devs.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
-            'messages'   => $messages,
+            'message'   => $message,
         ]);
     }
 
