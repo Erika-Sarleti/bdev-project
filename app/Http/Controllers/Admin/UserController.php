@@ -21,8 +21,6 @@ namespace App\Http\Controllers\Admin;
             'devs' => $devs,
             'userinfo' => $userinfo,
         ]);
-
-
     }
 
 
@@ -127,11 +125,11 @@ namespace App\Http\Controllers\Admin;
 
                 $dev->update($formData);
                 
-                
-                
-                
 
+                $dev->userInfo()->update($updateInfo);
 
+                $dev->update($formData);
+                
                  return redirect()->route('admin.devs.show', $dev->id);
     }
 

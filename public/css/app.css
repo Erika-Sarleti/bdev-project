@@ -12916,6 +12916,10 @@ img {
   padding-top: 5.5rem;
 }
 
+.main-show-dev {
+  background: var(--background-blue);
+}
+
 .bg-dashboard {
   background-color: var(--background-blue);
 }

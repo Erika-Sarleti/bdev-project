@@ -2,17 +2,23 @@
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
-<main class="d-flex container-bg mtplus">
+<main class="d-flex main-show-dev container-bg mtplus">
 
     @include('partials.sidebar');
+
+    
     
     <section class="section-main section-show-dev">
         
         <div class="container mb-5">
             <div class="row">
                 <div class="col">
+                  <h1 class="my-text-color ms-4 mb-5">Il mio profilo</h1>
 
-                  <div class="card-show-dev"  style="width: 40rem;" style="background-color: rgb(88, 88, 112)" >
+                  
+
+                  <div class="card-show-dev mt-5"  style="width: 40rem;" style="background-color: rgb(88, 88, 112)" >
+                    <hr style="color: rgb(255, 255, 255)">
                     <div class="d-flex">
                       <div>
                         <img src="{{ $dev->userinfo->image }}" class="card-img-top" style="width: 20rem;" alt="...">
