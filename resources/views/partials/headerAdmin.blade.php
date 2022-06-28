@@ -46,6 +46,9 @@
                 <li class="nav-item">
                     <a class="nav-link my-text-color" href="{{ route('register') }}">Register</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active my-text-color" aria-current="page" href="{{route('guest.index')}}">Esplora</a>
+                </li>
                 @endif
                 
               @endauth

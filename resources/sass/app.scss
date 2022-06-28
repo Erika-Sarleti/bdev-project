@@ -560,21 +560,14 @@ header{
 .bg-dashboard{
     background-color: var(--background-blue);
     .my-card{
+        margin: 0 2rem 2rem 2rem;
         align-items: flex-start;
         flex-direction: row;
         background-color: rgba($color: white, $alpha: .6);
-        height: 85vh;
+        // height: 85vh;
         max-width: 60%;
         justify-content: flex-start;
-        overflow-y:hidden;
-    }
-}
-@media only screen and (max-width: 1200px)  {
-    .bg-dashboard{
-        .my-card{
-
-            overflow-y:scroll;
-        }
+        overflow-y:auto;
     }
 }
 .message{
