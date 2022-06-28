@@ -2,13 +2,13 @@
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
-<main class="d-flex container-bg mtplus">
+<main class="d-flex bg-dashboard mtplus">
 
     @include('partials.sidebar');
     
-    <section class="section-main">
-    
-        <h2 class="my-text-color2 my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
+    <div class="my-card flex-grow-1 ">
+        <div class="card-body d-flex flex-column">
+        <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
         
         <div class="container mb-5">
             <div class="row">
@@ -101,16 +101,22 @@
 
                         <div class="mb-3 d-flex flex-column">
                             <label for="skill" class="form-label fw-bold my-text-color">Skills</label>
-                        @foreach ($skills as $skill)
-                        <input class="form-check-input" type="checkbox" name="skills[]" id="skill-{{ $skill->id }}" value="{{ $skill->id }}">
-                        <label class="form-check-label me-4" style="color: white" for="skill-{{ $skill->id }}">{{ $skill->name }}</label>
-                        @endforeach
+                            <div class="d-flex">
+                                 @foreach ($skills as $skill)
+                                    <input class="form-check-input" type="checkbox" name="skills[]" id="skill-{{ $skill->id }}" value="{{ $skill->id }}">
+                                    <label class="form-check-label me-4 ms-1 text-light"  for="skill-{{ $skill->id }}">{{ $skill->name }}</label>
+                                @endforeach
+                            </div>
                         </div>
+                        
 
-        
-                    <button type="submit" class="btn-neon mt-5 fw-bold">SUBMIT</button>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn-neon mt-5 fw-bold ">SUBMIT</button>
+                        </div>
+                    
         
                     </form>
-                </section>
+                </div>
+            </div>     
 </main>
 @endsection

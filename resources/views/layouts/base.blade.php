@@ -16,7 +16,7 @@
 <body>
     
     <div id="app">
-
+      
       @include('partials.headerAdmin')
 
       @yield('pageMain')
