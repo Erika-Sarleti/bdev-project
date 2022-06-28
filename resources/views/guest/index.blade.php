@@ -6,7 +6,7 @@
 
         <div class="d-flex flex-column flex-wrap justify-content-between align-items-center mt-5">
 
-            {{-- <div class="filters d-flex flex-column mt-5 mb-5"> --}}
+            <h1 class="pt-5">Inizia la tua ricerca qui</h1>
 
                 <div class="col-6 mt-5 d-flex flex-column ">
                     <label for="role" class="align-self-center"> FILTRA PER RUOLO </label>
@@ -15,6 +15,7 @@
                         <option value="front end">front end</option>
                         <option value="full stack">full stack</option>
                         <option value="data analyst">data analyst</option>
+                        <option value="project manager">project manager</option>
                     </select>
     
                     <button @click="search" class="btn btn-outline-success mb-5 mt-2 px-5" type="submit">SEARCH</button>
