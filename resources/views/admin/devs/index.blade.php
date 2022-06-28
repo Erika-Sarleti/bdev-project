@@ -7,6 +7,7 @@
         <div class="d-flex flex-column flex-wrap justify-content-between align-items-center mt-5">
 
             {{-- <div class="filters d-flex flex-column mt-5 mb-5"> --}}
+                <h1 class="pt-5">Inizia la tua ricerca qui</h1>
 
                 <div class="col-6 mt-5 d-flex flex-column ">
                     <label for="role" class="align-self-center"> FILTRA PER RUOLO </label>
@@ -15,6 +16,7 @@
                         <option value="front end">front end</option>
                         <option value="full stack">full stack</option>
                         <option value="data analyst">data analyst</option>
+                        <option value="project manager">project manager</option>
                     </select>
     
                     <button @click="search" class="btn btn-outline-success mb-5 mt-2 px-5" type="submit">SEARCH</button>
@@ -35,16 +37,18 @@
             
             <div v-for="dev in devs" class="card mt-5" style="width: 18rem;">
                
-                <img :src="dev.image" class="card-img-top" alt="devname">
-                <div class="card-body">
+                <img v-If="dev.image === null" src="https://picsum.photos/300/200" class="card-img-top" :alt="dev.name">
+                <img v-else  :src="dev.image" class="card-img-top" :alt="dev.name">
+                <div class="card-body d-flex flex-column gap-3">
                     <h5 class="card-title">
                         <span>@{{dev.user.name}}</span>
-
                     </h5>
+                    <small>@{{dev.role}}</small>
                     <p class="card-text">@{{dev.description}}</p>
-                    <small> @{{dev.media}}</small>
-                    <small> @{{dev.nreview}}</small>
+                    <small>Media Voti: @{{dev.media}}</small>
+                    <small>Recensioni: @{{dev.nreview}}</small>
 
+                
     
                 </div>
             </div>
