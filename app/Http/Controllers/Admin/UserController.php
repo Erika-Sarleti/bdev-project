@@ -57,16 +57,7 @@ namespace App\Http\Controllers\Admin;
      */
     public function store(Request $request)
     {
-        // $data = $request->all();
-
-        // $formData = [
-        //     'user_id' => Auth::user()->id,
-        // ] + $data;
-
-        // $dev = User::create($formData);
-
-        // return redirect()->route('admin.devs.show', $dev->id);
-
+        
 
         $formData = $request->all();
         $dev = new User();
@@ -107,16 +98,7 @@ namespace App\Http\Controllers\Admin;
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
 
         if (Auth::user()->id !== $dev->id) abort(403);
-        // private function getValidator(User $dev) {
 
-        // // $categories = Category::all();
-        // // $tags = Tag::all();
-        // // return view('admin.posts.edit', [
-        // //     'post'          => $post,
-        // //     'categories'    => $categories,
-        // //     'tags'          => $tags
-        // // ]);
-        //     }
 
         return view('admin.devs.edit', [
             'dev' => $dev,
@@ -127,22 +109,33 @@ namespace App\Http\Controllers\Admin;
     }
 
 
-    public function update(Request $request, User $dev)
+    public function update(Request $request, User $dev, UserInfo $userinfo)
     {
-         //All'array validators sto sommando un altro array slug, quindi diventa un unico array. La funzione Rule è di laravel e serve per rendere le   funzioni customizzabili.Ignore unique serve perché, nel caso di edit, ad ogni aggiornamento mi darebbe errore perché continuerebbe a trovare loslug doppione perché sto modificando, quindi già esiste nel DB
-                 // $request->validate($this->$validators + ['slug'  =>  [
-                 //     'required',
-                 //     Rule::unique('posts')->ignore($post->id),
-                 //     'max:100'
-                 // ]]);
-                 // qui invece gli passo l'argomento con $post
-                //  $request->validate($this->getValidators($dev));
-
+                $userinfo = UserInfo::where('user_id', Auth::user()->id)->first();
                 $formData = $request->all();
-
+               
                 $dev->skills()->sync($formData['skills']);
 
+                $updateInfo = [
+                    'locality' => $request->locality,
+                    'cv'       =>  $request->cv,
+                    'image'=> $request->image,
+                    'github' => $request->github,
+                    'description'=>  $request->description,
+                    'role'=> $request->role,
+                    'phone' =>$request->phone,
+
+                ];
+
+
+                $dev->userInfo()->update($updateInfo);
+
                 $dev->update($formData);
+                
+                
+                
+                
+
 
                  return redirect()->route('admin.devs.show', $dev->id);
     }

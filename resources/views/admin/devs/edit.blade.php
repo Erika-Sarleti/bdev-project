@@ -36,18 +36,12 @@
                         <div class="alert alert-warning">{{ $message }}</div>
                         @enderror
         
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-bold text-white">Email</label>
-                            <input type="text" class="form-control" id="email" name="email" value="{{ $dev->email }}" {{ old('email', $dev->email) }}>
-                        </div>
-                        @error('Email')
-                        <div class="alert alert-warning">{{ $message }}</div>
-                        @enderror
-    
                         @php
                             $info = $dev->userinfo
-                        @endphp
 
+                            
+                        @endphp
+                            
                         <div class="mb-3">
                             <label for="cv" class="form-label fw-bold text-white">Cv</label>
                             <input type="text" class="form-control" id="cv" name="cv" value="{{ $info->cv }}" {{ old('cv', $info->cv) }}>
