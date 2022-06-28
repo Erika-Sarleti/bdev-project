@@ -28,15 +28,15 @@ namespace App\Http\Controllers\Admin;
 
     public function message()
     {
-        $messages = Message::where('user_id', Auth::user()->id)->get();
-
+        $messages = Message::where('user_id', Auth::user()->id)->paginate(4);
+    
         return view('admin.messages.index', compact('messages'));
     }
 
     public function review()
     {
-        $reviews = Review::where('user_id', Auth::user()->id)->get();
-
+        $reviews = Review::where('user_id', Auth::user()->id)->paginate(4);
+    
         return view('admin.reviews.index', compact('reviews'));
     }
     /**
@@ -51,6 +51,8 @@ namespace App\Http\Controllers\Admin;
 
     public function store(Request $request)
     {
+        
+
         $formData = $request->all();
         $dev = new User();
         $dev->fill($formData);
@@ -66,12 +68,13 @@ namespace App\Http\Controllers\Admin;
         $dev = $dev->with('skills')->find($dev->id);     
         $message = Message::all();
 
-        $userinfo = UserInfo::all();
+        $userinfo = UserInfo::where('user_id', Auth::user()->id);
         return view('admin.devs.show', [
             'dev'       => $dev,
             'userinfo'  => $userinfo,
             'message'   => $message,
         ]);
+        
     }
 
     public function edit(User $dev)
@@ -81,6 +84,8 @@ namespace App\Http\Controllers\Admin;
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
 
         if (Auth::user()->id !== $dev->id) abort(403);
+
+
         return view('admin.devs.edit', [
             'dev' => $dev,
             'userinfo' => $userinfo,
@@ -106,11 +111,26 @@ namespace App\Http\Controllers\Admin;
                 ];
                 $dev->userInfo()->update($updateInfo);
 
+                $updateInfo = [
+                    'locality' => $request->locality,
+                    'cv'       =>  $request->cv,
+                    'image'=> $request->image,
+                    'github' => $request->github,
+                    'description'=>  $request->description,
+                    'role'=> $request->role,
+                    'phone' =>$request->phone,
+
+                ];
+
+
+                $dev->userInfo()->update($updateInfo);
+
                 $dev->update($formData);
-                // $userinfo->update([
-                //     'formData'  => $formData,
-                //     'id'        => $dev->id
-                // ]);
+                
+                
+                
+                
+
 
                  return redirect()->route('admin.devs.show', $dev->id);
     }

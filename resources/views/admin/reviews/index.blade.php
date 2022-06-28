@@ -1,21 +1,35 @@
 @extends('layouts.admin')
 @section('pageMain')
 
-@include('partials.sidebar');
 
-<div class="card">
-    <div class="card-body">
-      <h5 class="card-title">RECENSIONI:</h5>
-      <p class="card-text">
-
+<main class='d-flex bg-dashboard mtplus text-light'>
+  @include('partials.sidebar')
+  <div class="my-card flex-grow-1 ">
+    
+    <div class="d-flex flex-column">
+      <h4 class="my-text-color mb-4">Recensioni</h4>
+      {{-- Recensioni --}}
+      <div class="message-container">
         @foreach ($reviews as $review)
-        <span>Recensione:</span>
-        <p>{{$review->review}}</p>
-        <span>Voto:</span>
-        <p>{{$review->rating}}</p>
-        @endforeach
-      </p>
+              <div class="message">
+                
+                <p>Voto: {{$review->rating}}</p>
+                <span>Recensione:</span>
+                <p>{{$review->review}}</p>
+              </div>
+          
+        @endforeach 
+      </div> 
+      <div class="paginate">
+        {{ $reviews->links() }}
+      </div>
       
+
       
-</div>
-</div>
+     
+      
+    </div>
+    
+  </div>
+
+</main>

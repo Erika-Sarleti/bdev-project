@@ -1,24 +1,35 @@
 @extends('layouts.admin')
 @section('pageMain')
 
-@include('partials.sidebar');
 
-<div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Messaggi</h5>
-      <p class="card-text">
-
-        @foreach ($messages as $message)
-        <span>Messaggio:</span>
+<main class='d-flex bg-dashboard mtplus text-light'>
+  @include('partials.sidebar')
+  <div class="my-card flex-grow-1 ">
+    <div class="card-body d-flex flex-column">
+      <h4 class="mb-4 my-text-color">Nuovi messaggi</h4>
+      @foreach ($messages as $message)
+      <div class="message">
+        
+        <p>Da: {{$message->guest_mail}}</p>
+        
         <p>{{$message->message}}</p>
-        <span>Email mittente:</span>
-        <p>{{$message->guest_mail}}</p>
-        @endforeach
-      </p>
+      </div>
       
       
-</div>
-</div>
+        
+        
+        
+      
+      @endforeach 
+      <div class="paginate">
+        {{ $messages->links() }}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
 
 
 

@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
-
 use App\User;
 use Carbon\Carbon;
 use App\Sponsor;
@@ -9,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Braintree;
 use App\Http\Controllers\Controller;
-
 class SponsorController extends Controller
 {
     /**
@@ -25,15 +22,11 @@ class SponsorController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey'),
         ]);
-        
         $token = $gateway->ClientToken()->generate();
-        
-    
         return view('admin.devs.payments.index',[
             'token' => $token
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -47,8 +40,6 @@ class SponsorController extends Controller
             'publicKey' => config('services.braintree.publicKey'),
             'privateKey' => config('services.braintree.privateKey'),
         ]);
-
-        
         $amount = $request->amount;
         $nonce = $request->payment_method_nonce;
         $result = $gateway->transaction()->sale([
@@ -58,9 +49,7 @@ class SponsorController extends Controller
                 'submitForSettlement' => true
             ]
         ]);
-
         $dev = User::where('id', Auth::user()->id)->first();
-
         if ($result->success) {
             $transaction = $result->transaction;
             if ($request->amount == '2.99') {
@@ -91,16 +80,11 @@ class SponsorController extends Controller
             }
             return back()->withErrors('error:'. $errorString);
         }
-        
-
     }
-
-
     public function create()
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -111,7 +95,6 @@ class SponsorController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -122,7 +105,6 @@ class SponsorController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -130,29 +112,6 @@ class SponsorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Sponsor $sponsor)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Sponsor $sponsor)
-    {
-        
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Sponsor  $sponsor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Sponsor $sponsor)
     {
         //
     }
