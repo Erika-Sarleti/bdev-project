@@ -122,21 +122,6 @@ namespace App\Http\Controllers\Admin;
                     'description'=>  $request->description,
                     'role'=> $request->role,
                     'phone' =>$request->phone,
-<<<<<<< HEAD
-=======
-
-                ];
-
-
-                $dev->userInfo()->update($updateInfo);
-
-                $dev->update($formData);
-                
-                
-                
-                
-
->>>>>>> origin/erika-mado
 
                 ];
 
