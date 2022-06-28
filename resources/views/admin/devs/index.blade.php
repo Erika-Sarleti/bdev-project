@@ -1,26 +1,60 @@
 @extends('layouts.base')
+
 @section('pageMain')
-    <div class="col-7 container-fluid d-flex flex-wrap justify-content-between">
-        @foreach ($devs as $dev)
-    <div class="card mt-5" style="width: 18rem;">
+    <div id="app">
 
+        <div class="container-background">
+            <div class="d-flex flex-column flex-wrap justify-content-between align-items-center pt-5">
+    
+                <h1 class="pt-5 my-text-color">Inizia la tua ricerca qui</h1>
+    
+                    <div class="col-6 mt-5 d-flex flex-column ">
+                        <label for="role" class="align-self-center my-text-color2"> FILTRA PER RUOLO </label>
+                        <select v-model="role" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <option value="back end">back end</option>
+                            <option value="front end">front end</option>
+                            <option value="full stack">full stack</option>
+                            <option value="data analyst">data analyst</option>
+                            <option value="project manager">project manager</option>
+                        </select>
         
-         <img src="{{ $dev->userinfo->image }}" class="card-img-top" alt="lorem picsum photos">
-  
+                        <button @click="search" class="btn-neon mb-5 mt-2 px-5" type="submit">SEARCH</button>
+                    </div>
+    
+    
+                    <div class="col-6 d-flex flex-column"> 
+                        <label for="nreview" class="align-self-center my-text-color2"> NUMERO RECENSIONI </label>
+                        <input v-model="nreview" name="nreview" type="number">
+                        <label for="mediarating" class="align-self-center my-text-color2"> MEDIA VOTI </label>
+                        <input v-model="mediarating" name="mediarating" type="number" min="0" max="5">
+                        <button class="btn-neon mt-2" @click="filter">APPLY FILTERS</button>
+                    </div>
+    
+                {{-- </div> --}}
+            </div>
+                <div class="container-fluid py-5 d-flex justify-content-center align-items-center flex-wrap row-cols-4">
 
-        <div class="card-body">
-            <h3 class="card-title">
-                {{$dev->name}}
-            </h3>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{{ route('admin.devs.show', $dev->id)}}" class="btn btn-primary">Vai allo sviluppatore</a>
+                    <div v-for="dev in devs" class="m-3">
+                        <div class="card profile-card-3">
+                            <div class="background-block">
+                                <img :src="picsum + dev.user.id" alt="profile-sample1" class="background"/>
+                            </div>
+                            <div class="profile-thumb-block">
+                                <img :src="dev.image" :alt="dev.name" class="profile"/>
+                            </div>
+                            <div class="card-content">
+                            <h2>@{{dev.user.name}}<small>@{{dev.role}}</small></h3>
+                            <div class="icon-block"><a href="#" class="my-text-color-pink">Voto:<i>@{{dev.media}}</i></a><a href="#" class="my-text-color-pink">Recensioni<i>@{{dev.nreview}}</i></a></div>
+                            
+                        </div>
+                        </div>
+                        
+                    </div>
+            </div>
+
         </div>
     </div>
-    @endforeach
-    </div>
 
-    {{ $devs->links() }}
-    
 @endsection
     
 

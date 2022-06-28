@@ -8,11 +8,19 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-    protected $validationRules = [
-        'name' => 'required|max:255',
-        'email' => 'required|email|max:255',
-        'message' => 'required|max:255',
-    ];
+    // private $validationRules = [
+    //     'name' => 'max:255|min:2',
+    //     'email' => 'required|email|max:255|min:5',
+    //     'message' => 'required|max:255|min:4',
+    // ];
+
+    private function validation() {
+        return [
+            'name' => 'required|max:255|min:2',
+            'email' => 'required|email|max:255|min:5',
+            'message' => 'required|max:255|min:4',
+        ];
+    }
 
 
 
@@ -28,29 +36,19 @@ class MessageController extends Controller
     public function create(Request $request, User $dev)// TODO:
     {
 
-        $formData = $request->all();
-
-        $newMessage = Message::create([
-            'user_id' => $dev->id,
-            'email' => $formData['email'],
-            'message' => $formData['message'],
-        ]);
-
-        return redirect()->route('guest.show', $newMessage)->with('status', 'Complited with succes!');
     }
 
-    public function store(Request $request, User $dev) //TODO:
+    public function store(Request $request, User $dev) 
     {
         // $request->validate($this->validationRules, [
         //     'email' => 'Inserisci una mail valida',
+        //     'message' => 'Inserisci messaggio'
         // ]);
 
-        $id = User::where('id', $dev->id)->get('id');
-        // dd($dev);
+        // $id = User::where('id', $dev->id)->get('id');
+     
         // $formData = $request->all();
-        // dd($formData);
-        
-       
+
 
         Message::create([
             'user_id' => $request->user_id,
@@ -65,7 +63,7 @@ class MessageController extends Controller
     
     public function show(Message $message) // TODO:
     {
-        //
+        
     }
 
 

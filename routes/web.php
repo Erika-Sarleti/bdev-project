@@ -12,30 +12,48 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/api-dev', 'Api\ApiController@index');
 
-Route::get('/', function () {
+Auth::routes();
+
+Route::get('/', function(){
     return view('welcome');
 });
 
-Route::resource('/message', 'MessageController');
+
 Route::post('/message', 'MessageController@store')->name('message.store');
-Auth::routes();
+
 
 Route::middleware('auth')
     ->namespace('Admin')
     ->name('admin.')
     ->prefix('admin')
     ->group(function(){
-        Route::get('/', 'HomeController@index')->name('home');
         Route::resource('/devs', 'UserController');
+        Route::get('/message', 'UserController@message');
+        Route::get('/review', 'UserController@review');
+        Route::resource('/payments', 'SponsorController');
+        Route::get('/devs/{id}/payments', 'SponsorController@index');
+        Route::post('/checkout','SponsorController@checkout');
+
+
     });
 
+    Route::resource('/message', 'MessageController');
+
+
+
     Route::group(['middleware' => ['guest']], function () {
+        Route::get('/home', 'Guest\GuestController@guestindex'
+        )->name('guest.home');
         Route::resource('/guest', 'Guest\GuestController');
+        Route::get('/home', 'Guest\GuestController@guestindex')->name('guest.home');
+        Route::get('guest/review/{id}', 'Guest\GuestController@create')->name('guest.create');
     });
-Route::get("{any?}", function() {
-        return view("guest.home");
-        })->where("any", ".*");
+    
+// Route::get("{any?}", function() {
+//         return view("guest.home");
+//         })->where("any", ".*");
 // Auth::routes();
 
 
@@ -50,4 +68,4 @@ Route::get("{any?}", function() {
         //          Route::post('/slugger', 'HomeController@slugger')->name('slugger');
         //          Route::resource('/posts', 'PostController');
         //  });
-        //  
+        //

@@ -93,7 +93,24 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open 'C:\\Users\\Alessandro\\OneDrive\\Desktop\\progetto finale\\bdev-project\\resources\\js\\script.js'");
+var byline = document.getElementById('byline');
+bylineText = byline.innerHTML;
+bylineArr = bylineText.split('');
+byline.innerHTML = '';
+var span;
+var letter;
+
+for (i = 0; i < bylineArr.length; i++) {
+  span = document.createElement("span");
+  letter = document.createTextNode(bylineArr[i]);
+
+  if (bylineArr[i] == ' ') {
+    byline.appendChild(letter);
+  } else {
+    span.appendChild(letter);
+    byline.appendChild(span);
+  }
+}
 
 /***/ }),
 

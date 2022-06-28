@@ -3,10 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Review;
+use App\User;
+
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {
+
+    private function validation() {
+        return [
+            'review' => 'required|max:255|min:5',
+            'rating' => 'required|max:5|min:1',
+        ];
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -22,9 +33,10 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        
+        return view('guest.create', ['id'=> $dev->id]);
     }
 
     /**
@@ -33,9 +45,10 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $dev)
     {
         //
+        
     }
 
     /**
