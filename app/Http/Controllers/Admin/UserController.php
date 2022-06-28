@@ -29,14 +29,14 @@ namespace App\Http\Controllers\Admin;
     public function message()
     {
         $messages = Message::where('user_id', Auth::user()->id)->get();
-    
+
         return view('admin.messages.index', compact('messages'));
     }
 
     public function review()
     {
         $reviews = Review::where('user_id', Auth::user()->id)->get();
-    
+
         return view('admin.reviews.index', compact('reviews'));
     }
     /**
@@ -49,25 +49,8 @@ namespace App\Http\Controllers\Admin;
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // $data = $request->all();
-
-        // $formData = [
-        //     'user_id' => Auth::user()->id,
-        // ] + $data;
-
-        // $dev = User::create($formData);
-
-        // return redirect()->route('admin.devs.show', $dev->id);
-
-
         $formData = $request->all();
         $dev = new User();
         $dev->fill($formData);
@@ -80,7 +63,7 @@ namespace App\Http\Controllers\Admin;
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
 
-        $dev = $dev->with('skills')->find($dev->id);       
+        $dev = $dev->with('skills')->find($dev->id);     
         $message = Message::all();
 
         $userinfo = UserInfo::all();
@@ -91,14 +74,6 @@ namespace App\Http\Controllers\Admin;
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-
     public function edit(User $dev)
     {
         $skills = Skill::all();
@@ -106,17 +81,6 @@ namespace App\Http\Controllers\Admin;
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
 
         if (Auth::user()->id !== $dev->id) abort(403);
-        // private function getValidator(User $dev) {
-
-        // // $categories = Category::all();
-        // // $tags = Tag::all();
-        // // return view('admin.posts.edit', [
-        // //     'post'          => $post,
-        // //     'categories'    => $categories,
-        // //     'tags'          => $tags
-        // // ]);
-        //     }
-
         return view('admin.devs.edit', [
             'dev' => $dev,
             'userinfo' => $userinfo,
@@ -131,28 +95,26 @@ namespace App\Http\Controllers\Admin;
                 $userinfo = UserInfo::where('user_id', Auth::user()->id)->first();
                 $formData = $request->all();
                 $dev->skills()->sync($formData['skills']);
-                
                 $updateInfo = [
-                    'locality' => $request->locality,
-                    'cv' => $request->cv,
-                    'phone' =>  $request->phone,
-                    'image' => $request->image,
-                    'github' => $request->github,
-                    'description' => $request->description,
+                    'locality'      =>      $request->locality,
+                    'cv'            =>      $request->cv,
+                    'image'         =>      $request->image,
+                    'github'        =>      $request->github,
+                    'description'   =>      $request->description,
+                    'role'          =>      $request->role,
+                    'phone'         =>      $request->phone,
                 ];
                 $dev->userInfo()->update($updateInfo);
 
                 $dev->update($formData);
+                // $userinfo->update([
+                //     'formData'  => $formData,
+                //     'id'        => $dev->id
+                // ]);
 
                  return redirect()->route('admin.devs.show', $dev->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

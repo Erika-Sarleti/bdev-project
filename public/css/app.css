@@ -12935,3 +12935,16 @@ img {
   box-shadow: 0 0 10px #C71C82, 0 0 20px #C71C82;
 }
 
+.login-section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-blue);
+}
+
+.login-section input {
+  background-color: var(--input-color);
+}
+
