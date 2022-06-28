@@ -126,20 +126,21 @@ namespace App\Http\Controllers\Admin;
     }
 
 
-    public function update(Request $request, User $dev)
+    public function update(Request $request, User $dev, UserInfo $userinfo)
     {
-         //All'array validators sto sommando un altro array slug, quindi diventa un unico array. La funzione Rule è di laravel e serve per rendere le   funzioni customizzabili.Ignore unique serve perché, nel caso di edit, ad ogni aggiornamento mi darebbe errore perché continuerebbe a trovare loslug doppione perché sto modificando, quindi già esiste nel DB
-                 // $request->validate($this->$validators + ['slug'  =>  [
-                 //     'required',
-                 //     Rule::unique('posts')->ignore($post->id),
-                 //     'max:100'
-                 // ]]);
-                 // qui invece gli passo l'argomento con $post
-                //  $request->validate($this->getValidators($dev));
-
+                $userinfo = UserInfo::where('user_id', Auth::user()->id)->first();
                 $formData = $request->all();
-
                 $dev->skills()->sync($formData['skills']);
+                
+                $updateInfo = [
+                    'locality' => $request->locality,
+                    'cv' => $request->cv,
+                    'phone' =>  $request->phone,
+                    'image' => $request->image,
+                    'github' => $request->github,
+                    'description' => $request->description,
+                ];
+                $dev->userInfo()->update($updateInfo);
 
                 $dev->update($formData);
 

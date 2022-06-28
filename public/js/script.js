@@ -121,7 +121,7 @@ for (i = 0; i < bylineArr.length; i++) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\js\script.js */"./resources/js/script.js");
+module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\script.js */"./resources/js/script.js");
 
 
 /***/ })
