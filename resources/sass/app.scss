@@ -703,6 +703,10 @@ header{
         }
     }
 }
+
+.invio-mex {
+    color: #C71C82;
+}
 .message{
     background-color: var(--message-container-color);
     border-radius:10px;
@@ -719,6 +723,11 @@ header{
 
 .container-background{
     background-color: var(--background-blue);
+}
+
+.blade-review {
+    margin-top: 100px;
+
 }
 
 .bubu{
@@ -751,7 +760,11 @@ header{
 .skills {
     color: white;
 }
-
+.label-review {
+    color: #C71C82;
+    font-weight: bold;
+    font-weight: 25px;
+}
 .card-body span {
     color: #C71C82;
     font-weight: bold;
