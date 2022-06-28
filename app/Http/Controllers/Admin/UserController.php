@@ -21,8 +21,6 @@ namespace App\Http\Controllers\Admin;
             'devs' => $devs,
             'userinfo' => $userinfo,
         ]);
-
-
     }
 
 
@@ -64,8 +62,8 @@ namespace App\Http\Controllers\Admin;
 
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
-            
-        $dev = $dev->with('skills')->find($dev->id);       
+
+        $dev = $dev->with('skills')->find($dev->id);     
         $message = Message::all();
 
         $userinfo = UserInfo::where('user_id', Auth::user()->id);
@@ -99,7 +97,6 @@ namespace App\Http\Controllers\Admin;
     {
                 $userinfo = UserInfo::where('user_id', Auth::user()->id)->first();
                 $formData = $request->all();
-               
                 $dev->skills()->sync($formData['skills']);
                 $updateInfo = [
                     'locality'      =>      $request->locality,
@@ -128,11 +125,11 @@ namespace App\Http\Controllers\Admin;
 
                 $dev->update($formData);
                 
-                
-                
-                
 
+                $dev->userInfo()->update($updateInfo);
 
+                $dev->update($formData);
+                
                  return redirect()->route('admin.devs.show', $dev->id);
     }
 

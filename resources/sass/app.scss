@@ -21,6 +21,110 @@
 
 // COMPONENTI SITO
 
+// card index
+
+.profile-card-3 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    height:368px;
+    border:none;
+  }
+  .profile-card-3 .background-block {
+      float: left;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+  }
+  .profile-card-3 .background-block .background {
+    width:100%;
+    vertical-align: top;
+    opacity: 0.9;
+    -webkit-filter: blur(0.5px);
+    filter: blur(0.5px);
+     -webkit-transform: scale(1.8);
+    transform: scale(2.8);
+  }
+  .profile-card-3 .card-content {
+    width: 100%;
+    padding: 15px 25px;
+    color:#232323;
+    float:left;
+    background:#efefef;
+    height:50%;
+    border-radius:0 0 5px 5px;
+    position: relative;
+    z-index: 9999;
+  }
+  .profile-card-3 .card-content::before {
+      content: '';
+      background: #efefef;
+      width: 120%;
+      height: 100%;
+      left: 11px;
+      bottom: 51px;
+      position: absolute;
+      z-index: -1;
+      transform: rotate(-13deg);
+  }
+  .profile-card-3 .profile {
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    max-width: 100px;
+    opacity: 1;
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 1);
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    z-index:99999;
+  }
+  .profile-card-3 h2 {
+    margin: 0 0 5px;
+    font-weight: 600;
+    font-size:25px;
+  }
+  .profile-card-3 h2 small {
+    display: block;
+    font-size: 15px;
+    margin-top:10px;
+  }
+  .profile-card-3 i {
+    display: inline-block;
+      font-size: 16px;
+      color: #232323;
+      text-align: center;
+      border: 1px solid #232323;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      margin:0 5px;
+  }
+  .profile-card-3 .icon-block{
+      float:left;
+      width:100%;
+      margin-top:15px;
+  }
+  .profile-card-3 .icon-block a{
+      text-decoration:none;
+  }
+  .profile-card-3 i:hover {
+    background-color:#232323;
+    color:#fff;
+    text-decoration:none;
+  }
+
+.my-back-blur{
+    background-color: var(--my-white-transparent);
+
+}
+
+
 // scrollbar
 
 @import 'scroolbar';
@@ -29,23 +133,44 @@
   display: inline-block;
   font-weight: 400;
   line-height: 1.6;
-  color: #ffffff;
-  text-shadow: var(--my-pink) 0px 0px 5px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 15px, var(--my-pink) 0px 0px 20px, var(--my-pink) 0px 0px 30px, var(--my-pink) 0px 0px 40px, var(--my-pink) 0px 0px 50px, var(--my-pink) 0px 0px 75px, 2px 2px 2px var(--my-pink);
+  color: var(--my-pink);
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
   cursor: pointer;
   background-color: transparent;
   border: 1px solid transparent;
-  box-shadow: 0px 0px 20px 0px #C71C82;
+  box-shadow: 0px 0px 20px 0px var(--my-pink);
   padding: 0.375rem 0.75rem;
   font-size: 0.8rem;
   border-radius: 1rem;
   margin: .5rem 0;
+  outline: 1px solid var(--my-pink);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-neon:hover{
+.btn-neon2{
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--my-pink);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 5px 0px var(--my-pink);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8rem;
+  border-radius: 1rem;
+  margin: .5rem 0;
+  outline: 1px solid var(--my-pink);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-neon:hover,
+.btn-neon2:hover{
     color: #ffffff;
     text-shadow: var(--my-pink) 0px 0px 5px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 15px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 10px, var(--my-pink) 0px 0px 15px, 2px 2px 2px var(--my-pink);
     background-color: var(--my-pink);
@@ -553,9 +678,10 @@ header{
     padding-top: 5.5rem;
 }
 
+.main-show-dev {
+    background: var(--background-blue);
+}
 
-
-// *****DASHBOARD CHAT*****
 
 .bg-dashboard{
     background-color: var(--background-blue);
@@ -581,6 +707,61 @@ header{
     align-self: center;
     justify-self: flex-end;
 }
+
+// index 
+
+.container-background{
+    background-color: var(--background-blue);
+}
+
+.bubu{
+    padding: 4rem;
+    box-shadow: 0px 0px 4px var(--my-white);
+    border-radius: 50px;
+}
+
+.section-aside {
+    background-color: rgb(134, 134, 255);
+}
+.card-title span {
+    color: #C71C82;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 7px;
+}
+.card-text, .card-title {
+    color: white;
+    margin-top: 10px;
+}
+
+.card-img-top {
+    border-radius: 100%;
+}
+
+.section-show-dev {
+    margin-left: 100px;
+}
+.skills {
+    color: white;
+}
+
+.card-body span {
+    color: #C71C82;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+// PAGAMENTO
+
+.container-card-blur{
+    background-color: var(--my-white-transparent);
+    width: 50%;
+    margin: 3rem auto;
+    border-radius: 50px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 10px #C71C82, 0 0 20px #C71C82;
+}
+
 // login section
 .login-section{
     margin: 0;
