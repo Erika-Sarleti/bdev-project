@@ -89,7 +89,7 @@ const app = new Vue({
                     this.message != ''
                 )
                 {
-                    btnRegister.disabled = false;
+                    btnMessage.disabled = false;
                 }
                 else{
                     btnMessage.disabled = true;

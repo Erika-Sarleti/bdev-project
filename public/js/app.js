@@ -51072,7 +51072,7 @@ var app = new Vue({
       var btnMessage = document.getElementById('btn-message');
 
       if (this.guest_mail.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) && this.message != '') {
-        btnRegister.disabled = false;
+        btnMessage.disabled = false;
       } else {
         btnMessage.disabled = true;
       }
