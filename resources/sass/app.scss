@@ -618,11 +618,15 @@ header{
 
 .center-section-say{
     position: absolute;
-    top: 50%;
-    left: 20%;
+    top: 15%;
+    left: 50%;
     transform: translate(-50%);
 }
 
+.my-shadow{
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px var(--my-white-transparent),0px 0px 20px var(--my-white),0px 0px 30px var(--my-white-transparent);
+}
 
 
 

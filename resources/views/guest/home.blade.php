@@ -107,14 +107,12 @@
 
         {{-- sezione dicono di noi --}}
         <section class="container-section" id="section-say">
-            <div class="center-section-say">
-                <h2 class="my-text-color">Si sono affidati a noi</h2>
+            <div class="center-section-say d-flex flex-column justify-content-center align-items-center">
+                <h2 class="my-text-color pb-5">Si sono affidati a noi</h2>
                 <ul>
-                    <li>fiat</li>
-                    <li>radio dj</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>
+                        <img class="rounded my-shadow" src="https://bebeez.it/wp-content/uploads/2021/07/boolean-e1626086189994.png" alt="" class="">
+                    </li>
                 </ul>
             </div>
 
