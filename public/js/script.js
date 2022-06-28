@@ -122,10 +122,14 @@ for (i = 0; i < bylineArr.length; i++) {
 /***/ (function(module, exports, __webpack_require__) {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\script.js */"./resources/js/script.js");
 =======
 module.exports = __webpack_require__(/*! C:\Users\Erika\Desktop\boolean\bdev-project\resources\js\script.js */"./resources/js/script.js");
 >>>>>>> origin/erika-mado
+=======
+module.exports = __webpack_require__(/*! C:\Users\camil\OneDrive\Desktop\BOOLEAN\bdev-project\resources\js\script.js */"./resources/js/script.js");
+>>>>>>> origin/camilla
 
 
 /***/ })

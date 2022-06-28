@@ -12958,6 +12958,41 @@ img {
   border-radius: 50px;
 }
 
+.section-aside {
+  background-color: rgb(134, 134, 255);
+}
+
+.card-title span {
+  color: #C71C82;
+  font-weight: bold;
+  font-size: 25px;
+  margin-right: 7px;
+}
+
+.card-text,
+.card-title {
+  color: white;
+  margin-top: 10px;
+}
+
+.card-img-top {
+  border-radius: 100%;
+}
+
+.section-show-dev {
+  margin-left: 100px;
+}
+
+.skills {
+  color: white;
+}
+
+.card-body span {
+  color: #C71C82;
+  font-weight: bold;
+  font-size: 22px;
+}
+
 .container-card-blur {
   background-color: var(--my-white-transparent);
   width: 50%;
