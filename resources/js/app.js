@@ -1,5 +1,6 @@
 const { default: Axios } = require('axios');
-const { map } = require('lodash');
+const { contains } = require('jquery');
+const { map, includes } = require('lodash');
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -39,17 +40,79 @@ const app = new Vue({
         sqlData: [],
         results: [],
         nreview: '',
-        mediarating: ''
+        mediarating: '',
+        name: '',
+        surname: '',
+        email: '',
+        password: '',
+        cv: '',
+        image: '',
+        locality: '',
+        github: '',
+        phone: '',
+        role: '',
+        password_confirm: '',
+        guest_mail: '',
+        message: '',
+        messagereview: '',
     },
     methods: {
+        // function isCharacterALetter(char) {
+        //     return (/[a-zA-Z]/).test(char)
+        // }
+        checkedForms: function() {
+            let btnRegister = document.getElementById('btn-register');
+            if (this.name != '' &&
+                isNaN(this.name) == true &&
+                // this.name.test(/[a-zA-Z]/) &&
+                // this.name == /^[A-Za-z]+$/ &&
+                // this.name.match(letters) == false &&
+                this.surname != '' &&
+                isNaN(this.surname) == true &&
+                this.email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) &&
+                this.password != '' &&
+                this.password_confirm === this.password &&
+                this.role != '' &&
+                this.cv != '' &&
+                this.locality != '' &&
+                this.phone != '') {
+                btnRegister.disabled = false;
+                console.log('if')
+            }
+            else {
+                btnRegister.disabled = true;
+                console.log('elese');
+            }
+        },
+        checkedMessage: function() {
+            let btnMessage = document.getElementById('btn-message');
+            if  (   this.guest_mail.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i) &&
+                    this.message != ''
+                )
+                {
+                    btnMessage.disabled = false;
+                }
+                else{
+                    btnMessage.disabled = true;
+                }
+        },
+        checkedReview: function() {
+            let btnReview = document.getElementById('btn-review');
+            if  (this.messagereview != ''
+                )
+                {
+                    btnReview.disabled = false;
+                }
+                else{
+                    btnReview.disabled = true;
+                }
+        },
         search: function() {
             this.devs = [];
-
-
            Axios.get("/api-dev?role=" + this.role)
            .then((response) => {
-            // console.log(response); 
-            this.devs = response.data.response.data; 
+            // console.log(response);
+            this.devs = response.data.response.data;
             this.devs.forEach(element =>{
                 element['media'] = response.data.sql[element.user_id].media;
                 element['nreview'] = response.data.sql[element.user_id].n_recensioni;
@@ -64,7 +127,7 @@ const app = new Vue({
            .then((response) => {
             console.log(response);
             this.sqlData = Object.keys(response.data.response);
-            
+
             this.results = this.sqlData.map(function(x){
                 return parseInt(x, 10);
             })
@@ -74,17 +137,17 @@ const app = new Vue({
                     if (this.results.includes(element.user_id))
                     {
                         this.devs.push(element);
-                        
+
                     }
-    
+
                 });
             } else {
-                this.devs = response.data.response.data; 
-                
+                this.devs = response.data.response.data;
+
             }
         })
         }
-    
+
     },
     mounted: function mounted(){
         if(window.location.search){
@@ -94,19 +157,19 @@ const app = new Vue({
                     rol =  rol.replace('+', ' ');
                     rol =  rol.replace('+', ' ');
                     rol =  rol.replace('+', ' ');
-                } 
+                }
             };
-                this.role = rol;    
-            
-            
+                this.role = rol;
+
+
             Axios.get("/api-dev?role=" + this.role)
            .then((response) => {
-            console.log(response); 
-            this.devs = response.data.response.data;     
+            console.log(response);
+            this.devs = response.data.response.data;
             this.devs.forEach(element =>{
                 element['media'] = response.data.sql[element.user_id].media;
                 element['nreview'] = response.data.sql[element.user_id].n_recensioni;
-            })     
+            })
         })
         }
     }
@@ -116,9 +179,9 @@ const app = new Vue({
 
 if (document.getElementById('carousel-js')) {
     const item = document.getElementById('carousel-js');
-    
+
     item.firstChild.classList.add('active');
-    
+
 }
 
 // funzione pagamento formula
@@ -143,6 +206,9 @@ promo144.addEventListener('click', function(){
     amount.setAttribute('value', '9.99')
     amountShow.innerHTML = '9.99€';
 })
+
+// Register-page
+
 
 
 

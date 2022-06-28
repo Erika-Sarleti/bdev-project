@@ -42,9 +42,9 @@
 
   {{-- SEZIONE MESSAGGI --}}
   <section class="container">
-    
 
-    <form action="{{ route("message.store")}}" method="POST" class="mt-3" style="height: 100vh" id="form-message">
+
+    <form action="{{ route("message.store")}}" method="POST" @change="checkedMessage" class="mt-3" style="height: 100vh" id="form-message">
       @csrf
 
       <div class="form-group">
@@ -54,17 +54,17 @@
             <div class="alert alert-warning">{{ $message }}</div>
         @enderror
         <label for="guest_mail">Email</label>
-        <input name="guest_mail" type="email" name="email" class="form-control @error('guest_mail') is-invalid @enderror" required id="guest_mail" placeholder="Email">
+        <input name="guest_mail" type="email" name="email" v-model="guest_mail" class="form-control @error('guest_mail') is-invalid @enderror" required id="guest_mail" placeholder="Email">
         @error('guest_email')
             <div class="alert alert-warning">{{ $message }}</div>
         @enderror
         <label for="message">Messaggio</label>
-        <textarea name="message" class="form-control @error('guest_mail') is-invalid @enderror" required id="message" rows="3"></textarea>
+        <textarea name="message" v-model="message" class="form-control @error('guest_mail') is-invalid @enderror" required id="message" rows="3"></textarea>
         @error('message')
             <div class="alert alert-warning">{{ $message }}</div>
         @enderror
         <input name="user_id" value="{{ $dev->id }}" class="d-none" id="user_id">
-        <button type="submit" class="btn btn-primary">Invia</button>
+        <button id="btn-message" type="submit" class="btn btn-primary" disabled>Invia</button>
       </div>
     </form>
   </div>
