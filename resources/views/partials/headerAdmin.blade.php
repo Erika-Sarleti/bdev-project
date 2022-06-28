@@ -19,6 +19,9 @@
                     </a>
                     
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item my-text-color-pink" href="{{route('admin.devs.show',  Auth::user()->id )}}">
+                        Vai al tuo profilo
+                    </a>
                       <a class="dropdown-item my-text-color-pink" href="{{route('admin.devs.edit',  Auth::user()->id )}}">
                           Modifica Profilo
                       </a>
@@ -52,8 +55,8 @@
               
               
               <li class="nav-item">
-                <a class="navbar-brand my-text-color d-flex align-items-center" href="{{ route('guest.home')}}">
-                  <span>HOME</span>
+                <a class="navbar-brand my-text-color d-flex align-items-center" href="{{ route('guest.index')}}">
+                  <span>Esplora</span>
                 </a>
               </li>
             </ul>

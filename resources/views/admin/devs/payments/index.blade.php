@@ -57,7 +57,7 @@
                     <section>
                         <label for="amount">
                             <span class="input-label text-white text-uppercase">Devi pagacce:</span>
-                            <span id="js-amount"></span>
+                            <span id="js-amount" class="text-white h4 font-monospace"></span>
                             <div class="input-wrapper amount-wrapper">
                                 <input class="d-none" id="amount" name="amount" type="tel" min="1" placeholder="amount" value="">
                             </div>

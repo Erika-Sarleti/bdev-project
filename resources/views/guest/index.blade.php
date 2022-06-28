@@ -37,7 +37,7 @@
                     <div v-for="dev in devs" class="m-3">
                         <div class="card profile-card-3">
                             <div class="background-block">
-                                <img src="https://picsum.photos/200/300?random=1" alt="profile-sample1" class="background"/>
+                                <img :src="picsum + dev.user.id" alt="profile-sample1" class="background"/>
                             </div>
                             <div class="profile-thumb-block">
                                 <img :src="dev.image" :alt="dev.name" class="profile"/>

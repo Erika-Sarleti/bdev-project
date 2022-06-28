@@ -55,6 +55,7 @@ const app = new Vue({
         guest_mail: '',
         message: '',
         messagereview: '',
+        picsum: 'https://picsum.photos/500/500?random=',
     },
     methods: {
         // function isCharacterALetter(char) {

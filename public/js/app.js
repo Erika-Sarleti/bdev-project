@@ -51049,7 +51049,7 @@ var app = new Vue({
     locality: '',
     github: '',
     phone: ''
-  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _defineProperty(_data, "messagereview", ''), _data),
+  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _defineProperty(_data, "messagereview", ''), _defineProperty(_data, "picsum", 'https://picsum.photos/500/500?random='), _data),
   methods: {
     // function isCharacterALetter(char) {
     //     return (/[a-zA-Z]/).test(char)
