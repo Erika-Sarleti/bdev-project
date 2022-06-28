@@ -55,6 +55,8 @@ namespace App\Http\Controllers\Admin;
      */
     public function store(Request $request)
     {
+        
+
         $formData = $request->all();
         $dev = new User();
         $dev->fill($formData);
@@ -120,6 +122,21 @@ namespace App\Http\Controllers\Admin;
                     'description'=>  $request->description,
                     'role'=> $request->role,
                     'phone' =>$request->phone,
+<<<<<<< HEAD
+=======
+
+                ];
+
+
+                $dev->userInfo()->update($updateInfo);
+
+                $dev->update($formData);
+                
+                
+                
+                
+
+>>>>>>> origin/erika-mado
 
                 ];
 

@@ -9,6 +9,7 @@
   --my-green: #1FC71C;
   --background-blue: #043574;
   --input-color: #819ABA;
+  --message-container-color: #24355E;
 }
 
 /*!
@@ -12782,6 +12783,7 @@ img {
   padding-top: 5.5rem;
 }
 
+<<<<<<< HEAD
 .main-show-dev {
   background: var(--background-blue);
 }
@@ -12833,5 +12835,37 @@ img {
   color: #C71C82;
   font-weight: bold;
   font-size: 22px;
+=======
+.bg-dashboard {
+  background-color: var(--background-blue);
+}
+
+.bg-dashboard .my-card {
+  align-items: flex-start;
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 85vh;
+  max-width: 60%;
+  justify-content: flex-start;
+  overflow-y: hidden;
+}
+
+@media only screen and (max-width: 1200px) {
+  .bg-dashboard .my-card {
+    overflow-y: scroll;
+  }
+}
+
+.message {
+  background-color: var(--message-container-color);
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 1em 0;
+}
+
+.paginate {
+  align-self: center;
+  justify-self: flex-end;
+>>>>>>> origin/erika-mado
 }
 
