@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\UserInfo;
 use Illuminate\Http\Request;
 use App\Review;
+use Carbon\Carbon;
 
 class ApiController extends Controller
 {
@@ -18,8 +19,13 @@ class ApiController extends Controller
         $review = Review::all();
         $ciao = $result->toSql();
         $result = $result ->with([
-            'user' => function ($query1) {$query1->select('id', 'name', 'surname');},
+            'user' => function ($query1) {$query1->with(['sponsors' => function ($query) {
+                $query->where('end_time', '>', Carbon::now());
+            }]);},
+            
          ])->paginate(20);
+         
+        
         $user_id = [];
         if($request->nreview && $request->mediarating){
             foreach ($result as $user) {
@@ -106,6 +112,7 @@ class ApiController extends Controller
             foreach ($result as $user) {
                 $user_id[] = $user->user->id;
             }
+            
             $dati = $review->whereIn('user_id', $user_id)->groupBy('user_id');
             $nreview = 0;
             
