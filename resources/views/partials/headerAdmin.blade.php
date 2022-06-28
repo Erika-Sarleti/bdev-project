@@ -18,14 +18,14 @@
                         {{ Auth::user()->name }}
                     </a>
                     
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item my-text-color-pink" href="{{route('admin.devs.show',  Auth::user()->id )}}">
+                    <div class="dropdown-menu dropdown-menu-right container-background" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item text-white" href="{{route('admin.devs.show',  Auth::user()->id )}}">
                         Vai al tuo profilo
                     </a>
-                      <a class="dropdown-item my-text-color-pink" href="{{route('admin.devs.edit',  Auth::user()->id )}}">
+                      <a class="dropdown-item text-white" href="{{route('admin.devs.edit',  Auth::user()->id )}}">
                           Modifica Profilo
                       </a>
-                      <a class="dropdown-item my-text-color-pink" href="{{ route('logout') }}"
+                      <a class="dropdown-item text-white" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -49,17 +49,16 @@
                 <li class="nav-item">
                     <a class="nav-link my-text-color" href="{{ route('register') }}">Register</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active my-text-color" aria-current="page" href="{{route('guest.index')}}">Esplora</a>
-                </li>
+                
                 @endif
                 
               @endauth
               
               
               <li class="nav-item">
-                <a class="navbar-brand my-text-color d-flex align-items-center" href="{{ route('guest.index')}}">
+                <a class="navbar-brand text-white d-flex align-items-center gap-1" href="{{ route('guest.index')}}">
                   <span>Esplora</span>
+                  <span><i class="fa-solid fa-magnifying-glass"></i></span>
                 </a>
               </li>
             </ul>

@@ -18,12 +18,14 @@ class MessageSeeder extends Seeder
         $users = User::all();
 
         foreach ($users as $user) {
-            Message::create([
-            'user_id'           =>  $user->id,
-            'guest_mail'        =>  $faker->email(),
-            'message'           =>  $message,
+            $n = rand(1, 7);
+            for ($i= 0; $i< $n; $i++ ){
+                Message::create([
+                'user_id'           =>  $user->id,
+                'guest_mail'        =>  $faker->email(),
+                'message'           =>  $faker->text(),
           ]);
-
+        }  
         
     }
 }

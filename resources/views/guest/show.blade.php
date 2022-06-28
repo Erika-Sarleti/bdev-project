@@ -8,11 +8,15 @@
 
 
 
-  
-  
-  <section class="section-main section-show-dev">
-      
-      <div class="container mb-5">
+   
+   <section class="section-main section-show-dev">
+     
+     <div class="container mb-5">
+        @if(session()->has('status'))
+                  <div class="alert alert-success">
+                     {{ session()->get('status') }}
+                  </div>
+        @endif
           <div class="row">
               <div class="col">
 
@@ -69,8 +73,8 @@
           <a href="#form-message" class="btn btn-primary mt-5 fw-bold text-white me-5 mb-5">Invia un messaggio</a>
 
           @php
-      $id_dev=$dev->id;
-    @endphp
+            $id_dev=$dev->id;
+          @endphp
 
           <a href="{{route('guest.create', ['id' => $id_dev])}}" class="btn btn-primary mt-5 fw-bold text-white ms-5 mb-5">Scrivi una Recensione</a>
 
@@ -82,60 +86,7 @@
             
 
 
-          </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{{-- <section class="container">
-  <div class="d-flex flex-column my-container-show">
-    <div class="card">
-      <img src="{{ $dev->userinfo->image }}" class="my-image" alt="image {{ $dev->name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ $dev->name }}</h5>
-          <p class="card-text">{{$dev->description}}</p>
-          <small class="text-muted">numero recensioni: {{$dev->reviews->count('reviews')}}</small>
-          <div class="text-dark">media voti:
-            <script>
-              let media = 0;
-              @foreach($dev->reviews as $vote)
-                media += {{ $vote->rating }};
-              @endforeach
-              media = Math.floor(media / {{ $dev->reviews->count('reviews') }});
-              document.write(media);
-            </script>
-          </div>
-
-          <a href="#form-message" class="btn btn-primary">Invia un messaggio</a>
-        </div>
-    </div >
-  </div>
-  </section> --}}
-
+</main>
 
   {{-- SEZIONE MESSAGGI --}}
   <section class="container mt-5">

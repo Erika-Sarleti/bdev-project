@@ -1,10 +1,11 @@
 @extends('layouts.admin')
+@section('pageTitle', 'Recensioni')
 @section('pageMain')
 
 
 <main class='d-flex bg-dashboard mtplus text-light'>
   @include('partials.sidebar')
-  <div class="my-card flex-grow-1 ">
+  <div class="container-blur-sidebar container-mex">
     
     <div class="d-flex flex-column">
       <h4 class="my-text-color mb-4">Recensioni</h4>

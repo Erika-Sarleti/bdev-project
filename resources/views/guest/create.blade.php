@@ -22,6 +22,7 @@
         </select> <br>
         <label for="message" class="mt-5 label-review">Messaggio</label>
         <textarea name="message" style="width: 400px" v-model="messagereview" class="form-control mt-3 @error('message') is-invalid @enderror" required id="message" rows="3"></textarea>
+        
         @error('message')
             <div class="alert alert-warning">{{ $message }}</div>
         @enderror

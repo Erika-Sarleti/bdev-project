@@ -1,6 +1,6 @@
 @extends('layouts.base')
 
-
+@section('pageTitle', 'Homepage')
 @section('pageMain')
     
     <div class="container-index">

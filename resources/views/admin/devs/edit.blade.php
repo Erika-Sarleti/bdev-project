@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('pageTitle', 'Modifica il tuo profilo')
 @section('pageMain')
 
 {{-- BARRA LATERALE DI NAVIGAZIONE --}}
@@ -6,7 +7,7 @@
 
     @include('partials.sidebar');
     
-    <div class="my-card flex-grow-1 ">
+    <div class="container-blur-sidebar flex-grow-1 ">
         <div class="card-body d-flex flex-column">
         <h2 class="my-text-color my-4">MODIFICA LE TUE INFORMAZIONI PERSONALI:</h2>
         

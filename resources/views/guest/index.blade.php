@@ -1,5 +1,5 @@
 @extends('layouts.base')
-
+@section('pageTitle', 'Index')
 @section('pageMain')
     <div id="app">
 

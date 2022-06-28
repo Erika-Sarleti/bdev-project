@@ -1,8 +1,23 @@
 @extends('layouts.base')
+@section('pageTitle', 'CiccioPlus')
 @section('pageMain')
 
 {{-- SCELTA DELLA SPONSORIZZAZIONE --}}
 <section class="py-5 container-background">
+    @if(session('success_message'))
+    <div class="alert alert-success">
+        {{ session('success_message') }}
+    </div>
+    @endif
+    @if(count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container-card-blur">
         <div class="container text-center pt-5">
             <h1 class="my-text-color2">Ciccio Plus</h1>
@@ -34,20 +49,6 @@
         </div>
         
         {{-- MESSAGGI DI VALIDAZIONE PAGAMENTO --}}
-        @if(session('success_message'))
-        <div class="alert alert-success">
-            {{ session('success_message') }}
-        </div>
-        @endif
-        @if(count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
     
         {{-- FORM PAGAMENTO --}}
         <div class="row-cols-2">

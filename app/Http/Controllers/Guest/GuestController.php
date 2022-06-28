@@ -95,7 +95,7 @@ class GuestController extends Controller
             'review' => $request->message,
         ]);
         
-        return redirect()->route('guest.show', $dev_id)->with('status', 'Completed with success!');
+        return redirect()->route('guest.show', $dev_id)->with('status', 'Recensione inserita con successo!');
     }
 
     /**

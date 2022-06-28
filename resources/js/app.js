@@ -126,25 +126,26 @@ const app = new Vue({
             this.results = [];
            Axios.get("/api-dev?role=" + this.role + '&nreview=' + this.nreview + '&mediarating=' + this.mediarating)
            .then((response) => {
-            console.log(response);
+            
             this.sqlData = Object.keys(response.data.response);
 
             this.results = this.sqlData.map(function(x){
                 return parseInt(x, 10);
             })
 
+            
             if (this.nreview != 0 || this.mediarating != 0) {
                 response.data.sql.data.forEach((element, index) => {
                     if (this.results.includes(element.user_id))
                     {
                         this.devs.push(element);
-
+                        
                     }
-
+                    
                 });
             } else {
                 this.devs = response.data.response.data;
-
+                
             }
         })
         }

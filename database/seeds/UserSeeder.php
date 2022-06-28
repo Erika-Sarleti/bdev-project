@@ -10,7 +10,7 @@ class UserSeeder extends Seeder
     {
         for ($i=0; $i <20 ; $i++) {
 
-            $faker ->addProvider(new \Faker\Provider\it_IT\ Person($faker));
+            $faker->addProvider(new \Faker\Provider\it_IT\ Person($faker));
             User::create([
                 'name'              =>  $faker->firstName(),
                 'surname'           =>  $faker->lastName(),

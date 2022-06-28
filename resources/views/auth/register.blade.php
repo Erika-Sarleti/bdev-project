@@ -1,5 +1,5 @@
 @extends('layouts.base')
-@section('pageTitle', 'ShowPage')
+@section('pageTitle', 'Registrati')
 @section('pageMain')
     <div class="sign-in row-cols-2 d-flex justify-content-center align-items-center pt-4">
 

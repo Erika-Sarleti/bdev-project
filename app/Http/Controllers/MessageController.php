@@ -16,9 +16,9 @@ class MessageController extends Controller
 
     private function validation() {
         return [
-            'name' => 'required|max:255|min:2',
-            'email' => 'required|email|max:255|min:5',
-            'message' => 'required|max:255|min:4',
+            'name'      => 'required|max:255|min:2',
+            'email'     => 'required|email|max:255|min:5',
+            'message'   => 'required|max:255|min:4',
         ];
     }
 
@@ -40,14 +40,6 @@ class MessageController extends Controller
 
     public function store(Request $request, User $dev) 
     {
-        // $request->validate($this->validationRules, [
-        //     'email' => 'Inserisci una mail valida',
-        //     'message' => 'Inserisci messaggio'
-        // ]);
-
-        // $id = User::where('id', $dev->id)->get('id');
-     
-        // $formData = $request->all();
 
 
         Message::create([
@@ -57,7 +49,7 @@ class MessageController extends Controller
         ]);
 
 
-        return redirect()->route('guest.show', $request->user_id)->with('status', 'Completed with success!');
+        return redirect()->route('guest.show', $request->user_id)->with('status', 'Messaggio inviato con successo!');
     }
 
     

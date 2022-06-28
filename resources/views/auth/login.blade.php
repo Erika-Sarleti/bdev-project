@@ -12,13 +12,13 @@
     <section class="login-section d-flex align-items-center justify-content-center">
         <div class="row">
             <div class="col-md-12 d-flex flex-column">
-                <div class="my-text-color text-center fs-2">{{ __('Login') }}</div>
+                <div class="my-text-color-pink text-center font-monospace fs-2">{{ __('Login') }}</div>
                 <div class="card-body" style="width: 800px">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group row d-flex align-items-center">
                             <label for="email"
-                                class="my-text-color col-md-4 col-form-label text-md-right fs-4">{{ __('E-Mail Address:') }}</label>
+                                class="text-white col-md-4 col-form-label text-md-right fs-4">{{ __('E-Mail Address:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email"
@@ -36,7 +36,7 @@
 
                         <div class="form-group row d-flex align-items-center">
                             <label for="password"
-                                class="my-text-color col-md-4 col-form-label text-md-right fs-4">{{ __('Password:') }}</label>
+                                class="text-white col-md-4 col-form-label text-md-right fs-4">{{ __('Password:') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
@@ -66,7 +66,7 @@
 
                         <div class="form-group row mb-0 d-flex justify-content-center mt-3">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-neon">
+                                <button type="submit" class="btn btn-neon text-white">
                                     {{ __('Login') }}
                                 </button>
 
