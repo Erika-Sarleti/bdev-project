@@ -28,14 +28,14 @@ namespace App\Http\Controllers\Admin;
 
     public function message()
     {
-        $messages = Message::where('user_id', Auth::user()->id)->get();
+        $messages = Message::where('user_id', Auth::user()->id)->paginate(4);
     
         return view('admin.messages.index', compact('messages'));
     }
 
     public function review()
     {
-        $reviews = Review::where('user_id', Auth::user()->id)->get();
+        $reviews = Review::where('user_id', Auth::user()->id)->paginate(4);
     
         return view('admin.reviews.index', compact('reviews'));
     }
