@@ -80,7 +80,7 @@ namespace App\Http\Controllers\Admin;
     public function show(User $dev, UserInfo $userinfo, Message $message)
     {
 
-        $dev = $dev->with('skills')->first();       
+        $dev = $dev->with('skills')->find($dev->id);       
         $message = Message::all();
 
         $userinfo = UserInfo::all();
