@@ -49,12 +49,6 @@ namespace App\Http\Controllers\Admin;
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         
@@ -83,14 +77,6 @@ namespace App\Http\Controllers\Admin;
         
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-
     public function edit(User $dev)
     {
         $skills = Skill::all();
@@ -115,6 +101,16 @@ namespace App\Http\Controllers\Admin;
                 $formData = $request->all();
                
                 $dev->skills()->sync($formData['skills']);
+                $updateInfo = [
+                    'locality'      =>      $request->locality,
+                    'cv'            =>      $request->cv,
+                    'image'         =>      $request->image,
+                    'github'        =>      $request->github,
+                    'description'   =>      $request->description,
+                    'role'          =>      $request->role,
+                    'phone'         =>      $request->phone,
+                ];
+                $dev->userInfo()->update($updateInfo);
 
                 $updateInfo = [
                     'locality' => $request->locality,
@@ -140,12 +136,6 @@ namespace App\Http\Controllers\Admin;
                  return redirect()->route('admin.devs.show', $dev->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
