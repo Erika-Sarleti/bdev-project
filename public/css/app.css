@@ -12782,3 +12782,16 @@ img {
   padding-top: 5.5rem;
 }
 
+.login-section {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-blue);
+}
+
+.login-section input {
+  background-color: var(--input-color);
+}
+

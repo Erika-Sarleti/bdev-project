@@ -55,7 +55,7 @@
 
 .no-growth{
     flex-grow: 0;
-  
+
 }
 
 footer{
@@ -551,4 +551,17 @@ header{
 // SHOW
 .my-container-show{
     padding-top: 5.5rem;
+}
+
+// login section
+.login-section{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-blue);
+    input {
+        background-color: var(--input-color);
+    }
 }
