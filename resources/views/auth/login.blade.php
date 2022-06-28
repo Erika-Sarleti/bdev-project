@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
-
 <body>
     <section class="login-section d-flex align-items-center justify-content-center">
         <div class="row">
             <div class="col-md-12 d-flex flex-column">
                 <div class="my-text-color text-center fs-2">{{ __('Login') }}</div>
-                {{-- <div class="card"> --}}
                 <div class="card-body" style="width: 800px">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
