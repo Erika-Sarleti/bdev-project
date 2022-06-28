@@ -51049,7 +51049,7 @@ var app = new Vue({
     locality: '',
     github: '',
     phone: ''
-  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _data),
+  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _defineProperty(_data, "messagereview", ''), _data),
   methods: {
     // function isCharacterALetter(char) {
     //     return (/[a-zA-Z]/).test(char)
@@ -51075,6 +51075,15 @@ var app = new Vue({
         btnMessage.disabled = false;
       } else {
         btnMessage.disabled = true;
+      }
+    },
+    checkedReview: function checkedReview() {
+      var btnReview = document.getElementById('btn-review');
+
+      if (this.messagereview != '') {
+        btnReview.disabled = false;
+      } else {
+        btnReview.disabled = true;
       }
     },
     search: function search() {

@@ -54,6 +54,7 @@ const app = new Vue({
         password_confirm: '',
         guest_mail: '',
         message: '',
+        messagereview: '',
     },
     methods: {
         // function isCharacterALetter(char) {
@@ -93,6 +94,17 @@ const app = new Vue({
                 }
                 else{
                     btnMessage.disabled = true;
+                }
+        },
+        checkedReview: function() {
+            let btnReview = document.getElementById('btn-review');
+            if  (this.messagereview != ''
+                )
+                {
+                    btnReview.disabled = false;
+                }
+                else{
+                    btnReview.disabled = true;
                 }
         },
         search: function() {
