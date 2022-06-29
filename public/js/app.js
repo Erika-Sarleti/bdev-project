@@ -51049,7 +51049,7 @@ var app = new Vue({
     locality: '',
     github: '',
     phone: ''
-  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _defineProperty(_data, "messagereview", ''), _data),
+  }, _defineProperty(_data, "role", ''), _defineProperty(_data, "password_confirm", ''), _defineProperty(_data, "guest_mail", ''), _defineProperty(_data, "message", ''), _defineProperty(_data, "messagereview", ''), _defineProperty(_data, "picsum", 'https://picsum.photos/500/500?random='), _data),
   methods: {
     // function isCharacterALetter(char) {
     //     return (/[a-zA-Z]/).test(char)
@@ -51311,8 +51311,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Paolo\Documents\Boolean\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Alessandro\OneDrive\Desktop\progetto finale\bdev-project\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
